@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bahqp3y7lvxbw"
-path="res://.godot/imported/test3.png-433e84fc7987cafb4544adb3f4abb442.ctex"
+uid="uid://bamxw4dgdliee"
+path="res://.godot/imported/kitsune.png-12d0885b2bdb8bab464074c317cf8771.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/element-icons/test3.png"
-dest_files=["res://.godot/imported/test3.png-433e84fc7987cafb4544adb3f4abb442.ctex"]
+source_file="res://assets/category-icons/kitsune.png"
+dest_files=["res://.godot/imported/kitsune.png-12d0885b2bdb8bab464074c317cf8771.ctex"]
 
 [params]
 

@@ -13,12 +13,13 @@ func load_element_icons():
 			element_icons[key] = load("res://assets/element-icons/%s.png" % key)
 		else:
 			element_icons[key] = load("res://assets/element-icons/error.png")
-			Global.print_info(key + " - иконка элемента не найдена")
+			print("Element ", key + " icon missing!")
 
 func load_category_icons():
-	for key in Global.actual_element_category:
+	for key in Global.actual_item_groups:
 		if ResourceLoader.exists("res://assets/category-icons/%s.png" % key):
 			category_icons[key] = load("res://assets/category-icons/%s.png" % key)
 		else:
 			category_icons[key] = load("res://assets/category-icons/error.png")
-			Global.print_info(key + " - иконка категории не найдена")
+			print("Category ", key + " icon missing!")
+	print("---------------------------")

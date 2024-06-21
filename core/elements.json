@@ -1,0 +1,29 @@
+{
+	"cat": {
+		"name": "CAT",
+		"source_1": null,
+		"source_2": null,
+		"icon": null,
+		"categories": [
+			"kitsune"
+		]
+	},
+	"bat": {
+		"name": "BAT",
+		"source_1": null,
+		"source_2": null,
+		"icon": null,
+		"categories": [
+			"dragon"
+		]
+	},
+	"wolf": {
+		"name": "WOLF",
+		"source_1": "cat",
+		"source_2": "bat",
+		"icon": null,
+		"categories": [
+			"folklore"
+		]
+	}
+}
