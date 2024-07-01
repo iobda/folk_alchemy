@@ -1,9 +1,5 @@
 extends Node
 
-signal hints_updated
-signal hints_empty
-signal hidden_elements_changed
-
 const ELEMENTS_JSON = "res://core/elements.json" #list of all elements
 const ELEMENTS_SAVE_PATH = "res://saves/folklore.save" #save file path
 

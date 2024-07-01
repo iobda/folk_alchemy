@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjjcxykvj2lpy"
-path="res://.godot/imported/folklore.png-b1383a2987d273248aa76c7013c22b1b.ctex"
+uid="uid://cugbnd7kckahk"
+path="res://.godot/imported/on.png-934d1473b04e99b4ee452ece6b7e60c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/category-icons/folklore.png"
-dest_files=["res://.godot/imported/folklore.png-b1383a2987d273248aa76c7013c22b1b.ctex"]
+source_file="res://assets/frame/on.png"
+dest_files=["res://.godot/imported/on.png-934d1473b04e99b4ee452ece6b7e60c4.ctex"]
 
 [params]
 

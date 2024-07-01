@@ -1,5 +1,6 @@
 extends Control
 
+
 var label_name: String #label name, entered manually in game.tscn
 var category_name: String #new variable needed for script
 
