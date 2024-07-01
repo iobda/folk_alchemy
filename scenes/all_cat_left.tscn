@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnieao6ouav5s"]
+
+[ext_resource type="Script" path="res://scripts/AllCatLeft.gd" id="1_syq5a"]
+[ext_resource type="Texture2D" uid="uid://ltokwdkxg2ww" path="res://assets/frame/category-frame.png" id="2_mgqhp"]
+
+[node name="AllCatLeft" type="Control"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1820.0
+offset_bottom = -980.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_syq5a")
+
+[node name="CategoryFrame" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("2_mgqhp")
+expand_mode = 1
+
+[node name="ACLIcon" type="TextureRect" parent="."]
+z_index = 1
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.2, 0.2)
+
+[node name="ACLLabel" type="Label" parent="."]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 100.0
+offset_bottom = 125.0
+text = "all_cat_left"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

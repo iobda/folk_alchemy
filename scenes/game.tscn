@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d2tsyp5uo6uou"]
 
+[ext_resource type="Script" path="res://scenes/game.gd" id="1_1ml7u"]
 [ext_resource type="Texture2D" uid="uid://bqsfykw0g0uto" path="res://assets/background-book/background.png" id="1_cdgj1"]
-[ext_resource type="PackedScene" uid="uid://bq5vetut62bwt" path="res://scenes/right_element_category.tscn" id="3_w3jgv"]
 [ext_resource type="PackedScene" uid="uid://bh8qmah2hkren" path="res://scenes/left_element_category.tscn" id="4_7x2rw"]
 
 [node name="Game" type="Control"]
@@ -11,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1ml7u")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -20,91 +21,92 @@ texture = ExtResource("1_cdgj1")
 
 [node name="Left page" type="Node" parent="."]
 
-[node name="kitsune" parent="Left page" instance=ExtResource("4_7x2rw")]
-offset_left = 495.0
-offset_top = 157.0
-offset_right = -1325.0
-offset_bottom = -823.0
+[node name="LeftElementCategory" parent="Left page" instance=ExtResource("4_7x2rw")]
+offset_left = 488.0
+offset_top = 160.0
+offset_right = -1232.0
+offset_bottom = -720.0
 
-[node name="CategoryIcon" type="TextureRect" parent="Left page/kitsune"]
+[node name="CategoryIcon" type="TextureRect" parent="Left page/LeftElementCategory"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.2, 0.2)
+offset_right = 175.0
+offset_bottom = 175.0
+scale = Vector2(0.39, 0.39)
 
-[node name="CategoryName" type="Label" parent="Left page/kitsune"]
+[node name="CategoryName" type="Label" parent="Left page/LeftElementCategory"]
 layout_mode = 0
-offset_top = 100.0
-offset_right = 100.0
-offset_bottom = 130.0
-text = "kitsune"
+offset_left = -25.0
+offset_top = 200.0
+offset_right = 225.0
+offset_bottom = 250.0
+theme_override_font_sizes/font_size = 28
+text = "Animals"
 horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="dragon" parent="Left page" instance=ExtResource("4_7x2rw")]
-offset_left = 844.0
-offset_top = 338.0
-offset_right = -976.0
-offset_bottom = -642.0
+[node name="LeftElementCategory2" parent="Left page" instance=ExtResource("4_7x2rw")]
+offset_left = 800.0
+offset_top = 261.0
+offset_right = -920.0
+offset_bottom = -619.0
 
-[node name="CategoryIcon" type="TextureRect" parent="Left page/dragon"]
+[node name="CategoryIcon" type="TextureRect" parent="Left page/LeftElementCategory2"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.2, 0.2)
+offset_right = 175.0
+offset_bottom = 175.0
+scale = Vector2(0.39, 0.39)
 
-[node name="CategoryName" type="Label" parent="Left page/dragon"]
+[node name="CategoryName" type="Label" parent="Left page/LeftElementCategory2"]
 layout_mode = 0
-offset_top = 100.0
-offset_right = 100.0
-offset_bottom = 130.0
-text = "dragon"
+offset_left = -25.0
+offset_top = 200.0
+offset_right = 225.0
+offset_bottom = 250.0
+theme_override_font_sizes/font_size = 28
+text = "Human"
 horizontal_alignment = 1
-vertical_alignment = 1
+
+[node name="LeftElementCategory3" parent="Left page" instance=ExtResource("4_7x2rw")]
+offset_left = 497.0
+offset_top = 490.0
+offset_right = -1223.0
+offset_bottom = -390.0
+
+[node name="CategoryIcon" type="TextureRect" parent="Left page/LeftElementCategory3"]
+layout_mode = 0
+offset_right = 175.0
+offset_bottom = 175.0
+scale = Vector2(0.39, 0.39)
+
+[node name="CategoryName" type="Label" parent="Left page/LeftElementCategory3"]
+layout_mode = 0
+offset_left = -25.0
+offset_top = 200.0
+offset_right = 225.0
+offset_bottom = 250.0
+theme_override_font_sizes/font_size = 28
+text = "Emotions"
+horizontal_alignment = 1
+
+[node name="LeftElementCategory4" parent="Left page" instance=ExtResource("4_7x2rw")]
+offset_left = 798.0
+offset_top = 645.0
+offset_right = -922.0
+offset_bottom = -235.0
+
+[node name="CategoryIcon" type="TextureRect" parent="Left page/LeftElementCategory4"]
+layout_mode = 0
+offset_right = 175.0
+offset_bottom = 175.0
+scale = Vector2(0.39, 0.39)
+
+[node name="CategoryName" type="Label" parent="Left page/LeftElementCategory4"]
+layout_mode = 0
+offset_left = -25.0
+offset_top = 200.0
+offset_right = 225.0
+offset_bottom = 250.0
+theme_override_font_sizes/font_size = 28
+text = "Natural disasters"
+horizontal_alignment = 1
 
 [node name="Right page" type="Node" parent="."]
-
-[node name="kitsune" parent="Right page" instance=ExtResource("3_w3jgv")]
-offset_left = 1620.0
-offset_top = 177.0
-offset_right = -200.0
-offset_bottom = -803.0
-
-[node name="CategoryIcon" type="TextureRect" parent="Right page/kitsune"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.2, 0.2)
-flip_h = true
-
-[node name="CategoryName" type="Label" parent="Right page/kitsune"]
-layout_mode = 0
-offset_top = 100.0
-offset_right = 100.0
-offset_bottom = 130.0
-text = "kitsune"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="folklore" parent="Right page" instance=ExtResource("3_w3jgv")]
-offset_left = 1601.0
-offset_top = 607.0
-offset_right = -219.0
-offset_bottom = -373.0
-
-[node name="CategoryIcon" type="TextureRect" parent="Right page/folklore"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.2, 0.2)
-expand_mode = 1
-flip_h = true
-
-[node name="CategoryName" type="Label" parent="Right page/folklore"]
-layout_mode = 0
-offset_top = 100.0
-offset_right = 100.0
-offset_bottom = 130.0
-text = "folklore"
-horizontal_alignment = 1
-vertical_alignment = 1

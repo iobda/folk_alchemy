@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://qq55blymvfuq"]
+
+[ext_resource type="Script" path="res://scripts/Element.gd" id="1_2xiu2"]
+[ext_resource type="Texture2D" uid="uid://ltokwdkxg2ww" path="res://assets/frame/category-frame.png" id="2_28m50"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lbm7a"]
+texture = ExtResource("2_28m50")
+
+[node name="Element" type="Control"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1820.0
+offset_bottom = -980.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2xiu2")
+
+[node name="ItemFrame" type="Panel" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_lbm7a")
+
+[node name="ElementIcon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ElementName" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

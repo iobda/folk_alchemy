@@ -12,16 +12,17 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1720.0
-offset_bottom = -880.0
+offset_right = -1820.0
+offset_bottom = -980.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_elnd8")
 
 [node name="CategoryFrame" type="Panel" parent="."]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 0
-offset_right = 200.0
-offset_bottom = 200.0
+offset_right = 40.0
+offset_bottom = 40.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_bbrfp")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
