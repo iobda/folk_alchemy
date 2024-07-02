@@ -1,7 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnieao6ouav5s"]
+[gd_scene load_steps=3 format=3 uid="uid://dseowgjhri1fr"]
 
-[ext_resource type="Script" path="res://scripts/AllCatLeft.gd" id="1_syq5a"]
 [ext_resource type="Texture2D" uid="uid://ltokwdkxg2ww" path="res://assets/frame/category-frame.png" id="2_mgqhp"]
+
+[sub_resource type="GDScript" id="GDScript_65d74"]
+script/source = "extends Control
+
+var category_name: String = \"all_categories\"
+
+@onready var acl_label: Label = $ACLLabel
+@onready var acl_icon: TextureRect = $ACLIcon
+
+func _ready() -> void:
+	category_icon_set()
+
+func category_icon_set(): #category icon set from ResLoader
+	$ACLIcon.set_texture(ResLoader.category_icons[category_name])
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			print(category_name, \" - left click acl\")
+		elif event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+			print(category_name, \" - right click acl\")
+
+
+"
 
 [node name="AllCatLeft" type="Control"]
 custom_minimum_size = Vector2(100, 100)
@@ -13,7 +36,7 @@ offset_right = -1820.0
 offset_bottom = -980.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_syq5a")
+script = SubResource("GDScript_65d74")
 
 [node name="CategoryFrame" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(100, 100)

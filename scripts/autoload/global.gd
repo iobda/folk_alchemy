@@ -1,6 +1,6 @@
 extends Node
 
-const ELEMENTS_JSON = "res://core/elements.json" #list of all elements
+const ELEMENTS_JSON = "res://resources/elements.json"#list of all elements
 const ELEMENTS_SAVE_PATH = "res://saves/folklore.save" #save file path
 
 

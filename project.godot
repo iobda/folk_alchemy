@@ -17,10 +17,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Events="*res://core/events.gd"
-Global="*res://core/global.gd"
-ResLoader="*res://core/ResourceLoader.gd"
-SoundManager="*res://scripts/SoundManager.gd"
+Events="*res://scripts/autoload/events.gd"
+Global="*res://scripts/autoload/global.gd"
+ResLoader="*res://scripts/autoload/ResourceLoader.gd"
+SoundManager="*res://scripts/autoload/SoundManager.gd"
 
 [display]
 

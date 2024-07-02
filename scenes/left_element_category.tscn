@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bh8qmah2hkren"]
 
-[ext_resource type="Script" path="res://scripts/LeftElementCategory.gd" id="1_elnd8"]
+[ext_resource type="Script" path="res://scenes/left_element_category.gd" id="1_a7ohi"]
 [ext_resource type="Texture2D" uid="uid://ltokwdkxg2ww" path="res://assets/frame/category-frame.png" id="2_ftyvo"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bbrfp"]
@@ -16,7 +16,7 @@ offset_right = -1720.0
 offset_bottom = -880.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_elnd8")
+script = ExtResource("1_a7ohi")
 
 [node name="CategoryFrame" type="Panel" parent="."]
 layout_mode = 0
