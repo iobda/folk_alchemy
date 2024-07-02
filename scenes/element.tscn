@@ -1,7 +1,34 @@
 [gd_scene load_steps=4 format=3 uid="uid://qq55blymvfuq"]
 
-[ext_resource type="Script" path="res://scenes/element.gd" id="1_2xiu2"]
 [ext_resource type="Texture2D" uid="uid://ltokwdkxg2ww" path="res://assets/frame/category-frame.png" id="2_28m50"]
+
+[sub_resource type="GDScript" id="GDScript_1tlw6"]
+script/source = "extends Control
+
+var element_name: String = \"empty\"
+var display_name: String = \"empty\"
+
+func _ready():
+	pass
+
+func set_element_icon(data: String):
+	%Element_icon.set_texture(ResLoader.element_icons[data])
+
+func set_element_label(data: String):
+	%Element_name.set_text(Global.element_name)
+
+func set_item_groups():
+	add_to_group(\"all_categories\")
+	for cat in Global.all_elements[element_name][\"categories\"]:
+		add_to_group(cat)
+
+func set_parameters(element: String):
+	display_name = Global.all_elements[element].name
+	element_name = element
+	set_element_icon(element)
+	set_element_label(element)
+	set_item_groups()
+"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lbm7a"]
 texture = ExtResource("2_28m50")
@@ -16,7 +43,7 @@ offset_right = -1820.0
 offset_bottom = -980.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_2xiu2")
+script = SubResource("GDScript_1tlw6")
 
 [node name="ItemFrame" type="Panel" parent="."]
 custom_minimum_size = Vector2(100, 100)

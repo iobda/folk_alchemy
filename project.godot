@@ -17,10 +17,18 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Events="*res://scripts/autoload/events.gd"
+Events="*res://scripts/autoload/event_bus.gd"
 Global="*res://scripts/autoload/global.gd"
 ResLoader="*res://scripts/autoload/ResourceLoader.gd"
-SoundManager="*res://scripts/autoload/SoundManager.gd"
+SoundManager="*res://scripts/autoload/sound_manager.gd"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=2
+gdscript/warnings/unsafe_property_access=2
+gdscript/warnings/unsafe_method_access=2
+gdscript/warnings/unsafe_cast=1
+gdscript/warnings/unsafe_call_argument=2
 
 [display]
 
