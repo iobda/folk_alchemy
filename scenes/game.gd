@@ -43,14 +43,15 @@ func _on_element_chosen(element_db_name: String ,is_right: bool)->void:
 		if(folkore_bd_name != "none"):
 			_spawn_popup_folklore(folkore_bd_name)
 
+
 func _match() -> String:
 	for key: String in DBElements.folklores.keys() as Array[String]:
 		var folklore_dict: Dictionary = DBElements.folklores.get(key)
 		var source_1: String = folklore_dict.get("source_1")
 		var source_2: String = folklore_dict.get("source_2")
-		if( source_1 == _right_element_selected and source_2 == _left_element_selected or
-			source_2 == _right_element_selected and source_1 == _left_element_selected):
-				folklore_dict["state"] = "open"
+		if( source_1 == _right_element_selected and source_2 == _left_element_selected and folklore_dict["state"] == "closed" 
+		or source_2 == _right_element_selected and source_1 == _left_element_selected and folklore_dict["state"] == "closed"):
+				folklore_dict["state"] = "opened"
 				_right_element_selected = "none"
 				_left_element_selected = "none"
 				return key
