@@ -1,7 +1,7 @@
 extends Control
 
-var _right_element_selected: String = "Right is none"
-var _left_element_selected: String = "Left is none"
+var _right_element_selected: String = "none"
+var _left_element_selected: String = "none"
 
 @onready var _right_label: Label = %DebugLabel_1
 @onready var _left_label: Label = %DebugLabel_2
@@ -35,3 +35,14 @@ func _on_element_chosen(element_db_name: String ,is_right: bool)->void:
 		_left_element_selected = element_db_name
 		#debug line
 		_left_label.text = "Left is " + element_db_name
+	if(_right_element_selected != "none" and _left_element_selected != "none"):
+		merge()
+
+func merge() -> void:
+	for key: Dictionary in DBElements.folklores.values():
+		var source_1: String = key.get("source_1")
+		var source_2: String = key.get("source_2")
+		if( source_1 == _right_element_selected and source_2 == _left_element_selected or
+			source_2 == _right_element_selected and source_1 == _left_element_selected):
+				key["state"] = "open"
+	print((DBElements.folklores.get("bastet") as Dictionary).get("state"))
