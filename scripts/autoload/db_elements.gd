@@ -23,14 +23,18 @@ var elements: Dictionary = {
 		"source_2": null,
 		"icon": "res://assets/element-icons/love.png",
 		"category" : Category.EMOTIONS
-	},
+	}
+}
+
+var folklores: Dictionary ={
 	"bastet": {
 		"name": "Бастет",
 		"source_1": "cat",
 		"source_2": "love",
 		"icon": "res://assets/folklore/bastet.png",
 		"category": Category.FOLKLORE,
-		"description": "Лорем ипсум пси пси спим"
+		"description": "Лорем ипсум пси пси спим",
+		"state": "closed"
 	}
 }
 
