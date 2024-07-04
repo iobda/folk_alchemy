@@ -39,9 +39,9 @@ func stop_music()->void:
 
 func play_ui_click_sfx()->void:
 	_ui_click_sfx.play()
-	
+
 func play_sucess_sfx()->void:
 	_sucess_sfx.play()
-	
+
 func play_unsucess_sfx()->void:
 	_unsucess_sfx.play()

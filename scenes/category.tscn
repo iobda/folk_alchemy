@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://d37qck7pxs4mc"]
+
+[ext_resource type="Script" path="res://scenes/category.gd" id="1_ugxwe"]
+[ext_resource type="Texture2D" uid="uid://ltokwdkxg2ww" path="res://assets/frame/category-frame.png" id="2_aoa3i"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_omq8t"]
+texture = ExtResource("2_aoa3i")
+texture_margin_left = 25.0
+texture_margin_top = 25.0
+texture_margin_right = 25.0
+texture_margin_bottom = 25.0
+
+[node name="Category" type="Control"]
+layout_mode = 3
+anchor_right = 0.125
+anchor_bottom = 0.25
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ugxwe")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frame" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_omq8t")
+
+[node name="CategoryTextureButton" type="TextureButton" parent="VBoxContainer/Frame"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="CategoryLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
