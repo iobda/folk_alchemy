@@ -31,6 +31,11 @@ var _elements: Dictionary = {
 		"name": "Любовь",
 		"icon": "res://assets/element-icons/love.png",
 		"category" : CategoryType.EMOTIONS
+	},
+	"soul": {
+		"name": "Душа",
+		"icon": "res://assets/element-icons/soul.png",
+		"category" : CategoryType.HUMAN
 	}
 }
 
@@ -42,7 +47,15 @@ var _folklores: Dictionary ={
 		"source_1": "cat",
 		"source_2": "love",
 		"state": "closed"
-	}
+	},
+	"succubus": {
+		"name": "Суккуб",
+		"icon": "res://assets/folklore/succubus.png",
+		"description": "Лорем ипсум пси пси спим",
+		"source_1": "soul",
+		"source_2": "love",
+		"state": "closed"
+	},
 }
 
 func get_category_name(category: CategoryType) -> String:
@@ -57,6 +70,9 @@ func get_element_name(element_db_name: String) -> String:
 func get_element_icon_path(element_db_name: String) -> String:
 	return (_elements.get(element_db_name) as Dictionary).get("icon") as String
 
+func get_element_category(element_db_name: String) -> CategoryType:
+	return (_elements.get(element_db_name) as Dictionary).get("category") as CategoryType
+
 func get_elements_by_category(category: CategoryType) -> Array[String]:
 	var elements: Array[String] = []
 	for key: String in _elements.keys() as Array[String]:
@@ -64,6 +80,18 @@ func get_elements_by_category(category: CategoryType) -> Array[String]:
 		if(element.get("category") == category):
 			elements.push_back(key)
 	return elements
+
+func get_folklores_elements_bd_names() -> Array[String]:
+	var bd_names: Array[String] = []
+	for key: String in _folklores.keys() as Array[String]:
+		bd_names.push_back(key)
+	return bd_names
+
+func get_folklores_elements_sources(folklore_db_name: String) -> Array[String]:
+	var sources: Array[String] = []
+	sources.push_back((_folklores.get(folklore_db_name) as Dictionary).get("source_1"))
+	sources.push_back((_folklores.get(folklore_db_name) as Dictionary).get("source_2"))
+	return sources
 
 func get_folklore_element_name(folklore_db_name: String) -> String:
 	return (_folklores.get(folklore_db_name) as Dictionary).get("name") as String

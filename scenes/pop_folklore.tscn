@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://dot217uns2n3s"]
 
 [ext_resource type="Script" path="res://scenes/pop_folklore.gd" id="1_c4axo"]
-[ext_resource type="Shader" path="res://shaders/blur.gdshader" id="2_3m0aw"]
+[ext_resource type="Shader" path="res://resources/shaders/blur.gdshader" id="2_o2n7d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e2hqn"]
-shader = ExtResource("2_3m0aw")
+shader = ExtResource("2_o2n7d")
 shader_parameter/lod = 1.728
 
 [node name="PopUpFolklore" type="CanvasLayer"]

@@ -27,7 +27,7 @@ alignment_horizontal = 0
 alignment_vertical = 0
 script = ExtResource("1_widm8")
 _elements = [NodePath("Frame/ElementsMarginContainer/ElementsGrid/Element"), NodePath("Frame/ElementsMarginContainer/ElementsGrid/Element2"), NodePath("Frame/ElementsMarginContainer/ElementsGrid/Element3"), NodePath("Frame/ElementsMarginContainer/ElementsGrid/Element4"), NodePath("Frame/ElementsMarginContainer/ElementsGrid/Element5")]
-_categories = [NodePath("Frame/GridContainer/AspectRatioContainer/Category"), NodePath("Frame/GridContainer/AspectRatioContainer2/Category2")]
+_categories = [NodePath("Frame/GridContainer/AspectRatioContainer/Category"), NodePath("Frame/GridContainer/AspectRatioContainer2/Category"), NodePath("Frame/GridContainer/AspectRatioContainer3/Category")]
 
 [node name="Frame" type="PanelContainer" parent="."]
 layout_mode = 2
@@ -35,7 +35,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_xeo7i")
 
 [node name="GridContainer" type="GridContainer" parent="Frame"]
 layout_mode = 2
-columns = 2
+columns = 3
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="Frame/GridContainer"]
 layout_mode = 2
@@ -52,11 +52,20 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Category2" parent="Frame/GridContainer/AspectRatioContainer2" instance=ExtResource("3_hnd5t")]
+[node name="Category" parent="Frame/GridContainer/AspectRatioContainer2" instance=ExtResource("3_hnd5t")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 _category = 3
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="Frame/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Category" parent="Frame/GridContainer/AspectRatioContainer3" instance=ExtResource("3_hnd5t")]
+layout_mode = 2
+_category = 1
 
 [node name="ElementsMarginContainer" type="MarginContainer" parent="Frame"]
 layout_mode = 2

@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d37qck7pxs4mc"]
+[gd_scene load_steps=6 format=3 uid="uid://d37qck7pxs4mc"]
 
 [ext_resource type="Script" path="res://scenes/category.gd" id="1_ugxwe"]
 [ext_resource type="Texture2D" uid="uid://ltokwdkxg2ww" path="res://assets/frame/category-frame.png" id="2_aoa3i"]
+[ext_resource type="Texture2D" uid="uid://rrtkvphfe0qs" path="res://assets/category-icons/animals.png" id="3_swcvo"]
+[ext_resource type="Texture2D" uid="uid://cugbnd7kckahk" path="res://assets/frame/on.png" id="4_uusws"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_omq8t"]
 texture = ExtResource("2_aoa3i")
@@ -35,8 +37,41 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_omq8t")
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+texture_normal = ExtResource("3_swcvo")
 ignore_texture_size = true
 stretch_mode = 6
+
+[node name="CounterIcon" type="TextureRect" parent="VBoxContainer/Frame/CategoryTextureButton"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.126
+anchor_top = -0.098
+anchor_right = 0.189
+anchor_bottom = 0.212
+offset_left = -0.0599995
+offset_top = -0.0859985
+offset_right = 0.0899963
+offset_bottom = 0.0839958
+texture = ExtResource("4_uusws")
+expand_mode = 3
+
+[node name="Counter" type="Label" parent="VBoxContainer/Frame/CategoryTextureButton/CounterIcon"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "32"
+horizontal_alignment = 1
 
 [node name="CategoryLabel" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true

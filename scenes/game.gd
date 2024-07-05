@@ -27,9 +27,10 @@ func _on_element_chosen(element_db_name: String ,is_right: bool)->void:
 
 func _process_merge() -> void:
 	var folkore_bd_name: String = DBElements.get_folklore_element_name_by_sources(_left_element_selected,_right_element_selected)
-	if(folkore_bd_name != "none" and DBElements.is_folklore_element_closed(folkore_bd_name)):
+	if(folkore_bd_name != "none" and folkore_bd_name != "invalid_sources" and DBElements.is_folklore_element_closed(folkore_bd_name)):
 		DBElements.set_folklore_element_to_open(folkore_bd_name)
 		_spawn_popup_folklore(folkore_bd_name)
+		Events.merged.emit(folkore_bd_name)
 
 func _spawn_popup_folklore(folklore_bd_name: String)->void:
 	var popup_folklore: PopUpFolklore = _popup_folklore_pc.instantiate() as PopUpFolklore
