@@ -1,11 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctm5j1jfg6oyp"]
+[gd_scene load_steps=6 format=3 uid="uid://ctm5j1jfg6oyp"]
 
 [ext_resource type="Script" path="res://scenes/page.gd" id="1_widm8"]
 [ext_resource type="Texture2D" uid="uid://bgh8mf0mj3lce" path="res://assets/background-book/left-page.png" id="2_oqiix"]
 [ext_resource type="PackedScene" uid="uid://d37qck7pxs4mc" path="res://scenes/category.tscn" id="3_hnd5t"]
 [ext_resource type="PackedScene" uid="uid://qq55blymvfuq" path="res://scenes/element.tscn" id="3_oi5ix"]
-[ext_resource type="Texture2D" uid="uid://rrtkvphfe0qs" path="res://assets/category-icons/Animals.png" id="3_rwvwx"]
-[ext_resource type="Texture2D" uid="uid://bpwc7eswlvxvx" path="res://assets/category-icons/Emotions.png" id="5_lo3kp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xeo7i"]
 texture = ExtResource("2_oqiix")
@@ -14,7 +12,7 @@ texture_margin_top = 15.0
 texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 
-[node name="Page" type="AspectRatioContainer" node_paths=PackedStringArray("elements", "categories")]
+[node name="Page" type="AspectRatioContainer" node_paths=PackedStringArray("_elements", "_categories")]
 custom_minimum_size = Vector2(628, 924)
 anchors_preset = -1
 anchor_right = 0.355
@@ -28,8 +26,8 @@ stretch_mode = 1
 alignment_horizontal = 0
 alignment_vertical = 0
 script = ExtResource("1_widm8")
-elements = [NodePath("Frame/ElementsMarginContainer/ElementsGrid/Element"), NodePath("Frame/ElementsMarginContainer/ElementsGrid/Element2"), NodePath("Frame/ElementsMarginContainer/ElementsGrid/Element3"), NodePath("Frame/ElementsMarginContainer/ElementsGrid/Element4"), NodePath("Frame/ElementsMarginContainer/ElementsGrid/Element5")]
-categories = [NodePath("Frame/GridContainer/AspectRatioContainer/Category"), NodePath("Frame/GridContainer/AspectRatioContainer2/Category2")]
+_elements = [NodePath("Frame/ElementsMarginContainer/ElementsGrid/Element"), NodePath("Frame/ElementsMarginContainer/ElementsGrid/Element2"), NodePath("Frame/ElementsMarginContainer/ElementsGrid/Element3"), NodePath("Frame/ElementsMarginContainer/ElementsGrid/Element4"), NodePath("Frame/ElementsMarginContainer/ElementsGrid/Element5")]
+_categories = [NodePath("Frame/GridContainer/AspectRatioContainer/Category"), NodePath("Frame/GridContainer/AspectRatioContainer2/Category2")]
 
 [node name="Frame" type="PanelContainer" parent="."]
 layout_mode = 2
@@ -48,7 +46,6 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-icon = ExtResource("3_rwvwx")
 
 [node name="AspectRatioContainer2" type="AspectRatioContainer" parent="Frame/GridContainer"]
 layout_mode = 2
@@ -59,8 +56,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-icon = ExtResource("5_lo3kp")
-category = 3
+_category = 3
 
 [node name="ElementsMarginContainer" type="MarginContainer" parent="Frame"]
 layout_mode = 2

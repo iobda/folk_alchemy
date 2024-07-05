@@ -16,10 +16,11 @@ func _ready() -> void:
 
 func set_element_data(name_of_element: String) -> void:
 	_element_db_name = name_of_element
-	element_texture_button.texture_normal = load((DBElements.elements.get(name_of_element) as Dictionary).get("icon") as String) as CompressedTexture2D
-	element_name.text = (DBElements.elements.get(name_of_element as String) as Dictionary).get("name") as String
+	var icon_path: String = DBElements.get_element_icon_path(name_of_element)
+	element_texture_button.texture_normal = load(icon_path) as CompressedTexture2D
+	element_name.text = DBElements.get_element_name(name_of_element)
 
-func _on_category_opened(_category: DBElements.Category, category_is_right: bool)->void:
+func _on_category_opened(_category: DBElements.CategoryType, category_is_right: bool)->void:
 	if(category_is_right == is_right):
 		(self as Element).show()
 		element_texture_button.disabled = false
