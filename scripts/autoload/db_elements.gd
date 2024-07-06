@@ -36,6 +36,26 @@ var _elements: Dictionary = {
 		"name": "Душа",
 		"icon": "res://assets/element-icons/soul.png",
 		"category" : CategoryType.HUMAN
+	},
+	"hope": {
+		"name": "Надежда",
+		"icon": "res://assets/element-icons/hope.png",
+		"category" : CategoryType.EMOTIONS
+	},
+	"eruption": {
+		"name": "Извержение вулкана / Огонь",
+		"icon": "res://assets/element-icons/eruption.png",
+		"category" : CategoryType.NATURAL_DISASTERS
+	},
+	"tornado": {
+		"name": "Ураган / Ветер",
+		"icon": "res://assets/element-icons/tornado.png",
+		"category" : CategoryType.NATURAL_DISASTERS
+	},
+	"fear": {
+		"name": "Страх",
+		"icon": "res://assets/element-icons/fear.png",
+		"category" : CategoryType.EMOTIONS
 	}
 }
 
@@ -56,6 +76,23 @@ var _folklores: Dictionary ={
 		"source_2": "love",
 		"state": "closed"
 	},
+	"phoenix": {
+		"name": "Феникс",
+		"icon": "res://assets/folklore/phoenix.png",
+		"description": "Лорем ипсум пси пси спим",
+		"source_1": "hope",
+		"source_2": "eruption",
+		"state": "closed"
+	},
+	"harpy": {
+		"name": "Гарпия",
+		"icon": "res://assets/folklore/harpy.png",
+		"description": "Лорем ипсум пси пси спим",
+		"source_1": "fear",
+		"source_2": "tornado",
+		"state": "closed"
+	}
+
 }
 
 func get_category_name(category: CategoryType) -> String:
@@ -101,6 +138,9 @@ func get_folklore_element_icon_path(folklore_db_name: String) -> String:
 
 func get_folklore_element_description(folklore_db_name: String) -> String:
 	return (_folklores.get(folklore_db_name) as Dictionary).get("description") as String
+
+func get_folklore_state(folklore_db_name: String) -> String:
+	return (_folklores.get(folklore_db_name) as Dictionary).get("state")
 
 func set_folklore_element_to_open(folklore_db_name: String) -> void:
 	(_folklores[folklore_db_name])["state"] = "opened"

@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1fdo0sym155n"]
+
+[ext_resource type="Script" path="res://scenes/tips.gd" id="1_5i7du"]
+[ext_resource type="PackedScene" uid="uid://qq55blymvfuq" path="res://scenes/element.tscn" id="2_nn3uk"]
+[ext_resource type="Texture2D" uid="uid://cxrkvqdiyp2bc" path="res://assets/category-icons/all_categories.png" id="3_itek4"]
+[ext_resource type="Script" path="res://scenes/tip_element.gd" id="3_myr7b"]
+[ext_resource type="Texture2D" uid="uid://dk58g10ding0t" path="res://assets/frame/off.png" id="4_jomlq"]
+
+[node name="Tips" type="Control"]
+layout_mode = 3
+anchor_right = 0.204
+anchor_bottom = 0.356
+offset_right = -0.680023
+offset_bottom = 0.519989
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5i7du")
+
+[node name="TipsVBox" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TipsCountHBox" type="HBoxContainer" parent="TipsVBox"]
+layout_mode = 2
+
+[node name="TipsAmount" type="Label" parent="TipsVBox/TipsCountHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TipsObtainingProgress" type="Label" parent="TipsVBox/TipsCountHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TipsElementsHBox" type="HBoxContainer" parent="TipsVBox"]
+layout_mode = 2
+
+[node name="LeftElement" parent="TipsVBox/TipsElementsHBox" instance=ExtResource("2_nn3uk")]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("3_myr7b")
+
+[node name="TextureRect" type="TextureRect" parent="TipsVBox/TipsElementsHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("3_itek4")
+
+[node name="RightElement" parent="TipsVBox/TipsElementsHBox" instance=ExtResource("2_nn3uk")]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("3_myr7b")
+
+[node name="TipButton" type="TextureButton" parent="TipsVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_jomlq")
+
+[node name="TipLabel" type="Label" parent="TipsVBox/TipButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tip"
