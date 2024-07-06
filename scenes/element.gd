@@ -10,6 +10,9 @@ var _element_db_name: String
 @onready var element_name: Label = %ElementName
 
 func _ready() -> void:
+	_connect_signals()
+
+func _connect_signals() -> void:
 	Events.category_opened.connect(_on_category_opened)
 	Events.category_closed.connect(_on_category_closed)
 	element_texture_button.pressed.connect(_on_texture_button_pressed)
