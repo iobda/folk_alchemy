@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3rvmd6nrhfba"
-path="res://.godot/imported/natural_disasters.png-08f61b9d20701770bfea1309a332a97d.ctex"
+uid="uid://nopiwxkstpol"
+path="res://.godot/imported/eruption.png-821f77d246ab1b138db82a0603f0ad92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/category-icons/natural_disasters.png"
-dest_files=["res://.godot/imported/natural_disasters.png-08f61b9d20701770bfea1309a332a97d.ctex"]
+source_file="res://assets/element-icons/eruption.png"
+dest_files=["res://.godot/imported/eruption.png-821f77d246ab1b138db82a0603f0ad92.ctex"]
 
 [params]
 

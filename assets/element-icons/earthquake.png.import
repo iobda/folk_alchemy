@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3rvmd6nrhfba"
-path="res://.godot/imported/natural_disasters.png-08f61b9d20701770bfea1309a332a97d.ctex"
+uid="uid://b1lat737nle86"
+path="res://.godot/imported/earthquake.png-d46a2104a934e8dd5bf9e504873787aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/category-icons/natural_disasters.png"
-dest_files=["res://.godot/imported/natural_disasters.png-08f61b9d20701770bfea1309a332a97d.ctex"]
+source_file="res://assets/element-icons/earthquake.png"
+dest_files=["res://.godot/imported/earthquake.png-d46a2104a934e8dd5bf9e504873787aa.ctex"]
 
 [params]
 

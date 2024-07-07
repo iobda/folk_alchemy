@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3rvmd6nrhfba"
-path="res://.godot/imported/natural_disasters.png-08f61b9d20701770bfea1309a332a97d.ctex"
+uid="uid://tqsliy0btjqv"
+path="res://.godot/imported/hope.png-d4899792957b420b34e9f2a3bb3e5b54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/category-icons/natural_disasters.png"
-dest_files=["res://.godot/imported/natural_disasters.png-08f61b9d20701770bfea1309a332a97d.ctex"]
+source_file="res://assets/element-icons/hope.png"
+dest_files=["res://.godot/imported/hope.png-d4899792957b420b34e9f2a3bb3e5b54.ctex"]
 
 [params]
 

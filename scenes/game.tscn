@@ -71,3 +71,12 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 0
+
+[node name="Guidebook" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 88.0
+offset_top = 198.0
+offset_right = 208.0
+offset_bottom = 264.0
+text = "GUIDEBOOK"
