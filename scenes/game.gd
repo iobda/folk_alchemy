@@ -1,16 +1,15 @@
 extends Control
 
-var check_state: String = "none"
-var counter_text: String = "none"
+var _all_folk_count: int = 0
+var _counter_opened: int = 0
+var _check_state: String = "none"
+var _counter_text: String = "none"
 var _right_element_selected: String = "none"
 var _left_element_selected: String = "none"
 var _popup_folklore_pc: PackedScene = preload("res://scenes/pop_folklore.tscn")
 var _guidebook_pc: PackedScene = preload("res://scenes/guidebook.tscn")
-var all_folk_count: int = 0
-var counter_opened: int = 0
-
-@onready var _guidebook: Button = %Guidebook
 @onready var folklore_counter: Label = %FolkloreCounter
+@onready var _guidebook: Button = %Guidebook
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -52,9 +51,9 @@ func _open_guidebook()->void:
 	add_child(folklore_guidebooke)
 
 func set_folklore_counter(folklore_db_name: String)->void:
-	check_state = DBElements.get_folklore_state(folklore_db_name)
-	all_folk_count = DBElements._folklores.size()
-	if check_state == "opened":
-		counter_opened += 1
-	counter_text = str(counter_opened) + " / " + str(all_folk_count)
-	folklore_counter.text = counter_text
+	_check_state = DBElements.get_folklore_state(folklore_db_name)
+	_all_folk_count = DBElements._folklores.size()
+	if _check_state == "opened":
+		_counter_opened += 1
+	_counter_text = str(_counter_opened) + " / " + str(_all_folk_count)
+	folklore_counter.text = _counter_text
