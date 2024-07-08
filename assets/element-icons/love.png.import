@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3rvmd6nrhfba"
-path="res://.godot/imported/natural_disasters.png-08f61b9d20701770bfea1309a332a97d.ctex"
+uid="uid://b6ymcnx43b2b0"
+path="res://.godot/imported/love.png-15398206f1eb85eb2c6ce00b24a8dcfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/category-icons/natural_disasters.png"
-dest_files=["res://.godot/imported/natural_disasters.png-08f61b9d20701770bfea1309a332a97d.ctex"]
+source_file="res://assets/element-icons/love.png"
+dest_files=["res://.godot/imported/love.png-15398206f1eb85eb2c6ce00b24a8dcfc.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3rvmd6nrhfba"
-path="res://.godot/imported/natural_disasters.png-08f61b9d20701770bfea1309a332a97d.ctex"
+uid="uid://d47adk3hov50"
+path="res://.godot/imported/siren.png-b1d9ecc181084bc6c713ca709ecddef7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/category-icons/natural_disasters.png"
-dest_files=["res://.godot/imported/natural_disasters.png-08f61b9d20701770bfea1309a332a97d.ctex"]
+source_file="res://assets/folklore/siren.png"
+dest_files=["res://.godot/imported/siren.png-b1d9ecc181084bc6c713ca709ecddef7.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3rvmd6nrhfba"
-path="res://.godot/imported/natural_disasters.png-08f61b9d20701770bfea1309a332a97d.ctex"
+uid="uid://ctdabl8mcqr3f"
+path="res://.godot/imported/tornado.png-25d266dd60a66b691f8685d777d90b62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/category-icons/natural_disasters.png"
-dest_files=["res://.godot/imported/natural_disasters.png-08f61b9d20701770bfea1309a332a97d.ctex"]
+source_file="res://assets/element-icons/tornado.png"
+dest_files=["res://.godot/imported/tornado.png-25d266dd60a66b691f8685d777d90b62.ctex"]
 
 [params]
 

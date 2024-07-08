@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3rvmd6nrhfba"
-path="res://.godot/imported/natural_disasters.png-08f61b9d20701770bfea1309a332a97d.ctex"
+uid="uid://dx8wqxoll2n3t"
+path="res://.godot/imported/gorgon.png-888d7756940deb7381f85418ba097c32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/category-icons/natural_disasters.png"
-dest_files=["res://.godot/imported/natural_disasters.png-08f61b9d20701770bfea1309a332a97d.ctex"]
+source_file="res://assets/folklore/gorgon.png"
+dest_files=["res://.godot/imported/gorgon.png-888d7756940deb7381f85418ba097c32.ctex"]
 
 [params]
 

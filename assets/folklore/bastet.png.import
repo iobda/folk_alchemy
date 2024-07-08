@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3rvmd6nrhfba"
-path="res://.godot/imported/natural_disasters.png-08f61b9d20701770bfea1309a332a97d.ctex"
+uid="uid://bb5axd1phqey2"
+path="res://.godot/imported/bastet.png-5eba6df0e1111d9abc22df7775b96f35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/category-icons/natural_disasters.png"
-dest_files=["res://.godot/imported/natural_disasters.png-08f61b9d20701770bfea1309a332a97d.ctex"]
+source_file="res://assets/folklore/bastet.png"
+dest_files=["res://.godot/imported/bastet.png-5eba6df0e1111d9abc22df7775b96f35.ctex"]
 
 [params]
 

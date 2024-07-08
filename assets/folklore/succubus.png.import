@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3rvmd6nrhfba"
-path="res://.godot/imported/natural_disasters.png-08f61b9d20701770bfea1309a332a97d.ctex"
+uid="uid://cg0u06lr683q5"
+path="res://.godot/imported/succubus.png-1c55d82096f5cc2318eea6a1e89e5194.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/category-icons/natural_disasters.png"
-dest_files=["res://.godot/imported/natural_disasters.png-08f61b9d20701770bfea1309a332a97d.ctex"]
+source_file="res://assets/folklore/succubus.png"
+dest_files=["res://.godot/imported/succubus.png-1c55d82096f5cc2318eea6a1e89e5194.ctex"]
 
 [params]
 

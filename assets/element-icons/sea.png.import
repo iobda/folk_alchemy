@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3rvmd6nrhfba"
-path="res://.godot/imported/natural_disasters.png-08f61b9d20701770bfea1309a332a97d.ctex"
+uid="uid://cy7e3xoornyod"
+path="res://.godot/imported/sea.png-fcc73d22562968d8c3a2e17cd588072d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/category-icons/natural_disasters.png"
-dest_files=["res://.godot/imported/natural_disasters.png-08f61b9d20701770bfea1309a332a97d.ctex"]
+source_file="res://assets/element-icons/sea.png"
+dest_files=["res://.godot/imported/sea.png-fcc73d22562968d8c3a2e17cd588072d.ctex"]
 
 [params]
 

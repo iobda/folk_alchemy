@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3rvmd6nrhfba"
-path="res://.godot/imported/natural_disasters.png-08f61b9d20701770bfea1309a332a97d.ctex"
+uid="uid://ctus4l8vr2bpg"
+path="res://.godot/imported/harpy.png-974870ad535b687e2c9f45fcd09ab4b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/category-icons/natural_disasters.png"
-dest_files=["res://.godot/imported/natural_disasters.png-08f61b9d20701770bfea1309a332a97d.ctex"]
+source_file="res://assets/folklore/harpy.png"
+dest_files=["res://.godot/imported/harpy.png-974870ad535b687e2c9f45fcd09ab4b8.ctex"]
 
 [params]
 
