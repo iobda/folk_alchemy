@@ -160,3 +160,8 @@ func is_folklore_element_closed(folklore_db_name: String)->bool:
 	if(state == "closed"):
 		return true
 	return false
+
+#func all_folklore_count(folklore_db_name: String)->int:
+	#len(_folklores)
+	#var folklore_count: int = 1
+	#pass
