@@ -1,6 +1,5 @@
-extends Control
 class_name GuidebookFolklore
-
+extends Control
 
 @onready var _folklore_name: Label = %FolkloreName
 @onready var _folklore_description: RichTextLabel = %FolkloreDescription

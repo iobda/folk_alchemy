@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2tsyp5uo6uou"]
+[gd_scene load_steps=6 format=3 uid="uid://d2tsyp5uo6uou"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_1ml7u"]
 [ext_resource type="Texture2D" uid="uid://bqsfykw0g0uto" path="res://assets/background-book/background.png" id="1_cdgj1"]
 [ext_resource type="PackedScene" uid="uid://ctm5j1jfg6oyp" path="res://scenes/page.tscn" id="3_c3nbt"]
 [ext_resource type="PackedScene" uid="uid://d1fdo0sym155n" path="res://scenes/tip_window.tscn" id="4_yivx0"]
+[ext_resource type="Script" path="res://scenes/FolkloreCounter.gd" id="5_6w3au"]
 
 [node name="GameState" type="Control"]
 layout_mode = 3
@@ -80,3 +81,16 @@ offset_top = 198.0
 offset_right = 208.0
 offset_bottom = 264.0
 text = "GUIDEBOOK"
+
+[node name="FolkloreCounter" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 91.0
+offset_top = 126.0
+offset_right = 203.0
+offset_bottom = 182.0
+theme_override_font_sizes/font_size = 32
+text = "0/4"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_6w3au")
