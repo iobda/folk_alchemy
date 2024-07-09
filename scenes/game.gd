@@ -1,9 +1,6 @@
 extends Control
 
-var _all_folk_count: int = 0
-var _counter_opened: int = 0
-var _check_state: String = "none"
-var _counter_text: String = "none"
+
 var _right_element_selected: String = "none"
 var _left_element_selected: String = "none"
 var _popup_folklore_pc: PackedScene = preload("res://scenes/pop_folklore.tscn")
@@ -44,16 +41,7 @@ func _spawn_popup_folklore(folklore_bd_name: String)->void:
 	var popup_folklore: PopUpFolklore = _popup_folklore_pc.instantiate() as PopUpFolklore
 	add_child(popup_folklore)
 	popup_folklore.set_popup_data(folklore_bd_name)
-	set_folklore_counter(folklore_bd_name)
 
 func _open_guidebook()->void:
 	var folklore_guidebooke: GuideBook = _guidebook_pc.instantiate() as GuideBook
 	add_child(folklore_guidebooke)
-
-func set_folklore_counter(folklore_db_name: String)->void:
-	_check_state = DBElements.get_folklore_state(folklore_db_name)
-	_all_folk_count = DBElements._folklores.size()
-	if _check_state == "opened":
-		_counter_opened += 1
-	_counter_text = str(_counter_opened) + " / " + str(_all_folk_count)
-	folklore_counter.text = _counter_text
