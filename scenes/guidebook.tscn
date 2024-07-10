@@ -1,14 +1,53 @@
-[gd_scene load_steps=4 format=3 uid="uid://syk4yxnval31"]
+[gd_scene load_steps=7 format=3 uid="uid://syk4yxnval31"]
 
-[ext_resource type="Script" path="res://scenes/guidebook.gd" id="1_tv43w"]
+[ext_resource type="Script" path="res://scenes/guidebook.gd" id="1_ubvq5"]
 [ext_resource type="Shader" path="res://resources/shaders/blur.gdshader" id="2_0k5mc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pbrw7"]
 shader = ExtResource("2_0k5mc")
 shader_parameter/lod = 1.728
 
+[sub_resource type="Animation" id="Animation_4un5y"]
+resource_name = "scale"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1.62451),
+"update": 0,
+"values": [Transform2D(0.01, 0, 0, 0.01, 0, 0), Transform2D(1, 0, 0, 1, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2sr21"]
+resource_name = "descale"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1.62451, 1),
+"update": 0,
+"values": [Transform2D(1, 0, 0, 1, 0, 0), Transform2D(0.01, 0, 0, 0.01, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_578x2"]
+_data = {
+"descale": SubResource("Animation_2sr21"),
+"scale": SubResource("Animation_4un5y")
+}
+
 [node name="Guidebook" type="CanvasLayer"]
-script = ExtResource("1_tv43w")
+script = ExtResource("1_ubvq5")
 
 [node name="Panel" type="Panel" parent="."]
 material = SubResource("ShaderMaterial_pbrw7")
@@ -20,21 +59,34 @@ grow_vertical = 2
 
 [node name="Exit" type="Button" parent="."]
 unique_name_in_owner = true
-offset_left = 1498.0
-offset_top = 153.0
-offset_right = 1557.0
-offset_bottom = 182.0
+anchors_preset = -1
+anchor_left = 0.78
+anchor_top = 0.142
+anchor_right = 0.811
+anchor_bottom = 0.17
+offset_left = 0.399902
+offset_top = -0.360001
+offset_right = -0.120117
+offset_bottom = -1.60001
+size_flags_horizontal = 4
+size_flags_vertical = 4
 text = "CLOSE"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(1000, 700)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = -1
+anchor_left = 0.24
+anchor_top = 0.176
+anchor_right = 0.76
+anchor_bottom = 0.824
+offset_left = 499.2
+offset_top = 349.92
+offset_right = -499.2
+offset_bottom = -349.92
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 color = Color(0.321728, 0.321728, 0.321728, 1)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
@@ -49,7 +101,15 @@ offset_right = 500.0
 offset_bottom = 350.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="FolkloreList" type="VBoxContainer" parent="ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="FolkloreWindowAnimations" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_578x2")
+}
