@@ -1,6 +1,7 @@
 extends Control
 
-
+var left_element_chosen: bool
+var right_element_chosen: bool
 var _right_element_selected: String = "none"
 var _left_element_selected: String = "none"
 var _popup_folklore_pc: PackedScene = preload("res://scenes/pop_folklore.tscn")
@@ -12,6 +13,7 @@ var _guidebook_pc: PackedScene = preload("res://scenes/guidebook.tscn")
 func _ready() -> void:
 	Events.category_closed.connect(_on_category_closed)
 	Events.element_chosen.connect(_on_element_chosen)
+	Events.popup_closed.connect(_elements_clear)
 	_guidebook.pressed.connect(_open_guidebook)
 
 func _on_category_closed(is_right: bool)->void:
@@ -20,15 +22,23 @@ func _on_category_closed(is_right: bool)->void:
 	else:
 		_left_element_selected = "none"
 
-func _on_element_chosen(element_db_name: String ,is_right: bool)->void:
-	if(is_right):
-		_right_element_selected = element_db_name
+func _on_element_chosen(element_db_name: String, is_right: bool)->void:
+	if is_right:
+		if _right_element_selected == element_db_name:
+			_right_element_selected = "none"
+		else:
+			_right_element_selected = element_db_name
 	else:
-		_left_element_selected = element_db_name
+		if _left_element_selected == element_db_name:
+			_left_element_selected = "none"
+		else:
+			_left_element_selected = element_db_name
 	if(_right_element_selected != "none" and _left_element_selected != "none"):
 		_process_merge()
-		_left_element_selected = "none"
-		_right_element_selected = "none"
+
+func _elements_clear()->void:
+	_left_element_selected = "none"
+	_right_element_selected = "none"
 
 func _process_merge() -> void:
 	var folkore_bd_name: String = DBElements.get_folklore_element_name_by_sources(_left_element_selected,_right_element_selected)

@@ -3,7 +3,7 @@ extends CanvasLayer
 
 @onready var _exit: Button = %Exit
 @onready var _folklore_list: VBoxContainer = %FolkloreList
-var _folklore_pc: PackedScene = preload("res://scenes/Guidebook_folklore.tscn")
+var _folklore_pc: PackedScene = preload("res://scenes/guidebook_folklore.tscn")
 
 func _ready() -> void:
 	_exit.pressed.connect(queue_free)

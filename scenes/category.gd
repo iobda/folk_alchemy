@@ -6,7 +6,6 @@ signal folklores_to_merged_changed(_new_amount: int)
 @export  var _category: DBElements.CategoryType
 
 
-
 #If left hen false
 var is_right: bool
 var _is_opened: bool = false
@@ -18,7 +17,6 @@ var _folklores_to_merged: int = 0:
 @onready var _category_texture_button: TextureButton = %CategoryTextureButton
 @onready var _category_label: Label = %CategoryLabel
 #Counter
-@onready var _counter_icon: TextureRect = %CounterIcon
 @onready var _counter: Label = %Counter
 
 # Called when the node enters the scene tree for the first time.

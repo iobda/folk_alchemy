@@ -1,12 +1,12 @@
 [gd_scene load_steps=2 format=3 uid="uid://dfyyen38haelj"]
 
-[ext_resource type="Script" path="res://scenes/Guidebook_folklore.gd" id="1_fd55p"]
+[ext_resource type="Script" path="res://scenes/guidebook_folklore.gd" id="1_d0trh"]
 
 [node name="Folklore" type="Control"]
 custom_minimum_size = Vector2(1000, 300)
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_fd55p")
+script = ExtResource("1_d0trh")
 
 [node name="ListBackground" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(1000, 300)

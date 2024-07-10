@@ -2,13 +2,12 @@ class_name TipElement
 extends Element
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
 
 func enable_tip_element() -> void:
 	element_texture_button.disabled = false
-	
+
 func disable_tip_element() -> void:
 	element_texture_button.disabled = true
 	element_name.text = ""

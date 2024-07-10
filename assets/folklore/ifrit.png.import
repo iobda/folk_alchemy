@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpmwohwfdb2ga"
-path="res://.godot/imported/ifrit.png-72d3f352f5eb383c61fbc6a524dca011.ctex"
+uid="uid://766btyg0fff4"
+path="res://.godot/imported/ifrit.png-90438346c88bf60232efe9e369048813.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ifrit.png"
-dest_files=["res://.godot/imported/ifrit.png-72d3f352f5eb383c61fbc6a524dca011.ctex"]
+source_file="res://assets/folklore/ifrit.png"
+dest_files=["res://.godot/imported/ifrit.png-90438346c88bf60232efe9e369048813.ctex"]
 
 [params]
 

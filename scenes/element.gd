@@ -36,4 +36,6 @@ func _on_category_closed(category_is_right: bool)->void:
 		element_name.text = ""
 
 func _on_texture_button_pressed()->void:
+	if _element_db_name == "":
+		return
 	Events.element_chosen.emit(_element_db_name, is_right)
