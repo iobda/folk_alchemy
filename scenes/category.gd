@@ -5,8 +5,6 @@ signal folklores_to_merged_changed(_new_amount: int)
 
 @export  var _category: DBElements.CategoryType
 
-
-
 #If left hen false
 var is_right: bool
 var _is_opened: bool = false
@@ -18,7 +16,6 @@ var _folklores_to_merged: int = 0:
 @onready var _category_texture_button: TextureButton = %CategoryTextureButton
 @onready var _category_label: Label = %CategoryLabel
 #Counter
-@onready var _counter_icon: TextureRect = %CounterIcon
 @onready var _counter: Label = %Counter
 
 # Called when the node enters the scene tree for the first time.
@@ -34,7 +31,7 @@ func _ready() -> void:
 	_init_counter(_category)
 
 
-func _init_counter(_category: DBElements.CategoryType) -> void:
+func _init_counter(in_category: DBElements.CategoryType) -> void:
 	for folklore_db_name: String in DBElements.get_folklores_elements_bd_names():
 		var sources: Array[String] = DBElements.get_folklores_elements_sources(folklore_db_name)
 		for source: String in sources:

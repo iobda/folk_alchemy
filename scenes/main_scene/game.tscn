@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2tsyp5uo6uou"]
+[gd_scene load_steps=7 format=3 uid="uid://d2tsyp5uo6uou"]
 
-[ext_resource type="Script" path="res://scenes/game.gd" id="1_1ml7u"]
-[ext_resource type="Texture2D" uid="uid://bqsfykw0g0uto" path="res://assets/background-book/background.png" id="1_cdgj1"]
-[ext_resource type="PackedScene" uid="uid://ctm5j1jfg6oyp" path="res://scenes/page.tscn" id="3_c3nbt"]
-[ext_resource type="PackedScene" uid="uid://d1fdo0sym155n" path="res://scenes/tip_window.tscn" id="4_yivx0"]
-[ext_resource type="Script" path="res://scenes/FolkloreCounter.gd" id="5_6w3au"]
+[ext_resource type="Script" path="res://scenes/main_scene/game_state.gd" id="1_icmeg"]
+[ext_resource type="Texture2D" uid="uid://bqsfykw0g0uto" path="res://assets/background-book/background.png" id="2_x4nba"]
+[ext_resource type="PackedScene" uid="uid://ctm5j1jfg6oyp" path="res://scenes/page.tscn" id="3_tb0wv"]
+[ext_resource type="PackedScene" uid="uid://d1fdo0sym155n" path="res://scenes/tip_window.tscn" id="4_5o2c7"]
+[ext_resource type="Script" path="res://scenes/main_scene/folklore_counter.gd" id="5_a2jdn"]
+[ext_resource type="Script" path="res://scenes/main_scene/guide_book_button.gd" id="5_vsqrg"]
 
 [node name="GameState" type="Control"]
 layout_mode = 3
@@ -15,7 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_1ml7u")
+script = ExtResource("1_icmeg")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 2
@@ -23,7 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_cdgj1")
+texture = ExtResource("2_x4nba")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -43,7 +44,7 @@ size_flags_horizontal = 6
 size_flags_vertical = 4
 size_flags_stretch_ratio = 3.6
 
-[node name="LeftPage" parent="HBoxContainer" instance=ExtResource("3_c3nbt")]
+[node name="LeftPage" parent="HBoxContainer" instance=ExtResource("3_tb0wv")]
 layout_mode = 2
 size_flags_horizontal = 6
 
@@ -53,7 +54,7 @@ size_flags_horizontal = 6
 size_flags_vertical = 4
 size_flags_stretch_ratio = 1.78
 
-[node name="RightPage" parent="HBoxContainer" instance=ExtResource("3_c3nbt")]
+[node name="RightPage" parent="HBoxContainer" instance=ExtResource("3_tb0wv")]
 layout_mode = 2
 _is_right_page = true
 
@@ -63,7 +64,7 @@ size_flags_horizontal = 6
 size_flags_vertical = 4
 size_flags_stretch_ratio = 1.15
 
-[node name="Tips" parent="." instance=ExtResource("4_yivx0")]
+[node name="Tips" parent="." instance=ExtResource("4_5o2c7")]
 layout_mode = 1
 anchor_top = 0.65
 anchor_right = 0.2
@@ -73,7 +74,7 @@ offset_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="Guidebook" type="Button" parent="."]
+[node name="GuideBookButton" type="Button" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 88.0
@@ -81,6 +82,7 @@ offset_top = 198.0
 offset_right = 208.0
 offset_bottom = 264.0
 text = "GUIDEBOOK"
+script = ExtResource("5_vsqrg")
 
 [node name="FolkloreCounter" type="Label" parent="."]
 unique_name_in_owner = true
@@ -93,4 +95,4 @@ theme_override_font_sizes/font_size = 32
 text = "0/4"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_6w3au")
+script = ExtResource("5_a2jdn")

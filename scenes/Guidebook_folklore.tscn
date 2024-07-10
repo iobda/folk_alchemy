@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dfyyen38haelj"]
 
-[ext_resource type="Script" path="res://scenes/Guidebook_folklore.gd" id="1_fd55p"]
+[ext_resource type="Script" path="res://scenes/guidebook_folklore.gd" id="1_fd55p"]
 
 [node name="Folklore" type="Control"]
 custom_minimum_size = Vector2(1000, 300)
