@@ -31,7 +31,6 @@ var _merges_to_obtain_tip: int = 0:
 @onready var _right_element: TipElement = %RightElement
 @onready var _tip_button: TextureButton = %TipButton
 
-
 func _ready() -> void:
 	_tips_amount.text = str(_tips_available)
 	_tips_obtaining_progress.text = str(_merges_to_obtain_tip) + "/" + str(MERGES_LIMIT)
@@ -53,7 +52,6 @@ func _disable_elements() -> void:
 func _enable_elements() -> void:
 	_left_element.enable_tip_element()
 	_right_element.enable_tip_element()
-
 
 func _on_tip_button_pressed() -> void:
 	_tip_button.disabled = true

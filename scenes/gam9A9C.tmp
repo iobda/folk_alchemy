@@ -94,3 +94,6 @@ text = "0/4"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_6w3au")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true

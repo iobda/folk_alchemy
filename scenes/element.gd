@@ -3,11 +3,12 @@ extends Control
 
 #If left then false
 var is_right: bool
-
+var previous_element_db_name: String = "null"
 var _element_db_name: String
 
 @onready var element_texture_button: TextureButton = %ElementTextureButton
 @onready var element_name: Label = %ElementName
+@onready var _animation_player: AnimationPlayer = %AnimationPlayer
 
 func _ready() -> void:
 	_connect_signals()
@@ -15,6 +16,7 @@ func _ready() -> void:
 func _connect_signals() -> void:
 	Events.category_opened.connect(_on_category_opened)
 	Events.category_closed.connect(_on_category_closed)
+	Events.popup_closed.connect(animation_stopper)
 	element_texture_button.pressed.connect(_on_texture_button_pressed)
 
 func set_element_data(name_of_element: String) -> void:
@@ -34,8 +36,23 @@ func _on_category_closed(category_is_right: bool)->void:
 		element_texture_button.disabled = true
 		element_texture_button.texture_normal = null
 		element_name.text = ""
+		animation_stopper()
 
 func _on_texture_button_pressed()->void:
 	if _element_db_name == "":
 		return
-	Events.element_chosen.emit(_element_db_name, is_right)
+	else:
+		Events.element_chosen.emit(_element_db_name, is_right)
+		if _element_db_name != previous_element_db_name:
+			_animation_player.play("Select")
+			previous_element_db_name = _element_db_name
+			return
+		if _element_db_name == previous_element_db_name:
+			previous_element_db_name = "null"
+			_animation_player.stop()
+			_animation_player.play("RESET")
+			return
+
+func animation_stopper()->void:
+	_animation_player.stop()
+	_animation_player.clear_queue()
