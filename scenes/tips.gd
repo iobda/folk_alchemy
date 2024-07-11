@@ -28,7 +28,6 @@ var _merges_to_obtain_tip: int = 0:
 @onready var _tips_amount: Label = %TipsAmount
 @onready var _tips_obtaining_progress: Label = %TipsObtainingProgress
 @onready var _left_element: TipElement = %LeftElement
-@onready var _texture_rect: TextureRect = %TextureRect
 @onready var _right_element: TipElement = %RightElement
 @onready var _tip_button: TextureButton = %TipButton
 

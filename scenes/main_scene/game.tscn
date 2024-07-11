@@ -1,0 +1,112 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2tsyp5uo6uou"]
+
+[ext_resource type="Script" path="res://scenes/main_scene/game_state.gd" id="1_icmeg"]
+[ext_resource type="Texture2D" uid="uid://bqsfykw0g0uto" path="res://assets/background-book/background.png" id="2_x4nba"]
+[ext_resource type="PackedScene" uid="uid://ctm5j1jfg6oyp" path="res://scenes/page.tscn" id="3_tb0wv"]
+[ext_resource type="PackedScene" uid="uid://d1fdo0sym155n" path="res://scenes/tip_window.tscn" id="4_5o2c7"]
+[ext_resource type="Script" path="res://scenes/main_scene/folklore_counter.gd" id="5_a2jdn"]
+[ext_resource type="Script" path="res://scenes/main_scene/guide_book_button.gd" id="5_vsqrg"]
+[ext_resource type="Texture2D" uid="uid://vo5y2eanu2hx" path="res://assets/book.png" id="5_xykkt"]
+
+[node name="GameState" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_icmeg")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_x4nba")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 195.0
+offset_top = 77.0
+offset_right = -61.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer1" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+size_flags_stretch_ratio = 3.6
+
+[node name="LeftPage" parent="HBoxContainer" instance=ExtResource("3_tb0wv")]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Spacer2" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+size_flags_stretch_ratio = 1.78
+
+[node name="RightPage" parent="HBoxContainer" instance=ExtResource("3_tb0wv")]
+layout_mode = 2
+_is_right_page = true
+
+[node name="Spacer3" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+size_flags_stretch_ratio = 1.15
+
+[node name="Tips" parent="." instance=ExtResource("4_5o2c7")]
+layout_mode = 1
+anchor_top = 0.681
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -33.48
+offset_right = -1536.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 0
+
+[node name="GuideBookButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.046
+anchor_top = 0.183
+anchor_right = 0.122
+anchor_bottom = 0.344
+offset_left = -0.320007
+offset_top = 0.359985
+offset_right = 0.759979
+offset_bottom = 0.47998
+texture_normal = ExtResource("5_xykkt")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("5_vsqrg")
+
+[node name="FolkloreCounter" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.117
+anchor_right = 0.106
+anchor_bottom = 0.169
+offset_left = 0.759995
+offset_top = -0.360008
+offset_right = -0.52002
+offset_bottom = -0.52002
+theme_override_font_sizes/font_size = 32
+text = "0/4"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_a2jdn")

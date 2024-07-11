@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Godot-wild-jam"
-run/main_scene="res://scenes/game.tscn"
+run/main_scene="res://scenes/main_scene/game.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Events="*res://scripts/autoload/event_bus.gd"
 SoundManager="*res://scripts/autoload/sound_manager.gd"
 DBElements="*res://scripts/autoload/db_elements.gd"
+GlobalVariables="*res://scripts/autoload/global_variables.gd"
 
 [debug]
 
@@ -57,3 +58,4 @@ BUTTON_RIGHT={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
