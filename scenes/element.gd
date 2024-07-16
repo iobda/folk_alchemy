@@ -3,8 +3,9 @@ extends Control
 
 #If left then false
 var is_right: bool
-var previous_element_db_name: String = "null"
+var previous_element: String = ""
 var _element_db_name: String
+
 
 @onready var element_texture_button: TextureButton = %ElementTextureButton
 @onready var element_name: Label = %ElementName
@@ -37,22 +38,20 @@ func _on_category_closed(category_is_right: bool)->void:
 		element_texture_button.texture_normal = null
 		element_name.text = ""
 		animation_stopper()
+		previous_element = ""
 
 func _on_texture_button_pressed()->void:
 	if _element_db_name == "":
 		return
 	else:
 		Events.element_chosen.emit(_element_db_name, is_right)
-		if _element_db_name != previous_element_db_name:
+		if _element_db_name == previous_element:
+			animation_stopper()
+			previous_element = ""
+		else:
 			_animation_player.play("Select")
-			previous_element_db_name = _element_db_name
-			return
-		if _element_db_name == previous_element_db_name:
-			previous_element_db_name = "null"
-			_animation_player.stop()
-			_animation_player.play("RESET")
-			return
+			previous_element = _element_db_name
 
 func animation_stopper()->void:
 	_animation_player.stop()
-	_animation_player.clear_queue()
+	_animation_player.play("RESET")

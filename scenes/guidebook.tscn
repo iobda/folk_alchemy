@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://syk4yxnval31"]
 
-[ext_resource type="Script" path="res://Guidebook.gd" id="1_tv43w"]
+[ext_resource type="Script" path="res://scenes/Guidebook.gd" id="1_tv43w"]
 [ext_resource type="Shader" path="res://resources/shaders/blur.gdshader" id="2_0k5mc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pbrw7"]
