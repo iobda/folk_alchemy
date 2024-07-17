@@ -6,9 +6,6 @@ var right_element_chosen: bool
 var _right_element_selected: String = "none"
 var _left_element_selected: String = "none"
 var _popup_folklore_pc: PackedScene = preload("res://scenes/pop_folklore.tscn")
-var _guidebook_pc: PackedScene = preload("res://scenes/guidebook.tscn")
-@onready var folklore_counter: Label = %FolkloreCounter
-@onready var _guidebook: Button = %Guidebook
 
 
 # Called when the node enters the scene tree for the first time.
@@ -53,7 +50,3 @@ func _spawn_popup_folklore(folklore_bd_name: String)->void:
 	var popup_folklore: PopUpFolklore = _popup_folklore_pc.instantiate() as PopUpFolklore
 	add_child(popup_folklore)
 	popup_folklore.set_popup_data(folklore_bd_name)
-
-func _open_guidebook()->void:
-	var folklore_guidebooke: GuideBook = _guidebook_pc.instantiate() as GuideBook
-	add_child(folklore_guidebooke)

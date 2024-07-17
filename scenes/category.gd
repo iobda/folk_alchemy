@@ -32,12 +32,12 @@ func _ready() -> void:
 	_init_counter(_category)
 
 
-func _init_counter(_category: DBElements.CategoryType) -> void:
+func _init_counter(in_category: DBElements.CategoryType) -> void:
 	for folklore_db_name: String in DBElements.get_folklores_elements_bd_names():
 		var sources: Array[String] = DBElements.get_folklores_elements_sources(folklore_db_name)
 		for source: String in sources:
 			var tmp_category: DBElements.CategoryType =  DBElements.get_element_category(source)
-			if(_category == tmp_category):
+			if(in_category == tmp_category):
 				_folklores_to_merged+=1
 
 func _on_merged(folklore_db_name: String) -> void:
