@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfyyen38haelj"]
+[gd_scene load_steps=3 format=3 uid="uid://dlbt4oq4icngi"]
 
 [ext_resource type="Script" path="res://scenes/guidebook_folklore.gd" id="1_fd55p"]
 [ext_resource type="Texture2D" uid="uid://cg0u06lr683q5" path="res://assets/folklore/succubus.png" id="3_2r5vb"]

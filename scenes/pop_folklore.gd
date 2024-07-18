@@ -7,11 +7,15 @@ extends CanvasLayer
 @onready var _exit: Button = %Exit
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	_exit.pressed.connect(queue_free)
+func _ready()->void:
+	popup_exit()
 
 func set_popup_data(folklore_db_name: String)->void:
 	var path_to_png: String = DBElements.get_folklore_element_icon_path(folklore_db_name)
 	_folkore_icon.texture = load(path_to_png) as CompressedTexture2D
 	_folklore_name.text =  DBElements.get_folklore_element_name(folklore_db_name)
 	_folklore_description.text =  DBElements.get_folklore_element_description(folklore_db_name)
+
+func popup_exit()->void:
+	_exit.pressed.connect(queue_free)
+	Events.popup_closed.emit()
