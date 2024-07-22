@@ -3,8 +3,8 @@ extends Control
 
 #If left then false
 var is_right: bool
-var previous_element: String = ""
-var _element_db_name: String
+var _previous_element: String = ""
+var _element_db_name: String = ""
 
 
 @onready var element_texture_button: TextureButton = %ElementTextureButton
@@ -17,7 +17,9 @@ func _ready() -> void:
 func _connect_signals() -> void:
 	Events.category_opened.connect(_on_category_opened)
 	Events.category_closed.connect(_on_category_closed)
-	Events.popup_closed.connect(animation_stopper)
+	Events.popup_closed.connect(_stop_animation)
+	Events.merge_failed.connect(_stop_animation)
+	Events.element_chosen.connect(_on_element_chosen)
 	element_texture_button.pressed.connect(_on_texture_button_pressed)
 
 func set_element_data(name_of_element: String) -> void:
@@ -25,33 +27,41 @@ func set_element_data(name_of_element: String) -> void:
 	var icon_path: String = DBElements.get_element_icon_path(name_of_element)
 	element_texture_button.texture_normal = load(icon_path) as CompressedTexture2D
 	element_name.text = DBElements.get_element_name(name_of_element)
+	enable_element()
+
+func enable_element() -> void:
+	(self as Element).show()
+	(self as Element).process_mode = Node.PROCESS_MODE_INHERIT
+
+func disable_element() -> void:
+	(self as Element).hide()
+	(self as Element).process_mode = Node.PROCESS_MODE_DISABLED
 
 func _on_category_opened(_category: DBElements.CategoryType, category_is_right: bool)->void:
 	if(category_is_right == is_right):
-		(self as Element).show()
-		element_texture_button.disabled = false
+		enable_element()
 
-func _on_category_closed(category_is_right: bool)->void:
+func _on_category_closed(category_is_right: bool) -> void:
 	if(category_is_right == is_right):
-		(self as Element).hide()
-		element_texture_button.disabled = true
+		disable_element()
 		element_texture_button.texture_normal = null
 		element_name.text = ""
-		animation_stopper()
-		previous_element = ""
+		_stop_animation()
+		_previous_element = ""
 
-func _on_texture_button_pressed()->void:
-	if _element_db_name == "":
-		return
-	else:
-		Events.element_chosen.emit(_element_db_name, is_right)
-		if _element_db_name == previous_element:
-			animation_stopper()
-			previous_element = ""
-		else:
-			_animation_player.play("Select")
-			previous_element = _element_db_name
-
-func animation_stopper()->void:
+func _stop_animation() -> void:
+	_previous_element = ""
 	_animation_player.stop()
 	_animation_player.play("RESET")
+
+func _on_element_chosen(element_db_name: String , in_is_right: bool) -> void:
+	if(element_db_name != _element_db_name and in_is_right == is_right):
+		_stop_animation()
+
+func _on_texture_button_pressed() -> void:
+	if _element_db_name == _previous_element:
+		_previous_element = ""
+	else:
+		_animation_player.play("Select")
+		_previous_element = _element_db_name
+	Events.element_chosen.emit(_element_db_name, is_right)
