@@ -1,9 +1,18 @@
 extends Control
 
 
-var _right_element_selected: String = "none"
-var _left_element_selected: String = "none"
+var _right_element_selected: String = "none":
+	set(new_var):
+		_right_element_selected = new_var
+		debug_right.text = "Right Element - " + new_var
+var _left_element_selected: String = "none":
+	set(new_var):
+		_left_element_selected = new_var
+		debug_right.text = "Left Element - " + new_var
 var _popup_folklore_pc: PackedScene = preload("res://scenes/pop_folklore.tscn")
+
+@onready var debug_left: Label = %DebugLeft
+@onready var debug_right: Label = %DebugRight
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,6 +41,8 @@ func _process_merge() -> void:
 		DBElements.set_folklore_element_to_open(folkore_bd_name)
 		_spawn_popup_folklore(folkore_bd_name)
 		Events.merged.emit(folkore_bd_name)
+	else:
+		Events.merge_failed.emit()
 
 func _spawn_popup_folklore(folklore_bd_name: String)->void:
 	var popup_folklore: PopUpFolklore = _popup_folklore_pc.instantiate() as PopUpFolklore

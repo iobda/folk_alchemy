@@ -20,5 +20,10 @@ func _on_category_opened(category: DBElements.CategoryType, category_is_right: b
 		for elem_name: String in elements_names:
 			_elements[i].set_element_data(elem_name)
 			i+=1
+		for elem: Element in _elements:
+			if(elem.element_name.text == ""):
+				elem.disable_element()
+			else:
+				elem.enable_element()
 	else:
 		return
