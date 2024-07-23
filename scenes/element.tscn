@@ -12,7 +12,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ElementFrame/ElementTextureButton:scale")
+tracks/0/path = NodePath("ElementFrame/ContainerSpacer/ElementTextureButton:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -29,7 +29,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ElementFrame/ElementTextureButton:scale")
+tracks/0/path = NodePath("ElementFrame/ContainerSpacer/ElementTextureButton:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -48,8 +48,9 @@ _data = {
 [node name="Element" type="AspectRatioContainer"]
 offset_right = 150.0
 offset_bottom = 150.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
+pivot_offset = Vector2(75, 75)
+size_flags_horizontal = 3
+size_flags_vertical = 3
 mouse_filter = 2
 stretch_mode = 1
 script = ExtResource("1_2xiu2")
@@ -58,9 +59,18 @@ script = ExtResource("1_2xiu2")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_lbm7a")
 
-[node name="ElementTextureButton" type="TextureButton" parent="ElementFrame"]
-unique_name_in_owner = true
+[node name="ContainerSpacer" type="Control" parent="ElementFrame"]
 layout_mode = 2
+
+[node name="ElementTextureButton" type="TextureButton" parent="ElementFrame/ContainerSpacer"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(75, 75)
 size_flags_vertical = 3
 texture_normal = ExtResource("3_7nyd2")
 ignore_texture_size = true
