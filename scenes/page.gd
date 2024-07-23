@@ -1,4 +1,4 @@
-extends AspectRatioContainer
+extends Control
 
 #Be aware - with some change in this class these export may be gone away or set to default
 @export var _is_right_page: bool

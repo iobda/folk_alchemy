@@ -3,63 +3,79 @@
 [ext_resource type="Script" path="res://scenes/tips.gd" id="1_5i7du"]
 [ext_resource type="PackedScene" uid="uid://qq55blymvfuq" path="res://scenes/element.tscn" id="2_nn3uk"]
 [ext_resource type="Script" path="res://scenes/tip_element.gd" id="3_myr7b"]
+[ext_resource type="Texture2D" uid="uid://h157q1q7x0q2" path="res://assets/icons/+.png" id="4_7wuow"]
 [ext_resource type="Texture2D" uid="uid://dk58g10ding0t" path="res://assets/frame/off.png" id="4_jomlq"]
-[ext_resource type="Texture2D" uid="uid://c7cx3vfjcplfd" path="res://assets/category-icons/plus.png" id="4_rte6i"]
 [ext_resource type="Theme" uid="uid://dgg4q0g5l2soj" path="res://resources/themes/tip_button.tres" id="5_n0aga"]
 
-[node name="Tips" type="Control"]
-layout_mode = 3
-anchor_right = 0.204
-anchor_bottom = 0.356
-offset_right = -0.680023
-offset_bottom = 0.519989
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Tips" type="VBoxContainer"]
+offset_right = 200.0
+offset_bottom = 200.0
+mouse_filter = 2
 script = ExtResource("1_5i7du")
 
-[node name="TipsVBox" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TipsCountHBox" type="HBoxContainer" parent="TipsVBox"]
+[node name="TipsCountHBox" type="HBoxContainer" parent="."]
 layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.1
+mouse_filter = 2
 
-[node name="TipsAmount" type="Label" parent="TipsVBox/TipsCountHBox"]
+[node name="TipsAmount" type="Label" parent="TipsCountHBox"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 15
+size_flags_vertical = 13
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 2
 
-[node name="TipsObtainingProgress" type="Label" parent="TipsVBox/TipsCountHBox"]
+[node name="TipsObtainingProgress" type="Label" parent="TipsCountHBox"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 15
+size_flags_vertical = 13
+theme_override_font_sizes/font_size = 20
 
-[node name="TipsElementsHBox" type="HBoxContainer" parent="TipsVBox"]
+[node name="TipsElementsHBox" type="HBoxContainer" parent="."]
 layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
 
-[node name="LeftElement" parent="TipsVBox/TipsElementsHBox" instance=ExtResource("2_nn3uk")]
+[node name="LeftElement" parent="TipsElementsHBox" instance=ExtResource("2_nn3uk")]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+stretch_mode = 0
 script = ExtResource("3_myr7b")
 
-[node name="TextureRect" type="TextureRect" parent="TipsVBox/TipsElementsHBox"]
+[node name="TextureRect" type="TextureRect" parent="TipsElementsHBox"]
 unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("4_rte6i")
+size_flags_horizontal = 3
+texture = ExtResource("4_7wuow")
 expand_mode = 2
+stretch_mode = 5
 
-[node name="RightElement" parent="TipsVBox/TipsElementsHBox" instance=ExtResource("2_nn3uk")]
+[node name="RightElement" parent="TipsElementsHBox" instance=ExtResource("2_nn3uk")]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+stretch_mode = 0
 script = ExtResource("3_myr7b")
 
-[node name="TipButton" type="TextureButton" parent="TipsVBox"]
+[node name="TipButton" type="TextureButton" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
 theme = ExtResource("5_n0aga")
 texture_normal = ExtResource("4_jomlq")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="TipLabel" type="Label" parent="TipsVBox/TipButton"]
+[node name="TipLabel" type="Label" parent="TipButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

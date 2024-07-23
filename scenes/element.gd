@@ -1,5 +1,5 @@
 class_name Element
-extends Control
+extends AspectRatioContainer
 
 #If left then false
 var is_right: bool
@@ -12,6 +12,8 @@ var _element_db_name: String = ""
 @onready var _animation_player: AnimationPlayer = %AnimationPlayer
 
 func _ready() -> void:
+	element_texture_button.texture_normal = null
+	element_name.text = ""
 	_connect_signals()
 
 func _connect_signals() -> void:
@@ -28,6 +30,7 @@ func set_element_data(name_of_element: String) -> void:
 	element_texture_button.texture_normal = load(icon_path) as CompressedTexture2D
 	element_name.text = DBElements.get_element_name(name_of_element)
 	enable_element()
+	
 
 func enable_element() -> void:
 	(self as Element).show()

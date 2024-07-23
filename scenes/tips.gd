@@ -1,4 +1,4 @@
-extends Control
+extends VBoxContainer
 
 signal  tips_available_updated(tips: int)
 

@@ -56,6 +56,61 @@ var _elements: Dictionary = {
 		"name": "Страх",
 		"icon": "res://assets/element-icons/fear.png",
 		"category" : CategoryType.EMOTIONS
+	},##
+		"bat": {
+		"name": "Летучая мышь",
+		"icon": "res://assets/element-icons/bat.png",
+		"category" : CategoryType.ANIMALS
+	},
+		"blood": {
+		"name": "Кровь",
+		"icon": "res://assets/element-icons/blood.png",
+		"category" : CategoryType.HUMAN
+	},
+		"earthquake": {
+		"name": "Землетрясение",
+		"icon": "res://assets/element-icons/earthquake.png",
+		"category" : CategoryType.NATURAL_DISASTERS
+	},
+		"eyes": {
+		"name": "Глаза",
+		"icon": "res://assets/element-icons/eyes.png",
+		"category" : CategoryType.HUMAN
+	},
+		"fox": {
+		"name": "Лиса",
+		"icon": "res://assets/element-icons/fox.png",
+		"category" : CategoryType.ANIMALS
+	},
+		"hatred": {
+		"name": "Ненависть",
+		"icon": "res://assets/element-icons/hatred.png",
+		"category" : CategoryType.HUMAN
+	},
+		"sadness": {
+		"name": "Печаль",
+		"icon": "res://assets/element-icons/sadness.png",
+		"category" : CategoryType.EMOTIONS
+	},
+		"sea": {
+		"name": "Море / Вода",
+		"icon": "res://assets/element-icons/sea.png",
+		"category" : CategoryType.NATURAL_DISASTERS
+	},
+		"snake": {
+		"name": "Змея",
+		"icon": "res://assets/element-icons/snake.png",
+		"category" : CategoryType.ANIMALS
+	},
+		"wolf": {
+		"name": "Волк",
+		"icon": "res://assets/element-icons/wolf.png",
+		"category" : CategoryType.ANIMALS
+	},
+		"voice": {
+		"name": "Голос",
+		"icon": "res://assets/element-icons/voice.png",
+		"category" : CategoryType.HUMAN
 	}
 }
 
