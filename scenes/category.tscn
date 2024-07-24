@@ -1,62 +1,109 @@
-[gd_scene load_steps=6 format=3 uid="uid://d37qck7pxs4mc"]
+[gd_scene load_steps=8 format=3 uid="uid://d37qck7pxs4mc"]
 
 [ext_resource type="Script" path="res://scenes/category.gd" id="1_ugxwe"]
-[ext_resource type="Texture2D" uid="uid://ltokwdkxg2ww" path="res://assets/frame/category-frame.png" id="2_aoa3i"]
 [ext_resource type="Texture2D" uid="uid://rrtkvphfe0qs" path="res://assets/category-icons/animals.png" id="3_swcvo"]
 [ext_resource type="Texture2D" uid="uid://cugbnd7kckahk" path="res://assets/frame/on.png" id="4_uusws"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_omq8t"]
-texture = ExtResource("2_aoa3i")
-texture_margin_left = 25.0
-texture_margin_top = 25.0
-texture_margin_right = 25.0
-texture_margin_bottom = 25.0
+[sub_resource type="Animation" id="Animation_jopgs"]
+resource_name = "appear"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.01, 0.01), Vector2(1, 1)]
+}
 
-[node name="Category" type="Control"]
-layout_mode = 3
-anchor_right = 0.125
-anchor_bottom = 0.25
+[sub_resource type="Animation" id="Animation_72m7w"]
+resource_name = "disappear"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.01, 0.01)]
+}
+
+[sub_resource type="Animation" id="Animation_16spk"]
+resource_name = "focus"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hjyix"]
+_data = {
+"appear": SubResource("Animation_jopgs"),
+"disappear": SubResource("Animation_72m7w"),
+"focus": SubResource("Animation_16spk")
+}
+
+[node name="Category" type="AspectRatioContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_ugxwe")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Frame" type="PanelContainer" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxTexture_omq8t")
 
-[node name="CategoryTextureButton" type="TextureButton" parent="VBoxContainer/Frame"]
+[node name="CategoryTextureButton" type="TextureButton" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("3_swcvo")
 ignore_texture_size = true
-stretch_mode = 6
+stretch_mode = 5
 
-[node name="CounterIcon" type="TextureRect" parent="VBoxContainer/Frame/CategoryTextureButton"]
+[node name="CounterIcon" type="TextureRect" parent="VBoxContainer/CategoryTextureButton"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.126
-anchor_top = -0.098
-anchor_right = 0.189
-anchor_bottom = 0.212
-offset_left = -0.0599995
-offset_top = -0.0859985
-offset_right = 0.0899963
-offset_bottom = 0.0839958
+anchor_left = -0.0176471
+anchor_right = 0.229
+anchor_bottom = 0.239
+offset_right = 0.419983
+offset_bottom = -0.384003
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_uusws")
 expand_mode = 3
+metadata/_edit_use_anchors_ = true
 
-[node name="Counter" type="Label" parent="VBoxContainer/Frame/CategoryTextureButton/CounterIcon"]
+[node name="Counter" type="Label" parent="VBoxContainer/CategoryTextureButton/CounterIcon"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -70,6 +117,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 40
 text = "32"
 horizontal_alignment = 1
 
@@ -77,3 +125,9 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
+
+[node name="CategoryAnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_hjyix")
+}

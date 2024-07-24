@@ -1,122 +1,181 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctm5j1jfg6oyp"]
+[gd_scene load_steps=9 format=3 uid="uid://ctm5j1jfg6oyp"]
 
 [ext_resource type="Script" path="res://scenes/page.gd" id="1_widm8"]
 [ext_resource type="Texture2D" uid="uid://bgh8mf0mj3lce" path="res://assets/background-book/left-page.png" id="2_oqiix"]
 [ext_resource type="PackedScene" uid="uid://d37qck7pxs4mc" path="res://scenes/category.tscn" id="3_hnd5t"]
 [ext_resource type="PackedScene" uid="uid://qq55blymvfuq" path="res://scenes/element.tscn" id="3_oi5ix"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xeo7i"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ukdk3"]
 texture = ExtResource("2_oqiix")
-texture_margin_left = 15.0
-texture_margin_top = 15.0
+texture_margin_left = 20.0
+texture_margin_top = 20.0
 texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 
-[node name="Page" type="AspectRatioContainer" node_paths=PackedStringArray("_elements", "_categories")]
+[sub_resource type="Animation" id="Animation_bjs8h"]
+resource_name = "left_focus_move"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/Category:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(400, 562), Vector2(208, 142)]
+}
+
+[sub_resource type="Animation" id="Animation_p7r5m"]
+resource_name = "right_focus_move"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/Category:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(400, 562), Vector2(208, 142)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cc5x3"]
+_data = {
+"left_focus_move": SubResource("Animation_bjs8h"),
+"right_focus_move": SubResource("Animation_p7r5m")
+}
+
+[node name="Page" type="Control" node_paths=PackedStringArray("_elements", "_categories")]
 custom_minimum_size = Vector2(628, 924)
-anchors_preset = -1
+layout_mode = 3
 anchor_right = 0.355
 anchor_bottom = 0.856
 offset_right = 0.399963
 offset_bottom = -0.480042
 size_flags_horizontal = 3
 size_flags_vertical = 3
-ratio = 0.738
-stretch_mode = 1
-alignment_horizontal = 0
-alignment_vertical = 0
 script = ExtResource("1_widm8")
-_elements = [NodePath("Frame/ElementsMarginContainer/ElementsGrid/Element"), NodePath("Frame/ElementsMarginContainer/ElementsGrid/Element2"), NodePath("Frame/ElementsMarginContainer/ElementsGrid/Element3"), NodePath("Frame/ElementsMarginContainer/ElementsGrid/Element4"), NodePath("Frame/ElementsMarginContainer/ElementsGrid/Element5")]
-_categories = [NodePath("Frame/MarginContainer/GridContainer/AspectRatioContainer/Category"), NodePath("Frame/MarginContainer/GridContainer/AspectRatioContainer2/Category"), NodePath("Frame/MarginContainer/GridContainer/AspectRatioContainer3/Category"), NodePath("Frame/MarginContainer/GridContainer/AspectRatioContainer4/Category")]
+_elements = [NodePath("Panel/ElementsGrid/ElementsHBoxContainer/Element"), NodePath("Panel/ElementsGrid/ElementsHBoxContainer/Element2"), NodePath("Panel/ElementsGrid/ElementsHBoxContainer/Element3"), NodePath("Panel/ElementsGrid/ElementsHBoxContainer2/Element4"), NodePath("Panel/ElementsGrid/ElementsHBoxContainer2/Element5")]
+_categories = [NodePath("Panel/Category4"), NodePath("Panel/Category3"), NodePath("Panel/Category2"), NodePath("Panel/Category")]
 
-[node name="Frame" type="PanelContainer" parent="."]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_xeo7i")
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 682.0
+offset_bottom = 924.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ukdk3")
 
-[node name="MarginContainer" type="MarginContainer" parent="Frame"]
-layout_mode = 2
-theme_override_constants/margin_top = 75
-theme_override_constants/margin_bottom = 305
-
-[node name="GridContainer" type="GridContainer" parent="Frame/MarginContainer"]
-layout_mode = 2
-columns = 2
-
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Frame/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Category" parent="Frame/MarginContainer/GridContainer/AspectRatioContainer" instance=ExtResource("3_hnd5t")]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="Frame/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Category" parent="Frame/MarginContainer/GridContainer/AspectRatioContainer2" instance=ExtResource("3_hnd5t")]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-_category = 3
-
-[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="Frame/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Category" parent="Frame/MarginContainer/GridContainer/AspectRatioContainer3" instance=ExtResource("3_hnd5t")]
-layout_mode = 2
-_category = 1
-
-[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="Frame/MarginContainer/GridContainer"]
-layout_mode = 2
-
-[node name="Category" parent="Frame/MarginContainer/GridContainer/AspectRatioContainer4" instance=ExtResource("3_hnd5t")]
-layout_mode = 2
-_category = 2
-
-[node name="ElementsMarginContainer" type="MarginContainer" parent="Frame"]
-layout_mode = 2
+[node name="ElementsGrid" type="GridContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 72.0
+offset_top = 540.0
+offset_right = 615.0
+offset_bottom = 839.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-theme_override_constants/margin_bottom = 30
+mouse_filter = 2
+theme_override_constants/v_separation = 30
 
-[node name="ElementsGrid" type="GridContainer" parent="Frame/ElementsMarginContainer"]
+[node name="ElementsHBoxContainer" type="HBoxContainer" parent="Panel/ElementsGrid"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-columns = 5
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = -70
 
-[node name="Element" parent="Frame/ElementsMarginContainer/ElementsGrid" instance=ExtResource("3_oi5ix")]
+[node name="Element" parent="Panel/ElementsGrid/ElementsHBoxContainer" instance=ExtResource("3_oi5ix")]
 visible = false
 layout_mode = 2
+size_flags_vertical = 1
 
-[node name="Element2" parent="Frame/ElementsMarginContainer/ElementsGrid" instance=ExtResource("3_oi5ix")]
+[node name="Element2" parent="Panel/ElementsGrid/ElementsHBoxContainer" instance=ExtResource("3_oi5ix")]
 visible = false
 layout_mode = 2
+size_flags_vertical = 1
 
-[node name="Element3" parent="Frame/ElementsMarginContainer/ElementsGrid" instance=ExtResource("3_oi5ix")]
+[node name="Element3" parent="Panel/ElementsGrid/ElementsHBoxContainer" instance=ExtResource("3_oi5ix")]
 visible = false
 layout_mode = 2
+size_flags_vertical = 1
 
-[node name="Element4" parent="Frame/ElementsMarginContainer/ElementsGrid" instance=ExtResource("3_oi5ix")]
+[node name="ElementsHBoxContainer2" type="HBoxContainer" parent="Panel/ElementsGrid"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = -220
+
+[node name="Element4" parent="Panel/ElementsGrid/ElementsHBoxContainer2" instance=ExtResource("3_oi5ix")]
+visible = false
+layout_direction = 3
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="Element5" parent="Panel/ElementsGrid/ElementsHBoxContainer2" instance=ExtResource("3_oi5ix")]
 visible = false
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 4
+size_flags_vertical = 1
 
-[node name="Element5" parent="Frame/ElementsMarginContainer/ElementsGrid" instance=ExtResource("3_oi5ix")]
-visible = false
+[node name="Category4" parent="Panel" instance=ExtResource("3_hnd5t")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 42.0
+offset_top = 70.0
+offset_right = 291.999
+offset_bottom = 320.0
 
-[node name="Spacer1" type="Control" parent="."]
+[node name="Category3" parent="Panel" instance=ExtResource("3_hnd5t")]
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-size_flags_stretch_ratio = 1.35
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 387.0
+offset_top = 236.0
+offset_right = 637.0
+offset_bottom = 486.0
+category = 1
+
+[node name="Category2" parent="Panel" instance=ExtResource("3_hnd5t")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 42.0002
+offset_top = 410.32
+offset_right = 292.0
+offset_bottom = 660.32
+category = 2
+
+[node name="Category" parent="Panel" instance=ExtResource("3_hnd5t")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 400.0
+offset_top = 562.0
+offset_right = 649.999
+offset_bottom = 812.001
+category = 3
+
+[node name="CategoriesAnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_cc5x3")
+}
