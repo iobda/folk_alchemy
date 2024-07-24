@@ -35,6 +35,7 @@ func set_element_data(name_of_element: String) -> void:
 func _init_element() -> void:
 	element_texture_button.texture_normal = null
 	element_name.text = ""
+	(self as Element).pivot_offset = (self as Element).size/2.0
 
 func _enable_element() -> void:
 	(self as Element).show()

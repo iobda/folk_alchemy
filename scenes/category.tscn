@@ -1,8 +1,65 @@
-[gd_scene load_steps=4 format=3 uid="uid://d37qck7pxs4mc"]
+[gd_scene load_steps=8 format=3 uid="uid://d37qck7pxs4mc"]
 
 [ext_resource type="Script" path="res://scenes/category.gd" id="1_ugxwe"]
 [ext_resource type="Texture2D" uid="uid://rrtkvphfe0qs" path="res://assets/category-icons/animals.png" id="3_swcvo"]
 [ext_resource type="Texture2D" uid="uid://cugbnd7kckahk" path="res://assets/frame/on.png" id="4_uusws"]
+
+[sub_resource type="Animation" id="Animation_jopgs"]
+resource_name = "appear"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.01, 0.01), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_72m7w"]
+resource_name = "disappear"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.01, 0.01)]
+}
+
+[sub_resource type="Animation" id="Animation_16spk"]
+resource_name = "focus"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hjyix"]
+_data = {
+"appear": SubResource("Animation_jopgs"),
+"disappear": SubResource("Animation_72m7w"),
+"focus": SubResource("Animation_16spk")
+}
 
 [node name="Category" type="AspectRatioContainer"]
 anchors_preset = 8
@@ -68,3 +125,9 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
+
+[node name="CategoryAnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_hjyix")
+}

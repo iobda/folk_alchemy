@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctm5j1jfg6oyp"]
+[gd_scene load_steps=9 format=3 uid="uid://ctm5j1jfg6oyp"]
 
 [ext_resource type="Script" path="res://scenes/page.gd" id="1_widm8"]
 [ext_resource type="Texture2D" uid="uid://bgh8mf0mj3lce" path="res://assets/background-book/left-page.png" id="2_oqiix"]
@@ -11,6 +11,44 @@ texture_margin_left = 20.0
 texture_margin_top = 20.0
 texture_margin_right = 20.0
 texture_margin_bottom = 20.0
+
+[sub_resource type="Animation" id="Animation_bjs8h"]
+resource_name = "left_focus_move"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/Category:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(400, 562), Vector2(208, 142)]
+}
+
+[sub_resource type="Animation" id="Animation_p7r5m"]
+resource_name = "right_focus_move"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/Category:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(400, 562), Vector2(208, 142)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cc5x3"]
+_data = {
+"left_focus_move": SubResource("Animation_bjs8h"),
+"right_focus_move": SubResource("Animation_p7r5m")
+}
 
 [node name="Page" type="Control" node_paths=PackedStringArray("_elements", "_categories")]
 custom_minimum_size = Vector2(628, 924)
@@ -30,6 +68,59 @@ layout_mode = 0
 offset_right = 682.0
 offset_bottom = 924.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_ukdk3")
+
+[node name="ElementsGrid" type="GridContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 72.0
+offset_top = 540.0
+offset_right = 615.0
+offset_bottom = 839.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_constants/v_separation = 30
+
+[node name="ElementsHBoxContainer" type="HBoxContainer" parent="Panel/ElementsGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = -70
+
+[node name="Element" parent="Panel/ElementsGrid/ElementsHBoxContainer" instance=ExtResource("3_oi5ix")]
+visible = false
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="Element2" parent="Panel/ElementsGrid/ElementsHBoxContainer" instance=ExtResource("3_oi5ix")]
+visible = false
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="Element3" parent="Panel/ElementsGrid/ElementsHBoxContainer" instance=ExtResource("3_oi5ix")]
+visible = false
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="ElementsHBoxContainer2" type="HBoxContainer" parent="Panel/ElementsGrid"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = -220
+
+[node name="Element4" parent="Panel/ElementsGrid/ElementsHBoxContainer2" instance=ExtResource("3_oi5ix")]
+visible = false
+layout_direction = 3
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="Element5" parent="Panel/ElementsGrid/ElementsHBoxContainer2" instance=ExtResource("3_oi5ix")]
+visible = false
+layout_mode = 2
+size_flags_vertical = 1
 
 [node name="Category4" parent="Panel" instance=ExtResource("3_hnd5t")]
 layout_mode = 2
@@ -82,55 +173,9 @@ offset_right = 649.999
 offset_bottom = 812.001
 category = 3
 
-[node name="ElementsGrid" type="GridContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = -1
-offset_left = 72.0
-offset_top = 499.0
-offset_right = 615.0
-offset_bottom = 798.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-mouse_filter = 2
-theme_override_constants/v_separation = 30
-
-[node name="ElementsHBoxContainer" type="HBoxContainer" parent="Panel/ElementsGrid"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-mouse_filter = 2
-theme_override_constants/separation = -70
-
-[node name="Element" parent="Panel/ElementsGrid/ElementsHBoxContainer" instance=ExtResource("3_oi5ix")]
-visible = false
-layout_mode = 2
-size_flags_vertical = 1
-
-[node name="Element2" parent="Panel/ElementsGrid/ElementsHBoxContainer" instance=ExtResource("3_oi5ix")]
-visible = false
-layout_mode = 2
-size_flags_vertical = 1
-
-[node name="Element3" parent="Panel/ElementsGrid/ElementsHBoxContainer" instance=ExtResource("3_oi5ix")]
-visible = false
-layout_mode = 2
-size_flags_vertical = 1
-
-[node name="ElementsHBoxContainer2" type="HBoxContainer" parent="Panel/ElementsGrid"]
-layout_mode = 2
-size_flags_vertical = 3
-mouse_filter = 2
-theme_override_constants/separation = -220
-
-[node name="Element4" parent="Panel/ElementsGrid/ElementsHBoxContainer2" instance=ExtResource("3_oi5ix")]
-visible = false
-layout_direction = 3
-layout_mode = 2
-size_flags_vertical = 1
-
-[node name="Element5" parent="Panel/ElementsGrid/ElementsHBoxContainer2" instance=ExtResource("3_oi5ix")]
-visible = false
-layout_mode = 2
-size_flags_vertical = 1
+[node name="CategoriesAnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_cc5x3")
+}

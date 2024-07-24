@@ -84,6 +84,7 @@ _data = {
 anchors_preset = -1
 offset_right = 150.0
 offset_bottom = 150.0
+scale = Vector2(0.01, 0.01)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
