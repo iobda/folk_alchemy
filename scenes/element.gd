@@ -19,6 +19,7 @@ func _connect_signals() -> void:
 	Events.category_closed.connect(_on_category_closed)
 	Events.popup_closed.connect(_stop_animation)
 	Events.merge_failed.connect(_stop_animation)
+	Events.failed_merge_elements.connect(fail_merge)
 	Events.element_chosen.connect(_on_element_chosen)
 	element_texture_button.pressed.connect(_on_texture_button_pressed)
 
@@ -65,3 +66,9 @@ func _on_texture_button_pressed() -> void:
 		_animation_player.play("Select")
 		_previous_element = _element_db_name
 	Events.element_chosen.emit(_element_db_name, is_right)
+
+func fail_merge(_left_element_selected: String, _right_element_selected: String) -> void:
+	if _element_db_name == _left_element_selected or _element_db_name == _right_element_selected:
+		_animation_player.play("Merge failed")
+		await _animation_player.animation_finished
+		_animation_player.play("RESET")
