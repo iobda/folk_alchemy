@@ -29,10 +29,16 @@ func _on_category_closed(is_right: bool)->void:
 
 func _on_element_chosen(element_db_name: String ,is_right: bool)->void:
 	if(is_right):
-		_right_element_selected = element_db_name
+		if _right_element_selected == element_db_name:
+			_right_element_selected = "none"
+		else:
+			_right_element_selected = element_db_name
 		Events.right_element.emit(element_db_name)
 	else:
-		_left_element_selected = element_db_name
+		if _left_element_selected == element_db_name:
+			_left_element_selected = "none"
+		else:
+			_left_element_selected = element_db_name
 		Events.left_element.emit(element_db_name)
 	if(_right_element_selected != "none" and _left_element_selected != "none"):
 		_process_merge()

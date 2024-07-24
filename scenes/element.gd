@@ -61,7 +61,7 @@ func _on_element_chosen(element_db_name: String , in_is_right: bool) -> void:
 
 func _on_texture_button_pressed() -> void:
 	if _element_db_name == _previous_element:
-		_previous_element = ""
+		_stop_animation()
 	else:
 		_animation_player.play("Select")
 		_previous_element = _element_db_name
