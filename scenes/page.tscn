@@ -23,7 +23,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_widm8")
 _elements = [NodePath("Panel/ElementsGrid/ElementsHBoxContainer/Element"), NodePath("Panel/ElementsGrid/ElementsHBoxContainer/Element2"), NodePath("Panel/ElementsGrid/ElementsHBoxContainer/Element3"), NodePath("Panel/ElementsGrid/ElementsHBoxContainer2/Element4"), NodePath("Panel/ElementsGrid/ElementsHBoxContainer2/Element5")]
-_categories = [NodePath("Panel/AspectRatioContainer/Category"), NodePath("Panel/AspectRatioContainer2/Category"), NodePath("Panel/AspectRatioContainer3/Category"), NodePath("Panel/AspectRatioContainer4/Category")]
+_categories = [NodePath("Panel/Category4"), NodePath("Panel/Category3"), NodePath("Panel/Category2"), NodePath("Panel/Category")]
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -31,91 +31,64 @@ offset_right = 682.0
 offset_bottom = 924.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_ukdk3")
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Panel"]
+[node name="Category4" parent="Panel" instance=ExtResource("3_hnd5t")]
 layout_mode = 2
-anchor_left = 0.062
-anchor_top = 0.076
-anchor_right = 0.428
-anchor_bottom = 0.346
-offset_left = -0.284
-offset_top = -0.224007
-offset_right = 0.104034
-offset_bottom = 0.29599
-size_flags_horizontal = 3
-metadata/_edit_use_anchors_ = true
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 42.0
+offset_top = 70.0
+offset_right = 291.999
+offset_bottom = 320.0
 
-[node name="Category" parent="Panel/AspectRatioContainer" instance=ExtResource("3_hnd5t")]
+[node name="Category3" parent="Panel" instance=ExtResource("3_hnd5t")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 387.0
+offset_top = 236.0
+offset_right = 637.0
+offset_bottom = 486.0
+category = 1
 
-[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="Panel"]
+[node name="Category2" parent="Panel" instance=ExtResource("3_hnd5t")]
 layout_mode = 2
-anchor_left = 0.567
-anchor_top = 0.255
-anchor_right = 0.934
-anchor_bottom = 0.526
-offset_left = 0.305969
-offset_top = 0.379974
-offset_right = 0.0115967
-offset_bottom = -0.0240173
-size_flags_horizontal = 3
-size_flags_vertical = 3
-metadata/_edit_use_anchors_ = true
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 42.0002
+offset_top = 410.32
+offset_right = 292.0
+offset_bottom = 660.32
+category = 2
 
-[node name="Category" parent="Panel/AspectRatioContainer2" instance=ExtResource("3_hnd5t")]
+[node name="Category" parent="Panel" instance=ExtResource("3_hnd5t")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-_category = 3
-
-[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="Panel"]
-layout_mode = 2
-anchor_left = 0.062
-anchor_top = 0.444
-anchor_right = 0.428
-anchor_bottom = 0.715
-offset_left = -0.284
-offset_top = 0.0639648
-offset_right = 0.104034
-offset_bottom = -0.340332
-size_flags_horizontal = 3
-size_flags_vertical = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="Category" parent="Panel/AspectRatioContainer3" instance=ExtResource("3_hnd5t")]
-layout_mode = 2
-_category = 1
-
-[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="Panel"]
-layout_mode = 2
-anchor_left = 0.567
-anchor_top = 0.628
-anchor_right = 0.934
-anchor_bottom = 0.898
-offset_left = 0.305969
-offset_top = -0.272034
-offset_right = 0.0120239
-offset_bottom = 0.247925
-size_flags_horizontal = 3
-size_flags_vertical = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="Category" parent="Panel/AspectRatioContainer4" instance=ExtResource("3_hnd5t")]
-layout_mode = 2
-_category = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 400.0
+offset_top = 562.0
+offset_right = 649.999
+offset_bottom = 812.001
+category = 3
 
 [node name="ElementsGrid" type="GridContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.106
-anchor_top = 0.54
-anchor_right = 0.106
-anchor_bottom = 0.54
-offset_left = -0.292
-offset_top = 0.039978
-offset_right = 542.708
-offset_bottom = 299.04
+offset_left = 72.0
+offset_top = 499.0
+offset_right = 615.0
+offset_bottom = 798.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -128,24 +101,21 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-theme_override_constants/separation = -100
+theme_override_constants/separation = -70
 
 [node name="Element" parent="Panel/ElementsGrid/ElementsHBoxContainer" instance=ExtResource("3_oi5ix")]
 visible = false
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 1
 
 [node name="Element2" parent="Panel/ElementsGrid/ElementsHBoxContainer" instance=ExtResource("3_oi5ix")]
 visible = false
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 1
 
 [node name="Element3" parent="Panel/ElementsGrid/ElementsHBoxContainer" instance=ExtResource("3_oi5ix")]
 visible = false
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 1
 
 [node name="ElementsHBoxContainer2" type="HBoxContainer" parent="Panel/ElementsGrid"]
@@ -158,11 +128,9 @@ theme_override_constants/separation = -220
 visible = false
 layout_direction = 3
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 1
 
 [node name="Element5" parent="Panel/ElementsGrid/ElementsHBoxContainer2" instance=ExtResource("3_oi5ix")]
 visible = false
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 1
