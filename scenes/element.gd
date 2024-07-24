@@ -24,7 +24,6 @@ func _connect_signals() -> void:
 	(self as Element).resized.connect(_on_resized)
 	_animation_player.animation_finished.connect(_on_animation_finished)
 	element_texture_button.pressed.connect(_on_texture_button_pressed)
-	
 
 func set_element_data(name_of_element: String) -> void:
 	_element_db_name = name_of_element

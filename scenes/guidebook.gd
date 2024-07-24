@@ -1,10 +1,12 @@
 class_name GuideBook
 extends CanvasLayer
 
+var _folklore_pc: PackedScene = preload("res://scenes/guidebook_folklore.tscn")
+
 @onready var _exit: TextureButton = %Exit
 @onready var _folklore_list: VBoxContainer = %FolkloreList
 @onready var _folklore_window_animations: AnimationPlayer = %FolkloreWindowAnimations
-var _folklore_pc: PackedScene = preload("res://scenes/guidebook_folklore.tscn")
+
 
 func _ready() -> void:
 	_connect_signals()

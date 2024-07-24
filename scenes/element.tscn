@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://qq55blymvfuq"]
+[gd_scene load_steps=11 format=3 uid="uid://qq55blymvfuq"]
 
 [ext_resource type="Script" path="res://scenes/element.gd" id="1_2xiu2"]
 [ext_resource type="Texture2D" uid="uid://ltokwdkxg2ww" path="res://assets/frame/category-frame.png" id="2_28m50"]
@@ -13,7 +13,7 @@ length = 1.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ElementFrame/ElementTextureButton:position")
+tracks/0/path = NodePath("ElementFrame/ContainerSpacer/ElementTextureButton:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -25,7 +25,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ElementFrame/ElementTextureButton:scale")
+tracks/1/path = NodePath("ElementFrame/ContainerSpacer/ElementTextureButton:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -52,7 +52,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ElementFrame/ElementTextureButton:position")
+tracks/1/path = NodePath("ElementFrame/ContainerSpacer/ElementTextureButton:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -122,10 +122,8 @@ _data = {
 }
 
 [node name="Element" type="AspectRatioContainer"]
-anchors_preset = -1
 offset_right = 150.0
 offset_bottom = 150.0
-scale = Vector2(0.01, 0.01)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
