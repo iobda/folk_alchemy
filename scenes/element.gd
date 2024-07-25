@@ -18,7 +18,7 @@ func _connect_signals() -> void:
 	Events.category_closed.connect(_on_category_closed)
 	Events.popup_closed.connect(_stop_animation)
 	Events.merge_failed.connect(_stop_animation)
-	Events.merge_failed.connect(fail_merge)
+	Events.merge_failed.connect(_on_fail_merge)
 	Events.element_chosen.connect(_on_element_chosen)
 	(self as Element).resized.connect(_on_resized)
 	_animation_player.animation_finished.connect(_on_animation_finished)
@@ -49,13 +49,11 @@ func _on_category_closed(category_is_right: bool) -> void:
 		_disable_element()
 
 func _stop_animation(_left_element_selected: String, _right_element_selected: String) -> void:
-	_previous_element = ""
-	_animation_player.play("RESET")
+	clear_animation()
 
 func _on_element_chosen(element_db_name: String , in_is_right: bool) -> void:
 	if(element_db_name != _element_db_name and in_is_right == is_right):
-		_previous_element = ""
-		_animation_player.play("RESET")
+		clear_animation()
 
 func _on_resized() -> void:
 	(self as Element).pivot_offset = (self as Element).size/2.0
@@ -71,15 +69,18 @@ func _on_animation_finished(anim_name: String) -> void:
 
 func _on_texture_button_pressed() -> void:
 	if _element_db_name == _previous_element:
-		_previous_element = ""
-		_animation_player.play("RESET")
+		clear_animation()
 	else:
 		_animation_player.play("Select")
 		_previous_element = _element_db_name
 	Events.element_chosen.emit(_element_db_name, is_right)
 
-func fail_merge(_left_element_selected: String, _right_element_selected: String) -> void:
+func _on_fail_merge(_left_element_selected: String, _right_element_selected: String) -> void:
 	if _element_db_name == _left_element_selected or _element_db_name == _right_element_selected:
 		_animation_player.play("Merge failed")
 		await _animation_player.animation_finished
 		_animation_player.play("RESET")
+
+func clear_animation() -> void:
+	_previous_element = ""
+	_animation_player.play("RESET")
