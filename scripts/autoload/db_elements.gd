@@ -194,6 +194,8 @@ func get_folklore_element_icon_path(folklore_db_name: String) -> String:
 func get_folklore_element_description(folklore_db_name: String) -> String:
 	return (_folklores.get(folklore_db_name) as Dictionary).get("description") as String
 
+## If element opened then return "opened"
+## else return "closed"
 func get_folklore_state(folklore_db_name: String) -> String:
 	return (_folklores.get(folklore_db_name) as Dictionary).get("state")
 

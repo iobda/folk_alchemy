@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d1fdo0sym155n" path="res://scenes/tip_window.tscn" id="4_5o2c7"]
 [ext_resource type="Script" path="res://scenes/main_scene/folklore_counter.gd" id="5_a2jdn"]
 [ext_resource type="Script" path="res://scenes/main_scene/guide_book_button.gd" id="5_vsqrg"]
-[ext_resource type="Texture2D" uid="uid://vo5y2eanu2hx" path="res://assets/book.png" id="5_xykkt"]
+[ext_resource type="Texture2D" uid="uid://vo5y2eanu2hx" path="res://assets/icons/book.png" id="5_xykkt"]
 
 [node name="GameState" type="Control"]
 layout_mode = 3
