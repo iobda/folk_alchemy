@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2tsyp5uo6uou"]
+[gd_scene load_steps=11 format=3 uid="uid://d2tsyp5uo6uou"]
 
 [ext_resource type="Script" path="res://scenes/main_scene/game_state.gd" id="1_icmeg"]
 [ext_resource type="Texture2D" uid="uid://bqsfykw0g0uto" path="res://assets/background-book/background.png" id="2_x4nba"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://scenes/main_scene/guide_book_button.gd" id="5_vsqrg"]
 [ext_resource type="Texture2D" uid="uid://vo5y2eanu2hx" path="res://assets/book.png" id="5_xykkt"]
 [ext_resource type="PackedScene" uid="uid://o4tec64a4n0p" path="res://scenes/merger.tscn" id="8_8nnqh"]
+[ext_resource type="Texture2D" uid="uid://bkbxaniyf0i4v" path="res://assets/icons/help.png" id="9_kqt3y"]
+[ext_resource type="Script" path="res://scenes/main_scene/how_to_play_button.gd" id="10_wlxf3"]
 
 [node name="GameState" type="Control"]
 layout_mode = 3
@@ -140,3 +142,15 @@ text = "Right is none"
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
+
+[node name="HowToPlayButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 124.0
+offset_top = 557.0
+offset_right = 644.0
+offset_bottom = 1077.0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("9_kqt3y")
+stretch_mode = 5
+script = ExtResource("10_wlxf3")
