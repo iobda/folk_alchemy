@@ -8,9 +8,12 @@ var _left_element_selected: String
 @onready var _right_element: Element = %RightElement
 
 func _ready() -> void:
+	_connect_signals()
+
+func _connect_signals() -> void:
 	Events.merged.connect(_animation_merge)
-	Events.right_element.connect(set_right_element)
-	Events.left_element.connect(set_left_element)
+	Events.right_element_chosen.connect(set_right_element)
+	Events.left_element_chosen.connect(set_left_element)
 
 func set_right_element(element_db_name: String)->void:
 	_right_element_selected = element_db_name

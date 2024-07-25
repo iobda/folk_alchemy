@@ -33,13 +33,13 @@ func _on_element_chosen(element_db_name: String ,is_right: bool)->void:
 			_right_element_selected = "none"
 		else:
 			_right_element_selected = element_db_name
-		Events.right_element.emit(element_db_name)
+		Events.right_element_chosen.emit(element_db_name)
 	else:
 		if _left_element_selected == element_db_name:
 			_left_element_selected = "none"
 		else:
 			_left_element_selected = element_db_name
-		Events.left_element.emit(element_db_name)
+		Events.left_element_chosen.emit(element_db_name)
 	if(_right_element_selected != "none" and _left_element_selected != "none"):
 		_process_merge()
 		_left_element_selected = "none"
@@ -52,8 +52,7 @@ func _process_merge() -> void:
 		merger.visible = true
 		Events.merged.emit(folkore_bd_name)
 	else:
-		Events.merge_failed.emit()
-		Events.failed_merge_elements.emit(_left_element_selected, _right_element_selected)
+		Events.merge_failed.emit(_left_element_selected, _right_element_selected)
 
 func _spawn_popup_folklore(folklore_bd_name: String)->void:
 	var popup_folklore: PopUpFolklore = _popup_folklore_pc.instantiate() as PopUpFolklore
