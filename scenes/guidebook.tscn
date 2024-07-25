@@ -23,8 +23,9 @@ texture_margin_bottom = 5.0
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ee5eh"]
 texture = ExtResource("4_ancqp")
 
-[node name="Guidebook" type="CanvasLayer"]
+[node name="Guidebook" type="CanvasLayer" node_paths=PackedStringArray("_guide_book_folklores")]
 script = ExtResource("1_ubvq5")
+_guide_book_folklores = [NodePath("BookPanelContainer/ColumnsHBox/LeftColumnVBox/Folklore2"), NodePath("BookPanelContainer/ColumnsHBox/LeftColumnVBox/Folklore"), NodePath("BookPanelContainer/ColumnsHBox/RightColumnVBox/Folklore4"), NodePath("BookPanelContainer/ColumnsHBox/RightColumnVBox/Folklore3")]
 
 [node name="Panel" type="Panel" parent="."]
 material = SubResource("ShaderMaterial_pbrw7")
@@ -98,6 +99,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.04
 
 [node name="PrevPage" type="TextureButton" parent="BookPanelContainer/ColumnsHBox/LeftColumnVBox/ArrowHBox"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -143,7 +145,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 6.64
 
-[node name="PrevPage" type="TextureButton" parent="BookPanelContainer/ColumnsHBox/RightColumnVBox/ArrowHBox"]
+[node name="NextPage" type="TextureButton" parent="BookPanelContainer/ColumnsHBox/RightColumnVBox/ArrowHBox"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
