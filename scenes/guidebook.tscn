@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://syk4yxnval31"]
+[gd_scene load_steps=11 format=3 uid="uid://syk4yxnval31"]
 
 [ext_resource type="Script" path="res://scenes/guidebook.gd" id="1_ubvq5"]
 [ext_resource type="Shader" path="res://resources/shaders/blur.gdshader" id="2_0k5mc"]
@@ -6,8 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bn4ged0yw3x88" path="res://assets/background-book/fon_in_book.png" id="3_su641"]
 [ext_resource type="Texture2D" uid="uid://dcmkr6114qoib" path="res://assets/background-book/book_open.png" id="4_ancqp"]
 [ext_resource type="PackedScene" uid="uid://dlbt4oq4icngi" path="res://scenes/guidebook_folklore.tscn" id="6_lx1jx"]
-[ext_resource type="Texture2D" uid="uid://dehk3m62i1ist" path="res://assets/icons/arrow_left.png" id="7_gx8r5"]
-[ext_resource type="Texture2D" uid="uid://bulb7xysgb1gn" path="res://assets/icons/arrow_right.png" id="8_xrkoh"]
+[ext_resource type="PackedScene" uid="uid://du7nerpvcowt3" path="res://scenes/arrow_button.tscn" id="7_nlapj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pbrw7"]
 shader = ExtResource("2_0k5mc")
@@ -60,11 +59,11 @@ stretch_mode = 5
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 164.0
-offset_top = 60.0
-offset_bottom = -25.0
+offset_left = 171.0
+offset_top = 146.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 8
 mouse_filter = 2
 ratio = 1.5999
 
@@ -105,21 +104,17 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
 
+[node name="LeftArrowButton" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox/LeftColumnVBox/ArrowHBox" instance=ExtResource("7_nlapj")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+is_right_button = false
+
 [node name="MarginLeft" type="Control" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox/LeftColumnVBox/ArrowHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.04
-
-[node name="PrevPage" type="TextureButton" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox/LeftColumnVBox/ArrowHBox"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 1.25
-texture_normal = ExtResource("7_gx8r5")
-ignore_texture_size = true
-stretch_mode = 4
+size_flags_stretch_ratio = 3.4
 
 [node name="MarginBottom" type="Control" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox/LeftColumnVBox"]
 layout_mode = 2
@@ -156,17 +151,13 @@ size_flags_stretch_ratio = 0.3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 6.64
+size_flags_stretch_ratio = 3.4
 
-[node name="NextPage" type="TextureButton" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox/RightColumnVBox/ArrowHBox"]
+[node name="RightArrowButton" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox/RightColumnVBox/ArrowHBox" instance=ExtResource("7_nlapj")]
 unique_name_in_owner = true
+clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 1.25
-texture_normal = ExtResource("8_xrkoh")
-ignore_texture_size = true
-stretch_mode = 4
 
 [node name="MarginBottom" type="Control" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox/RightColumnVBox"]
 layout_mode = 2

@@ -6,7 +6,6 @@ extends AspectRatioContainer
 @onready var _folklore_name: Label = %FolkloreName
 @onready var _folklore_description: RichTextLabel = %FolkloreDescription
 @onready var _folklore_icon: TextureRect = %FolkloreIcon
-@onready var _folklore_animation_player: AnimationPlayer = %FolkloreAnimationPlayer
 
 func _ready() -> void:
 	_connect_signals()
@@ -25,12 +24,6 @@ func set_guidebook_folklore(folklore_db_name: String) -> void:
 		_show_folklore_icon()
 	else:
 		_hide_folklore_icon()
-
-func play_appear_animation() -> void:
-	_folklore_animation_player.play("appear")
-
-func play_disappear_animation() -> void:
-	_folklore_animation_player.play("disappear")
 
 func _connect_signals() -> void:
 	(self as GuidebookFolklore).resized.connect(_on_resized)

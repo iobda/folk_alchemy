@@ -10,6 +10,7 @@ var _current_page: int = 0:
 		else:
 			_current_page = new_value
 			_update_page()
+			_update_buttons()
 	get:
 		return _current_page
 var _pages: int = 0:
@@ -22,8 +23,8 @@ var _pages: int = 0:
 		return _pages 
 
 @onready var _exit: TextureButton = %Exit
-@onready var _prev_page: TextureButton = %PrevPage
-@onready var _next_page: TextureButton = %NextPage
+@onready var _left_arrow_button: ArrowButton = %LeftArrowButton
+@onready var _right_arrow_button: ArrowButton = %RightArrowButton
 
 func _ready() -> void:
 	_init_guidebook()
@@ -42,8 +43,8 @@ func _init_guidebook() -> void:
 
 func _connect_signals() -> void:
 	_exit.pressed.connect(_on_exit_pressed)
-	_prev_page.pressed.connect(_on_prev_page_pressed)
-	_next_page.pressed.connect(_on_next_page_pressed)
+	_left_arrow_button.arrow_button_pressed.connect(_on_prev_page_pressed)
+	_right_arrow_button.arrow_button_pressed.connect(_on_next_page_pressed)
 
 func _update_page() -> void:
 	var folklores_bd_names: Array[String] = DBElements.get_folklores_elements_bd_names()
@@ -52,20 +53,30 @@ func _update_page() -> void:
 		if(folklores_bd_names.size() - (_guide_book_folklores.find(folk) + 1) < 0):
 			folk.z_index = -1
 		else:
-			folk.play_disappear_animation()
 			folk.set_guidebook_folklore(folklores_bd_names[_guide_book_folklores.find(folk)])
 			folk.z_index = 0
-			folk.play_appear_animation()
+
+func _update_buttons() -> void:
+	if(_current_page + 1 != _pages):
+		_right_arrow_button.make_available()
+	else:
+		_right_arrow_button.make_unavailable()
+	if(_current_page - 1 != -1):
+		_left_arrow_button.make_available()
+	else:
+		_left_arrow_button.make_unavailable()
 
 func _on_exit_pressed() -> void:
 	if(is_instance_valid((get_tree().current_scene as GameState))):
 		(get_tree().current_scene as GameState).last_current_page = _current_page
 	queue_free()
 
-func _on_next_page_pressed() -> void:
-	if(_current_page + 1 != _pages):
-		_current_page+=1
-
 func _on_prev_page_pressed() -> void:
 	if(_current_page != 0):
 		_current_page-=1
+	_update_buttons()
+
+func _on_next_page_pressed() -> void:
+	if(_current_page + 1 != _pages):
+		_current_page+=1
+	_update_buttons()
