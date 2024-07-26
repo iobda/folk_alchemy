@@ -56,58 +56,58 @@ var _elements: Dictionary = {
 		"name": "Страх",
 		"icon": "res://assets/element-icons/fear.png",
 		"category" : CategoryType.EMOTIONS
-	},##
-		"bat": {
+	},
+	"bat": {
 		"name": "Летучая мышь",
 		"icon": "res://assets/element-icons/bat.png",
 		"category" : CategoryType.ANIMALS
 	},
-		"blood": {
+	"blood": {
 		"name": "Кровь",
 		"icon": "res://assets/element-icons/blood.png",
 		"category" : CategoryType.HUMAN
 	},
-		"earthquake": {
+	"earthquake": {
 		"name": "Землетрясение",
 		"icon": "res://assets/element-icons/earthquake.png",
 		"category" : CategoryType.NATURAL_DISASTERS
 	},
-		"eyes": {
+	"eyes": {
 		"name": "Глаза",
 		"icon": "res://assets/element-icons/eyes.png",
 		"category" : CategoryType.HUMAN
 	},
-		"fox": {
+	"fox": {
 		"name": "Лиса",
 		"icon": "res://assets/element-icons/fox.png",
 		"category" : CategoryType.ANIMALS
 	},
-		"hatred": {
+	"hatred": {
 		"name": "Ненависть",
 		"icon": "res://assets/element-icons/hatred.png",
 		"category" : CategoryType.HUMAN
 	},
-		"sadness": {
+	"sadness": {
 		"name": "Печаль",
 		"icon": "res://assets/element-icons/sadness.png",
 		"category" : CategoryType.EMOTIONS
 	},
-		"sea": {
+	"sea": {
 		"name": "Море / Вода",
 		"icon": "res://assets/element-icons/sea.png",
 		"category" : CategoryType.NATURAL_DISASTERS
 	},
-		"snake": {
+	"snake": {
 		"name": "Змея",
 		"icon": "res://assets/element-icons/snake.png",
 		"category" : CategoryType.ANIMALS
 	},
-		"wolf": {
+	"wolf": {
 		"name": "Волк",
 		"icon": "res://assets/element-icons/wolf.png",
 		"category" : CategoryType.ANIMALS
 	},
-		"voice": {
+	"voice": {
 		"name": "Голос",
 		"icon": "res://assets/element-icons/voice.png",
 		"category" : CategoryType.HUMAN
@@ -146,8 +146,47 @@ var _folklores: Dictionary ={
 		"source_1": "fear",
 		"source_2": "tornado",
 		"state": "closed"
+	},
+	"banshi": {
+		"name": "Банши",
+		"icon": "res://assets/folklore/banshi.png",
+		"description": "Лорем ипсум пси пси спим",
+		"source_1": "voice",
+		"source_2": "sadness",
+		"state": "closed"
+	},
+	"gorgon": {
+		"name": "Медуза Горгона",
+		"icon": "res://assets/folklore/gorgon.png",
+		"description": "Лорем ипсум пси пси спим",
+		"source_1": "snake",
+		"source_2": "eyes",
+		"state": "closed"
+	},
+	"ifrit": {
+		"name": "Ифрит",
+		"icon": "res://assets/folklore/ifrit.png",
+		"description": "Лорем ипсум пси пси спим",
+		"source_1": "eruption",
+		"source_2": "hatred",
+		"state": "closed"
+	},
+	"siren": {
+		"name": "Сирена",
+		"icon": "res://assets/folklore/siren.png",
+		"description": "Лорем ипсум пси пси спим",
+		"source_1": "voice",
+		"source_2": "snake",
+		"state": "closed"
+	},
+	"vampire_cat": {
+		"name": "Кот-Вампир",
+		"icon": "res://assets/folklore/vampir_cat.png",
+		"description": "Лорем ипсум пси пси спим",
+		"source_1": "cat",
+		"source_2": "bat",
+		"state": "closed"
 	}
-
 }
 
 func get_category_name(category: CategoryType) -> String:
