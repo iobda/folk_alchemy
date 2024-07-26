@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2tsyp5uo6uou"]
+[gd_scene load_steps=9 format=3 uid="uid://d2tsyp5uo6uou"]
 
 [ext_resource type="Script" path="res://scenes/main_scene/game_state.gd" id="1_icmeg"]
 [ext_resource type="Texture2D" uid="uid://bqsfykw0g0uto" path="res://assets/background-book/background.png" id="2_x4nba"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scenes/main_scene/folklore_counter.gd" id="5_a2jdn"]
 [ext_resource type="Script" path="res://scenes/main_scene/guide_book_button.gd" id="5_vsqrg"]
 [ext_resource type="Texture2D" uid="uid://vo5y2eanu2hx" path="res://assets/icons/book.png" id="5_xykkt"]
+[ext_resource type="PackedScene" uid="uid://o4tec64a4n0p" path="res://scenes/merger.tscn" id="8_8nnqh"]
 
 [node name="GameState" type="Control"]
 layout_mode = 3
@@ -134,3 +135,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "Right is none"
+
+[node name="Merger" parent="." instance=ExtResource("8_8nnqh")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1

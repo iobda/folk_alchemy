@@ -1,7 +1,8 @@
 extends TextureButton
 
-@onready var _guidebook: TextureButton = %GuideBookButton
 var _guidebook_pc: PackedScene = preload("res://scenes/guidebook.tscn")
+
+@onready var _guidebook: TextureButton = %GuideBookButton
 
 func _ready() -> void:
 	_connect_signals()

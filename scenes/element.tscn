@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://qq55blymvfuq"]
+[gd_scene load_steps=11 format=3 uid="uid://qq55blymvfuq"]
 
 [ext_resource type="Script" path="res://scenes/element.gd" id="1_2xiu2"]
 [ext_resource type="Texture2D" uid="uid://ltokwdkxg2ww" path="res://assets/frame/category-frame.png" id="2_28m50"]
@@ -6,6 +6,34 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lbm7a"]
 texture = ExtResource("2_28m50")
+
+[sub_resource type="Animation" id="Animation_qapv2"]
+resource_name = "Merge failed"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ElementFrame/ContainerSpacer/ElementTextureButton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.7, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-8, 0), Vector2(8, 0), Vector2(-8, 0), Vector2(8, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ElementFrame/ContainerSpacer/ElementTextureButton:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.15, 1.15), Vector2(1, 1), Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_fk23u"]
 length = 0.001
@@ -20,6 +48,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ElementFrame/ContainerSpacer/ElementTextureButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_uav6h"]
@@ -74,6 +114,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8b2nt"]
 _data = {
+"Merge failed": SubResource("Animation_qapv2"),
 "RESET": SubResource("Animation_fk23u"),
 "Select": SubResource("Animation_uav6h"),
 "appear": SubResource("Animation_8tvw6"),
@@ -83,7 +124,6 @@ _data = {
 [node name="Element" type="AspectRatioContainer"]
 offset_right = 150.0
 offset_bottom = 150.0
-scale = Vector2(0.01, 0.01)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
@@ -131,4 +171,4 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_8b2nt")
 }
-speed_scale = 0.8
+speed_scale = 1.4

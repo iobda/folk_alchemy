@@ -6,6 +6,9 @@ extends CanvasLayer
 @onready var _folklore_description: RichTextLabel = %FolkloreDescription
 @onready var _exit: Button = %Exit
 
+var _left_element_selected: String
+var _right_element_selected: String
+
 # Called when the node enters the scene tree for the first time.
 func _ready()->void:
 	popup_exit()
@@ -18,4 +21,4 @@ func set_popup_data(folklore_db_name: String)->void:
 
 func popup_exit()->void:
 	_exit.pressed.connect(queue_free)
-	Events.popup_closed.emit()
+	Events.popup_closed.emit(_left_element_selected, _right_element_selected)

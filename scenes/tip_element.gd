@@ -12,7 +12,7 @@ func _connect_signals() -> void:
 
 func enable_tip_element() -> void:
 	element_texture_button.disabled = false
-	
+
 func disable_tip_element() -> void:
 	element_texture_button.disabled = true
 	element_name.text = ""
