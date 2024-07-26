@@ -49,11 +49,11 @@ func _on_category_closed(category_is_right: bool) -> void:
 		_disable_element()
 
 func _stop_animation(_left_element_selected: String, _right_element_selected: String) -> void:
-	clear_animation()
+	_clear_animation()
 
 func _on_element_chosen(element_db_name: String , in_is_right: bool) -> void:
 	if(element_db_name != _element_db_name and in_is_right == is_right):
-		clear_animation()
+		_clear_animation()
 
 func _on_resized() -> void:
 	(self as Element).pivot_offset = (self as Element).size/2.0
@@ -69,7 +69,7 @@ func _on_animation_finished(anim_name: String) -> void:
 
 func _on_texture_button_pressed() -> void:
 	if _element_db_name == _previous_element:
-		clear_animation()
+		_clear_animation()
 	else:
 		_animation_player.play("Select")
 		_previous_element = _element_db_name
@@ -81,6 +81,6 @@ func _on_fail_merge(_left_element_selected: String, _right_element_selected: Str
 		await _animation_player.animation_finished
 		_animation_player.play("RESET")
 
-func clear_animation() -> void:
+func _clear_animation() -> void:
 	_previous_element = ""
 	_animation_player.play("RESET")

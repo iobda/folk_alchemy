@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3evqe7sv2g6w"
-path="res://.godot/imported/Natural disasters.png-d039d61279b3b158a1c375d1d7e21e6d.ctex"
+uid="uid://b7w01pdo18hyl"
+path="res://.godot/imported/tip_off.png-a36dd77ee6d07c16f30229aaf634a030.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/category-icons/Natural disasters.png"
-dest_files=["res://.godot/imported/Natural disasters.png-d039d61279b3b158a1c375d1d7e21e6d.ctex"]
+source_file="res://assets/tip/tip_off.png"
+dest_files=["res://.godot/imported/tip_off.png-a36dd77ee6d07c16f30229aaf634a030.ctex"]
 
 [params]
 
