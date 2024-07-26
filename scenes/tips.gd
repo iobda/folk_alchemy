@@ -54,7 +54,6 @@ func _enable_elements() -> void:
 	_left_element.enable_tip_element()
 	_right_element.enable_tip_element()
 
-
 func _on_tip_button_pressed() -> void:
 	_tip_button.disabled = true
 	var sources: Array[String]
@@ -66,6 +65,7 @@ func _on_tip_button_pressed() -> void:
 			_left_element.set_element_data(sources[0])
 			_right_element.set_element_data(sources[1])
 			_tips_available-=1
+			tip_button_icon_change()
 			return
 
 func _on_merged(folklore_db_name: String) -> void:
@@ -74,3 +74,9 @@ func _on_merged(folklore_db_name: String) -> void:
 	else:
 		_disable_elements()
 		_tip_button.disabled = false
+
+func tip_button_icon_change() -> void:
+	if _tips_available >= 1:
+		_tip_button.texture_normal = load("res://assets/tip/tip_on.png") as CompressedTexture2D
+	if _tips_available == 0:
+		_tip_button.texture_normal = load("res://assets/tip/tip_off.png") as CompressedTexture2D
