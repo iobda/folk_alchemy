@@ -11,6 +11,8 @@ var _is_opened: bool = false
 var _folklores_to_merged: int = 0:
 	set(new_amount):
 		_folklores_to_merged = new_amount
+		if(new_amount == 0):
+			_counter_icon.texture = load("res://assets/frame/off.png") as CompressedTexture2D
 		folklores_to_merged_changed.emit(new_amount)
 
 @onready var _category_texture_button: TextureButton = %CategoryTextureButton
