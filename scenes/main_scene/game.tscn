@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://d2tsyp5uo6uou"]
+[gd_scene load_steps=12 format=3 uid="uid://d2tsyp5uo6uou"]
 
+[ext_resource type="Theme" uid="uid://cfnbb06x7c6ff" path="res://resources/themes/text.tres" id="1_7oesa"]
 [ext_resource type="Script" path="res://scenes/main_scene/game_state.gd" id="1_icmeg"]
 [ext_resource type="Texture2D" uid="uid://bqsfykw0g0uto" path="res://assets/background-book/background.png" id="2_x4nba"]
 [ext_resource type="PackedScene" uid="uid://ctm5j1jfg6oyp" path="res://scenes/page.tscn" id="3_tb0wv"]
@@ -20,6 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("1_7oesa")
 script = ExtResource("1_icmeg")
 
 [node name="Background" type="TextureRect" parent="."]
