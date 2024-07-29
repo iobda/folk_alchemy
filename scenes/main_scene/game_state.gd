@@ -1,5 +1,5 @@
+class_name GameState
 extends Control
-
 
 var _right_element_selected: String = "none":
 	set(new_var):
@@ -10,6 +10,8 @@ var _left_element_selected: String = "none":
 		_left_element_selected = new_var
 		debug_right.text = "Left Element - " + new_var
 var _popup_folklore_pc: PackedScene = preload("res://scenes/pop_folklore.tscn")
+## Last opened page number in guidebook
+var last_current_page: int = 0
 
 @onready var debug_left: Label = %DebugLeft
 @onready var debug_right: Label = %DebugRight
