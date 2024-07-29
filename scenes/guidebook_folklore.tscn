@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/guidebook_folklore.gd" id="1_fd55p"]
 [ext_resource type="Theme" uid="uid://cfnbb06x7c6ff" path="res://resources/themes/text.tres" id="1_n3bth"]
+[ext_resource type="Script" path="res://scenes/guidebook_folklore.gd" id="1_fd55p"]
 [ext_resource type="Shader" path="res://resources/shaders/grey_out.gdshader" id="2_rbo7r"]
 [ext_resource type="Texture2D" uid="uid://bn4ged0yw3x88" path="res://assets/background-book/fon_in_book.png" id="2_vx7ls"]
 [ext_resource type="Texture2D" uid="uid://ctus4l8vr2bpg" path="res://assets/folklore/harpy.png" id="4_klsu6"]
