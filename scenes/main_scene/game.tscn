@@ -83,10 +83,10 @@ grow_vertical = 0
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.046
-anchor_top = 0.183
-anchor_right = 0.122
-anchor_bottom = 0.344
+anchor_left = 0.0126667
+anchor_top = 0.0246667
+anchor_right = 0.19075
+anchor_bottom = 0.381963
 offset_left = -0.320007
 offset_top = 0.359985
 offset_right = 0.759979
@@ -95,15 +95,16 @@ texture_normal = ExtResource("5_xykkt")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("5_vsqrg")
+metadata/_edit_use_anchors_ = true
 
 [node name="FolkloreCounter" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.047
-anchor_top = 0.117
-anchor_right = 0.106
-anchor_bottom = 0.169
+anchor_left = 0.05325
+anchor_top = 0.404963
+anchor_right = 0.147667
+anchor_bottom = 0.455111
 offset_left = 0.759995
 offset_top = -0.360008
 offset_right = -0.52002
@@ -113,6 +114,7 @@ text = "0/4"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_a2jdn")
+metadata/_edit_use_anchors_ = true
 
 [node name="Debug" type="Control" parent="."]
 layout_mode = 1

@@ -71,13 +71,13 @@ func _on_texture_button_pressed() -> void:
 	if _element_db_name == _previous_element:
 		_clear_animation()
 	else:
-		_animation_player.play("Select")
+		_animation_player.play("select")
 		_previous_element = _element_db_name
 	Events.element_chosen.emit(_element_db_name, is_right)
 
 func _on_fail_merge(_left_element_selected: String, _right_element_selected: String) -> void:
 	if _element_db_name == _left_element_selected or _element_db_name == _right_element_selected:
-		_animation_player.play("Merge failed")
+		_animation_player.play("merge_failed")
 		await _animation_player.animation_finished
 		_animation_player.play("RESET")
 
