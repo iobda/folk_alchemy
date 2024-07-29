@@ -1,7 +1,7 @@
 class_name GuideBook
 extends CanvasLayer
 
-@export var _guide_book_folklores: Array[GuidebookFolklore] 
+@export var _guide_book_folklores: Array[GuidebookFolklore]
 
 var _current_page: int = 0:
 	set(new_value):
@@ -20,7 +20,7 @@ var _pages: int = 0:
 		else:
 			return
 	get:
-		return _pages 
+		return _pages
 
 @onready var _exit: TextureButton = %Exit
 @onready var _left_arrow_button: ArrowButton = %LeftArrowButton
@@ -32,6 +32,7 @@ func _ready() -> void:
 
 func _init_guidebook() -> void:
 	var folkore_count: int = DBElements.get_folklores_elements_bd_names().size()
+	@warning_ignore("integer_division")
 	var all_pages: int = folkore_count/4
 	if(folkore_count%4 != 0):
 		all_pages+=1
