@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cfnbb06x7c6ff"]
+
+[ext_resource type="FontFile" uid="uid://calv855s08gni" path="res://assets/pangolin_regular.ttf" id="1_bxmqg"]
+
+[resource]
+Label/fonts/font = ExtResource("1_bxmqg")
+RichTextLabel/fonts/normal_font = ExtResource("1_bxmqg")

@@ -158,7 +158,7 @@ offset_left = 42.0002
 offset_top = 410.32
 offset_right = 292.0
 offset_bottom = 660.32
-category = 2
+category = 3
 
 [node name="Category" parent="Panel" instance=ExtResource("3_hnd5t")]
 layout_mode = 2
@@ -171,7 +171,7 @@ offset_left = 400.0
 offset_top = 562.0
 offset_right = 649.999
 offset_bottom = 812.001
-category = 3
+category = 2
 
 [node name="CategoriesAnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://3wkgl8vn4k0s"]
+[gd_scene load_steps=6 format=3 uid="uid://3wkgl8vn4k0s"]
 
 [ext_resource type="Script" path="res://scenes/how_to_play.gd" id="1_oqccu"]
 [ext_resource type="Shader" path="res://resources/shaders/blur.gdshader" id="2_gffv8"]
+[ext_resource type="Theme" uid="uid://cfnbb06x7c6ff" path="res://resources/themes/text.tres" id="3_aycbj"]
 [ext_resource type="Texture2D" uid="uid://cxrkvqdiyp2bc" path="res://assets/category-icons/all_categories.png" id="3_pa5ah"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7a8it"]
@@ -31,6 +32,7 @@ offset_right = 200.0
 offset_bottom = 164.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_aycbj")
 text = "Тут типа много текста о том как играть в игру можно еще стрелочки раставить и всякое показывать еще тут текст или стрелочки еще тут текст или стрелочки еще тут текст или стрелочки еще тут текст или стрелочки еще тут текст или стрелочки еще тут текст или стрелочки еще тут текст или стрелочки еще тут текст или стрелочки еще тут текст или стрелочки еще тут текст или стрелочки еще тут текст или стрелочки"
 
 [node name="Exit" type="TextureButton" parent="."]
@@ -46,5 +48,6 @@ offset_right = 0.399994
 offset_bottom = -0.0800171
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("3_aycbj")
 texture_normal = ExtResource("3_pa5ah")
 stretch_mode = 5

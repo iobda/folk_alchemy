@@ -13,6 +13,8 @@ func _ready() -> void:
 		elem.is_right = _is_right_page
 	for catyg: Category in _categories:
 		catyg.is_right = _is_right_page
+	if(_is_right_page):
+		(self as Control).layout_direction = Control.LAYOUT_DIRECTION_RTL
 
 func _connect_signals() -> void:
 	Events.category_opened.connect(_on_category_opened)
