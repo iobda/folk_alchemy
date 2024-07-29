@@ -82,6 +82,7 @@ layout_mode = 2
 
 [node name="CategoryTextureButton" type="TextureButton" parent="VBoxContainer"]
 unique_name_in_owner = true
+layout_direction = 2
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("3_swcvo")
@@ -92,16 +93,16 @@ stretch_mode = 5
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.0176471
-anchor_right = 0.229
-anchor_bottom = 0.239
+anchor_left = 0.791667
+anchor_top = -0.0265907
+anchor_right = 1.03831
+anchor_bottom = 0.212409
 offset_right = 0.419983
 offset_bottom = -0.384003
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_uusws")
 expand_mode = 3
-metadata/_edit_use_anchors_ = true
 
 [node name="Counter" type="Label" parent="VBoxContainer/CategoryTextureButton/CounterIcon"]
 unique_name_in_owner = true

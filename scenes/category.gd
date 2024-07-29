@@ -11,18 +11,21 @@ var _is_opened: bool = false
 var _folklores_to_merged: int = 0:
 	set(new_amount):
 		_folklores_to_merged = new_amount
+		if(new_amount == 0):
+			_counter_icon.texture = load("res://assets/frame/off.png") as CompressedTexture2D
 		folklores_to_merged_changed.emit(new_amount)
 
 @onready var _category_texture_button: TextureButton = %CategoryTextureButton
 @onready var _category_label: Label = %CategoryLabel
 @onready var _counter: Label = %Counter
 @onready var _category_animation_player: AnimationPlayer = %CategoryAnimationPlayer
+@onready var _counter_icon: TextureRect = %CounterIcon
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_connect_signals()
-	_init_category()
 	_init_counter()
+	call_deferred("_init_category")
 
 func disable_interaction() -> void:
 	_category_texture_button.disabled = true
@@ -43,6 +46,9 @@ func _init_category() -> void:
 	_category_label.text = DBElements.get_category_name(category)
 	var path_to_icon: String = DBElements.get_category_icon_path(category)
 	_category_texture_button.texture_normal = load(path_to_icon) as CompressedTexture2D
+	if(is_right):
+		_category_texture_button.flip_h = true
+		_counter_icon.layout_direction = Control.LAYOUT_DIRECTION_RTL
 	(self as Category).pivot_offset = (self as Category).size/2.0
 
 func _init_counter() -> void:
