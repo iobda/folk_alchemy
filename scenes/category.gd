@@ -16,7 +16,6 @@ var _folklores_to_merged: int = 0:
 		folklores_to_merged_changed.emit(new_amount)
 
 @onready var _category_texture_button: TextureButton = %CategoryTextureButton
-@onready var _category_label: Label = %CategoryLabel
 @onready var _counter: Label = %Counter
 @onready var _category_animation_player: AnimationPlayer = %CategoryAnimationPlayer
 @onready var _counter_icon: TextureRect = %CounterIcon
@@ -43,7 +42,6 @@ func _connect_signals() -> void:
 	_category_animation_player.animation_finished.connect(_on_animation_finished)
 
 func _init_category() -> void:
-	_category_label.text = DBElements.get_category_name(category)
 	var path_to_icon: String = DBElements.get_category_icon_path(category)
 	_category_texture_button.texture_normal = load(path_to_icon) as CompressedTexture2D
 	if(is_right):

@@ -70,6 +70,7 @@ func _update_buttons() -> void:
 func _on_exit_pressed() -> void:
 	if(is_instance_valid((get_tree().current_scene as GameState))):
 		(get_tree().current_scene as GameState).last_current_page = _current_page
+	Events.guidebook_closed.emit()
 	queue_free()
 
 func _on_prev_page_pressed() -> void:
