@@ -9,3 +9,4 @@ signal popup_closed(_left_element_selected: String, _right_element_selected: Str
 signal right_element_chosen(element_db_name: String)
 signal left_element_chosen(element_db_name: String)
 signal spawn_popup(folkore_bd_name: String)
+signal guidebook_closed()
