@@ -42,7 +42,6 @@ var callback_leaderboard_entries_loaded = JavaScriptBridge.create_callback(_lead
 func is_working() -> bool:
 	return OS.has_feature("yandex")
 
-
 func open_auth_dialog() -> void:
 	if not OS.has_feature("yandex"):
 		return
@@ -58,7 +57,7 @@ func check_is_authorized() -> void:
 		await player_initialized
 	if not is_authorized:
 		window.CheckAuth(callback_is_authorized)
-		
+
 func _is_authorized(answer) -> void:
 	is_authorized = answer
 	emit_signal("check_auth", answer)
@@ -71,7 +70,6 @@ func init_leaderboard() -> void:
 		await game_initialized
 		window.InitLeaderboard(callback_leaderboard_initialized)
 
-
 func init_game() -> void:
 	if not OS.has_feature("yandex"):
 		return
@@ -80,7 +78,6 @@ func init_game() -> void:
 		var options = JavaScriptBridge.create_object("Object")
 		window.InitGame(options, callback_game_initialized)
 
-
 func show_interstitial_ad() -> void:
 	if not OS.has_feature("yandex"):
 		return
@@ -88,14 +85,12 @@ func show_interstitial_ad() -> void:
 		await game_initialized
 	window.ShowAd(callback_ad)
 
-
 func show_rewarded_ad() -> void:
 	if not OS.has_feature("yandex"):
 		return
 	if not is_game_initialized :
 		await game_initialized
 	window.ShowAdRewardedVideo(callback_rewarded_ad)
-
 
 func init_player() -> void:
 	if not OS.has_feature("yandex"):
@@ -107,7 +102,6 @@ func init_player() -> void:
 		return
 	is_player_initialization_started = true
 	window.InitPlayer(false, callback_player_initialized)
-
 
 func save_data(data: Dictionary, flush: bool = false) -> void:
 	if not OS.has_feature("yandex"):
@@ -123,7 +117,6 @@ func save_data(data: Dictionary, flush: bool = false) -> void:
 			saves[i] = data[i]
 	window.SaveData(saves, flush)
 
-
 func save_stats(stats: Dictionary) -> void:
 	if not OS.has_feature("yandex"):
 		return
@@ -134,7 +127,6 @@ func save_stats(stats: Dictionary) -> void:
 	for i in stats.keys():
 		saves[i] = float(stats[i])
 	window.SaveStats(saves)
-
 
 func increment_stats(increments: Dictionary) -> void:
 	if not OS.has_feature("yandex"):
@@ -147,14 +139,12 @@ func increment_stats(increments: Dictionary) -> void:
 		saves[i] = increments[i]
 	window.incrementStats(saves, callback_stats_loaded)
 
-
 func save_leaderboard_score(leaderboard_name, score, extra_data="") -> void:
 	if not OS.has_feature("yandex"):
 		return
 	if not is_leaderboard_initialized:
 		await leaderboard_initialized
 	window.SaveLeaderboardScore(leaderboard_name, score, extra_data)
-
 
 func load_all_data() -> void:
 	if not OS.has_feature("yandex"):
@@ -163,7 +153,6 @@ func load_all_data() -> void:
 		init_player()
 		await player_initialized
 	window.loadAllData(callback_data_loaded)
-
 
 func load_data(keys: Array) -> void:
 	if not OS.has_feature("yandex"):
@@ -176,7 +165,6 @@ func load_data(keys: Array) -> void:
 		saves[i] = keys[i]
 	window.LoadData(saves, callback_data_loaded)
 
-
 func load_all_stats() -> void:
 	if not OS.has_feature("yandex"):
 		return
@@ -184,7 +172,6 @@ func load_all_stats() -> void:
 		init_player()
 		await player_initialized
 	window.loadAllStats(callback_stats_loaded)
-
 
 func load_stats(keys: Array) -> void:
 	if not OS.has_feature("yandex"):
@@ -197,14 +184,12 @@ func load_stats(keys: Array) -> void:
 		saves[i] = keys[i]
 	window.LoadStats(saves, callback_stats_loaded)
 
-
 func load_leaderboard_player_entry(leaderboard_name: String) -> void:
 	if not OS.has_feature("yandex"):
 		return
 	if not is_leaderboard_initialized:
 		await leaderboard_initialized
 	window.LoadLeaderboardPlayerEntry(leaderboard_name, callback_leaderboard_player_entry_loaded)
-
 
 func load_leaderboard_entries(leaderboard_name: String, include_user: bool, quantity_around: int, quantity_top: int) -> void:
 	if not OS.has_feature("yandex"):
@@ -213,16 +198,13 @@ func load_leaderboard_entries(leaderboard_name: String, include_user: bool, quan
 		await leaderboard_initialized
 	window.LoadLeaderboardEntries(leaderboard_name, include_user, quantity_around, quantity_top, callback_leaderboard_entries_loaded)
 
-
 func _rewarded_ad(args) -> void:
 	print("rewarded ad res: ", args[0])
 	emit_signal("rewarded_ad", args)
 
-
 func _interstitial_ad(args) -> void:
 	print("ad res: ", args[0])
 	emit_signal("interstitial_ad", args[0])
-
 
 func _data_loaded(args) -> void:
 	var result := {}
@@ -231,7 +213,6 @@ func _data_loaded(args) -> void:
 	for i in range(keys.length):
 		result[keys[i]] = values[i]
 	emit_signal("data_loaded", result)
-		
 
 func _stats_loaded(args) -> void:
 	var result := {}
@@ -240,7 +221,6 @@ func _stats_loaded(args) -> void:
 	for i in range(keys.length):
 		result[keys[i]] = values[i]
 	stats_loaded.emit(result)
-		
 
 func _leaderboard_player_entry_loaded(args) -> void:
 	if args[0] == 'loaded':
@@ -250,7 +230,6 @@ func _leaderboard_player_entry_loaded(args) -> void:
 		for i in range(keys.length):
 			result[keys[i]] = values[i]
 		emit_signal("leaderboard_player_entry_loaded", result)
-
 
 func _leaderboard_entries_loaded(args) -> void:
 	if args[0] == 'loaded':
@@ -263,17 +242,14 @@ func _leaderboard_entries_loaded(args) -> void:
 	elif args[0] == 'error':
 		print("Произошла ошибка при загрузке лидерборда.")
 
-
 func _game_initialized(args) -> void:
 	is_game_initialized = true
 	emit_signal('game_initialized')
 
-
 func _player_initialized(args) -> void:
 	is_player_initialized = true
 	emit_signal('player_initialized')
-	
-	
+
 func _leaderboard_initialized(args) -> void:
 	is_leaderboard_initialized = true
 	emit_signal("leaderboard_initialized")

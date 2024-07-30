@@ -1,9 +1,7 @@
 @tool
 extends EditorPlugin
 
-
 var export_plugin: EditorExportPlugin = null
-
 
 func _enter_tree() -> void:
 	export_plugin = load("res://addons/yandex_sdk/sdk_export_plugin.gd").new()
