@@ -18,6 +18,7 @@ var last_current_page: int = 0
 @onready var _merger: Control = %Merger
 
 func _ready() -> void:
+	((self as GameState).get_viewport() as Window).size = DisplayServer.screen_get_size()
 	_merger.visible = false
 	_connect_signals()
 

@@ -1,9 +1,10 @@
-extends Control
+extends AspectRatioContainer
 
 #Be aware - with some change in this class these export may be gone away or set to default
 @export var _is_right_page: bool
 @export var _elements: Array[Element]
 @export var _categories: Array[Category]
+@onready var _page_background: Panel = %PageBackGround
 
 @onready var _categories_animation_player: AnimationPlayer = %CategoriesAnimationPlayer
 
@@ -14,7 +15,9 @@ func _ready() -> void:
 	for catyg: Category in _categories:
 		catyg.is_right = _is_right_page
 	if(_is_right_page):
+		_page_background.theme = load("res://resources/themes/right_page_background.tres")
 		(self as Control).layout_direction = Control.LAYOUT_DIRECTION_RTL
+		
 
 func _connect_signals() -> void:
 	Events.category_opened.connect(_on_category_opened)

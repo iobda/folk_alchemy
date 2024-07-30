@@ -34,49 +34,34 @@ texture = ExtResource("2_x4nba")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 195.0
-offset_top = 77.0
-offset_right = -61.0
-offset_bottom = -79.0
+anchors_preset = -1
+anchor_left = 0.216
+anchor_top = 0.026
+anchor_right = 0.98
+anchor_bottom = 0.981
+offset_left = 0.279999
+offset_top = -0.0799999
+offset_right = 0.399902
+offset_bottom = 0.519897
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Spacer1" type="Control" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-size_flags_stretch_ratio = 3.6
-
 [node name="LeftPage" parent="HBoxContainer" instance=ExtResource("3_tb0wv")]
 layout_mode = 2
-size_flags_horizontal = 6
-
-[node name="Spacer2" type="Control" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-size_flags_stretch_ratio = 1.78
 
 [node name="RightPage" parent="HBoxContainer" instance=ExtResource("3_tb0wv")]
 layout_mode = 2
 _is_right_page = true
 
-[node name="Spacer3" type="Control" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-size_flags_stretch_ratio = 1.15
-
 [node name="Tips" parent="." instance=ExtResource("4_5o2c7")]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.65
-anchor_bottom = 0.65
-offset_right = 378.0
-offset_bottom = 376.0
+anchor_right = 0.197
+anchor_bottom = 0.998
+offset_top = -6.10352e-05
+offset_right = -0.240021
+offset_bottom = 0.159912
 grow_vertical = 0
 
 [node name="GuideBookButton" type="TextureButton" parent="."]
@@ -126,9 +111,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Debug"]
-layout_mode = 0
-offset_right = 329.0
-offset_bottom = 116.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.909
+anchor_bottom = 1.064
+offset_right = -0.0580139
+offset_bottom = 0.0240021
 
 [node name="DebugLeft" type="Label" parent="Debug/VBoxContainer"]
 unique_name_in_owner = true
@@ -149,12 +137,22 @@ layout_mode = 1
 
 [node name="HowToPlayButton" type="TextureButton" parent="."]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 124.0
-offset_top = 557.0
-offset_right = 644.0
-offset_bottom = 1077.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.065
+anchor_top = 0.516
+anchor_right = 0.132
+anchor_bottom = 0.636
+offset_left = -0.800011
+offset_top = -0.280029
+offset_right = 390.56
+offset_bottom = 390.12
 scale = Vector2(0.25, 0.25)
 texture_normal = ExtResource("9_kqt3y")
 stretch_mode = 5
 script = ExtResource("10_wlxf3")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

@@ -57,13 +57,14 @@ texture_normal = ExtResource("3_sj5mn")
 stretch_mode = 5
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
-anchors_preset = 15
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 171.0
-offset_top = 146.0
+offset_top = -934.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 size_flags_vertical = 8
 mouse_filter = 2
 theme = ExtResource("5_d4dyg")

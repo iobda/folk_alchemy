@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dxu3vuaxme5l3"]
+
+[ext_resource type="Texture2D" uid="uid://ba2sskb340frj" path="res://assets/background-book/right_page_background.png" id="1_7i4vk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nf4fy"]
+texture = ExtResource("1_7i4vk")
+texture_margin_left = 40.0
+texture_margin_top = 40.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+
+[resource]
+Panel/styles/panel = SubResource("StyleBoxTexture_nf4fy")
