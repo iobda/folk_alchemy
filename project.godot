@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Godot-wild-jam"
 run/main_scene="res://scenes/main_scene/game.tscn"
-config/features=PackedStringArray("4.2", "GL Compatibility")
+config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
