@@ -23,7 +23,7 @@ func _ready() -> void:
 	yandex()
 
 func yandex() -> void:
-	YandexSDK.is_working()
+	YandexSDK.init_game()
 
 func _connect_signals() -> void:
 	Events.category_closed.connect(_on_category_closed)
