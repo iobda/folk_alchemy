@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cejki572peshm"
-path="res://.godot/imported/catsith.png-ad97592130f622a5bba98c6d217ad706.ctex"
+path="res://.godot/imported/Catsith.png-ae78fdfe1df387a3587f6c8e4858c680.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/folklore/catsith.png"
-dest_files=["res://.godot/imported/catsith.png-ad97592130f622a5bba98c6d217ad706.ctex"]
+source_file="res://assets/folklore/Catsith.png"
+dest_files=["res://.godot/imported/Catsith.png-ae78fdfe1df387a3587f6c8e4858c680.ctex"]
 
 [params]
 

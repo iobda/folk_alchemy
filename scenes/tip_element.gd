@@ -6,20 +6,20 @@ extends Element
 func _ready() -> void:
 	super()
 	(self as TipElement).hide()
-	element_texture_button.disabled = true
+	_element_texture_button.disabled = true
 
-func _connect_signals() -> void:
+func _connect_signals() -> void: 
 	return
 
 func enable_tip_element() -> void:
 	(self as TipElement).show()
-	element_texture_button.disabled = false
+	_element_texture_button.disabled = false
 
 func disable_tip_element() -> void:
 	(self as TipElement).hide()
-	element_texture_button.disabled = true
-	element_name.text = ""
-	element_texture_button.texture_normal = null
+	_element_texture_button.disabled = true
+	_element_name.text = ""
+	_element_texture_button.texture_normal = null
 
 func _on_texture_button_pressed() -> void:
 	super()

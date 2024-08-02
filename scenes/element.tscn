@@ -1,18 +1,29 @@
-[gd_scene load_steps=11 format=3 uid="uid://qq55blymvfuq"]
+[gd_scene load_steps=13 format=3 uid="uid://qq55blymvfuq"]
 
 [ext_resource type="Script" path="res://scenes/element.gd" id="1_2xiu2"]
 [ext_resource type="Texture2D" uid="uid://ltokwdkxg2ww" path="res://assets/frame/category-frame.png" id="2_28m50"]
+[ext_resource type="Shader" path="res://resources/shaders/select_element.gdshader" id="3_3xfaa"]
 [ext_resource type="Texture2D" uid="uid://bwwd4kk776iyv" path="res://assets/element-icons/cat.png" id="3_7nyd2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lbm7a"]
 texture = ExtResource("2_28m50")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fje2l"]
+resource_local_to_scene = true
+shader = ExtResource("3_3xfaa")
+shader_parameter/circle_width = 1.0
+shader_parameter/wait_time = 0.6
+shader_parameter/speed = 1.5
+shader_parameter/alpha_boost = 1.0
+shader_parameter/in_color = Vector3(0.785, 1.32, -0.29)
+shader_parameter/is_turn_on = false
 
 [sub_resource type="Animation" id="Animation_fk23u"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ElementFrame/ContainerSpacer/ElementTextureButton:scale")
+tracks/0/path = NodePath("ElementFrame/ContainerSpace/ElementAspectRatioContainer:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +35,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ElementFrame/ContainerSpacer/ElementTextureButton:position")
+tracks/1/path = NodePath("ElementFrame/ContainerSpace/ElementAspectRatioContainer:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -73,7 +84,7 @@ length = 1.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ElementFrame/ContainerSpacer/ElementTextureButton:position")
+tracks/0/path = NodePath("ElementFrame/ContainerSpace/ElementAspectRatioContainer/ElementTextureButton:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -85,7 +96,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ElementFrame/ContainerSpacer/ElementTextureButton:scale")
+tracks/1/path = NodePath("ElementFrame/ContainerSpace/ElementAspectRatioContainer/ElementTextureButton:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -102,7 +113,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ElementFrame/ContainerSpacer/ElementTextureButton:scale")
+tracks/0/path = NodePath("ElementFrame/ContainerSpace/ElementAspectRatioContainer:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -122,8 +133,15 @@ _data = {
 }
 
 [node name="Element" type="AspectRatioContainer"]
-offset_right = 150.0
-offset_bottom = 150.0
+anchors_preset = -1
+anchor_left = 0.039
+anchor_top = 0.069
+anchor_right = 0.039
+anchor_bottom = 0.069
+offset_left = -74.88
+offset_top = -74.52
+offset_right = 75.12
+offset_bottom = 75.48
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
@@ -134,25 +152,32 @@ script = ExtResource("1_2xiu2")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_lbm7a")
 
-[node name="ContainerSpacer" type="Control" parent="ElementFrame"]
+[node name="ShaderPulsar" type="PanelContainer" parent="ElementFrame"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_fje2l")
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_lbm7a")
+
+[node name="ContainerSpace" type="Control" parent="ElementFrame"]
 layout_mode = 2
 
-[node name="ElementTextureButton" type="TextureButton" parent="ElementFrame/ContainerSpacer"]
+[node name="ElementAspectRatioContainer" type="AspectRatioContainer" parent="ElementFrame/ContainerSpace"]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.986667
-anchor_bottom = 0.986667
-offset_right = 1.0
-offset_bottom = 3.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(75, 75)
+scale = Vector2(1.05, 1.05)
+
+[node name="ElementTextureButton" type="TextureButton" parent="ElementFrame/ContainerSpace/ElementAspectRatioContainer"]
+unique_name_in_owner = true
+layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("3_7nyd2")
 ignore_texture_size = true
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
+stretch_mode = 5
 
 [node name="LabelMarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -171,6 +196,7 @@ justification_flags = 161
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
+reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_8b2nt")
 }

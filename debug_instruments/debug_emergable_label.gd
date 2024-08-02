@@ -7,6 +7,7 @@ extends Control
 
 func _ready() -> void:
 	_debug_label.text = str(get_tree().root.size)
+	@warning_ignore("integer_division")
 	_debug_label.add_theme_font_size_override("font_size", 66 + (get_tree().root.size.x/100 * 2))
 	_disappear_timer.timeout.connect(queue_free)
 	_delete_others()

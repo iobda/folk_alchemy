@@ -17,8 +17,7 @@ func _ready() -> void:
 	((self as GameState).get_viewport() as Window).size = DisplayServer.screen_get_size()
 	_merger.visible = false
 	_connect_signals()
-	call_deferred("update_resolution")
-	
+	call_deferred("_update_resolution")
 
 #Function to sync with platform resolution
 func _update_resolution() -> void:

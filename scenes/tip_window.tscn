@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1fdo0sym155n"]
+[gd_scene load_steps=8 format=3 uid="uid://d1fdo0sym155n"]
 
 [ext_resource type="Script" path="res://scenes/tips.gd" id="1_5i7du"]
-[ext_resource type="PackedScene" uid="uid://qq55blymvfuq" path="res://scenes/element.tscn" id="2_nn3uk"]
-[ext_resource type="Script" path="res://scenes/tip_element.gd" id="3_myr7b"]
+[ext_resource type="PackedScene" uid="uid://b32a4y2djbyok" path="res://scenes/tip_element.tscn" id="2_x7tg6"]
 [ext_resource type="Texture2D" uid="uid://h157q1q7x0q2" path="res://assets/icons/+.png" id="4_7wuow"]
 [ext_resource type="Shader" path="res://resources/shaders/grey_scale.gdshader" id="5_b1hf3"]
 [ext_resource type="Theme" uid="uid://dgg4q0g5l2soj" path="res://resources/themes/tip_button.tres" id="5_n0aga"]
@@ -20,6 +19,7 @@ anchor_bottom = 0.185
 offset_right = 0.319992
 offset_bottom = 0.199997
 mouse_filter = 2
+alignment = 1
 script = ExtResource("1_5i7du")
 
 [node name="TipsAmount" type="Label" parent="."]
@@ -33,30 +33,23 @@ layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="LeftElement" parent="TipsElementsHBox" instance=ExtResource("2_nn3uk")]
+[node name="LeftElement" parent="TipsElementsHBox" instance=ExtResource("2_x7tg6")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 1
-size_flags_stretch_ratio = 2.0
 stretch_mode = 2
-script = ExtResource("3_myr7b")
 
-[node name="TextureRect" type="TextureRect" parent="TipsElementsHBox"]
+[node name="PlusTexture" type="TextureRect" parent="TipsElementsHBox"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.08
 texture = ExtResource("4_7wuow")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="RightElement" parent="TipsElementsHBox" instance=ExtResource("2_nn3uk")]
+[node name="RightElement" parent="TipsElementsHBox" instance=ExtResource("2_x7tg6")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 1
-size_flags_stretch_ratio = 2.0
 stretch_mode = 2
-script = ExtResource("3_myr7b")
 
 [node name="TipButton" type="TextureButton" parent="."]
 unique_name_in_owner = true

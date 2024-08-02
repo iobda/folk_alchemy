@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://syk4yxnval31"]
+[gd_scene load_steps=10 format=3 uid="uid://syk4yxnval31"]
 
 [ext_resource type="Script" path="res://scenes/guidebook.gd" id="1_ubvq5"]
 [ext_resource type="Shader" path="res://resources/shaders/blur.gdshader" id="2_0k5mc"]
 [ext_resource type="Texture2D" uid="uid://cxrkvqdiyp2bc" path="res://assets/category-icons/all_categories.png" id="3_sj5mn"]
-[ext_resource type="Texture2D" uid="uid://bn4ged0yw3x88" path="res://assets/background-book/fon_in_book.png" id="3_su641"]
 [ext_resource type="Texture2D" uid="uid://dcmkr6114qoib" path="res://assets/background-book/book_open.png" id="4_ancqp"]
 [ext_resource type="Theme" uid="uid://cfnbb06x7c6ff" path="res://resources/themes/text.tres" id="5_d4dyg"]
 [ext_resource type="PackedScene" uid="uid://dlbt4oq4icngi" path="res://scenes/guidebook_folklore.tscn" id="6_lx1jx"]
@@ -11,14 +10,10 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pbrw7"]
 shader = ExtResource("2_0k5mc")
-shader_parameter/lod = 3.404
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ycac"]
-texture = ExtResource("3_su641")
-texture_margin_left = 5.0
-texture_margin_top = 5.0
-texture_margin_right = 5.0
-texture_margin_bottom = 5.0
+shader_parameter/blur_radius = 1.0
+shader_parameter/blur_amount = 5.0
+shader_parameter/blur_inner = 0.122
+shader_parameter/blur_outer = 0.48
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ee5eh"]
 texture = ExtResource("4_ancqp")
@@ -36,7 +31,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-theme_override_styles/panel = SubResource("StyleBoxTexture_2ycac")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 anchors_preset = -1
