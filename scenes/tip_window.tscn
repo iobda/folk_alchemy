@@ -19,14 +19,7 @@ anchor_bottom = 0.185
 offset_right = 0.319992
 offset_bottom = 0.199997
 mouse_filter = 2
-alignment = 1
 script = ExtResource("1_5i7du")
-
-[node name="TipsAmount" type="Label" parent="."]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-horizontal_alignment = 1
 
 [node name="TipsElementsHBox" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -51,13 +44,28 @@ unique_name_in_owner = true
 layout_mode = 2
 stretch_mode = 2
 
-[node name="TipButton" type="TextureButton" parent="."]
+[node name="TipsCount&Button" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TipsAmount" type="Label" parent="TipsCount&Button"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 11
+size_flags_stretch_ratio = 1.5
+theme_override_font_sizes/font_size = 70
+text = "3"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TipButton" type="TextureButton" parent="TipsCount&Button"]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_y3xk4")
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.71
+size_flags_stretch_ratio = 4.0
 theme = ExtResource("5_n0aga")
 texture_normal = ExtResource("6_1y1n5")
 ignore_texture_size = true
-stretch_mode = 5
+stretch_mode = 4
