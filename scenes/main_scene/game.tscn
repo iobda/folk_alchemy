@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://scenes/main_scene/guidebook_button.gd" id="5_vsqrg"]
 [ext_resource type="Texture2D" uid="uid://vo5y2eanu2hx" path="res://assets/icons/book.png" id="5_xykkt"]
 [ext_resource type="PackedScene" uid="uid://o4tec64a4n0p" path="res://scenes/merger.tscn" id="8_8nnqh"]
-[ext_resource type="Texture2D" uid="uid://bkbxaniyf0i4v" path="res://assets/icons/help.png" id="9_kqt3y"]
+[ext_resource type="Texture2D" uid="uid://d3g0i1sh0ibyl" path="res://assets/icons/help.png" id="9_kqt3y"]
 [ext_resource type="Script" path="res://scenes/main_scene/how_to_play_button.gd" id="10_wlxf3"]
 
 [node name="GameState" type="Control"]

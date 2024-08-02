@@ -3,12 +3,11 @@ extends VBoxContainer
 signal  tips_available_updated(tips: int)
 
 var _tiped_folklore: String = "none"
-var _tips_available: int = 3:
+var _tips_available: int = 1:
 	set(new_amount):
-		if(new_amount == 0 and _tips_available > 0
-		or new_amount > 0 and _tips_available == 0):
-			_change_tip_button_icon()
 		_tips_available = new_amount
+		if(_tips_available == 0 or _tips_available == 1):
+			_change_tip_button_icon()
 		tips_available_updated.emit(new_amount)
 		_tips_amount.text = str(new_amount)
 
@@ -59,7 +58,7 @@ func _on_merged(folklore_db_name: String) -> void:
 		_tip_button.disabled = false
 
 func _change_tip_button_icon() -> void:
-	if _tips_available >= 1:
-		_tip_button.texture_normal = load("res://assets/tip/tip_on.png") as CompressedTexture2D
-	if _tips_available == 0:
-		_tip_button.texture_normal = load("res://assets/tip/tip_off.png") as CompressedTexture2D
+	if (_tips_available >= 1):
+		_tip_button.material.set("shader_parameter/is_grey",false)
+	elif (_tips_available == 0):
+		_tip_button.material.set("shader_parameter/is_grey",true)

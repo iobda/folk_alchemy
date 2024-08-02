@@ -1,11 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1fdo0sym155n"]
+[gd_scene load_steps=9 format=3 uid="uid://d1fdo0sym155n"]
 
 [ext_resource type="Script" path="res://scenes/tips.gd" id="1_5i7du"]
 [ext_resource type="PackedScene" uid="uid://qq55blymvfuq" path="res://scenes/element.tscn" id="2_nn3uk"]
 [ext_resource type="Script" path="res://scenes/tip_element.gd" id="3_myr7b"]
 [ext_resource type="Texture2D" uid="uid://h157q1q7x0q2" path="res://assets/icons/+.png" id="4_7wuow"]
+[ext_resource type="Shader" path="res://resources/shaders/grey_scale.gdshader" id="5_b1hf3"]
 [ext_resource type="Theme" uid="uid://dgg4q0g5l2soj" path="res://resources/themes/tip_button.tres" id="5_n0aga"]
-[ext_resource type="Texture2D" uid="uid://dmxe55gcq1rel" path="res://assets/tip/tip_on.png" id="6_bmune"]
+[ext_resource type="Texture2D" uid="uid://baf2pn5477gnk" path="res://assets/icons/clue.png" id="6_1y1n5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y3xk4"]
+shader = ExtResource("5_b1hf3")
+shader_parameter/weighted = true
+shader_parameter/is_grey = false
 
 [node name="Tips" type="VBoxContainer"]
 anchors_preset = -1
@@ -54,10 +60,11 @@ script = ExtResource("3_myr7b")
 
 [node name="TipButton" type="TextureButton" parent="."]
 unique_name_in_owner = true
+material = SubResource("ShaderMaterial_y3xk4")
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.71
 theme = ExtResource("5_n0aga")
-texture_normal = ExtResource("6_bmune")
+texture_normal = ExtResource("6_1y1n5")
 ignore_texture_size = true
 stretch_mode = 5

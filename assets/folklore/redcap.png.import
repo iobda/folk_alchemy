@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3g0i1sh0ibyl"
-path="res://.godot/imported/help.png-c25f10aa7a1b9d3629b34cea70981949.ctex"
+uid="uid://bk2uu0yiofeh1"
+path="res://.godot/imported/redcap.png-cba7b291b83fe82973d7a12cad9d8497.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/help.png"
-dest_files=["res://.godot/imported/help.png-c25f10aa7a1b9d3629b34cea70981949.ctex"]
+source_file="res://assets/folklore/redcap.png"
+dest_files=["res://.godot/imported/redcap.png-cba7b291b83fe82973d7a12cad9d8497.ctex"]
 
 [params]
 
