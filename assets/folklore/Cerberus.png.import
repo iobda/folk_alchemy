@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3g0i1sh0ibyl"
-path="res://.godot/imported/help.png-c25f10aa7a1b9d3629b34cea70981949.ctex"
+uid="uid://dnx326x5gfejx"
+path="res://.godot/imported/cerberus.png-4d265bc155bb4eafa51c9d68d7b0e04c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/help.png"
-dest_files=["res://.godot/imported/help.png-c25f10aa7a1b9d3629b34cea70981949.ctex"]
+source_file="res://assets/folklore/cerberus.png"
+dest_files=["res://.godot/imported/cerberus.png-4d265bc155bb4eafa51c9d68d7b0e04c.ctex"]
 
 [params]
 

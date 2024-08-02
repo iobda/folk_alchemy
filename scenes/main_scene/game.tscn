@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://scenes/main_scene/guidebook_button.gd" id="5_vsqrg"]
 [ext_resource type="Texture2D" uid="uid://vo5y2eanu2hx" path="res://assets/icons/book.png" id="5_xykkt"]
 [ext_resource type="PackedScene" uid="uid://o4tec64a4n0p" path="res://scenes/merger.tscn" id="8_8nnqh"]
-[ext_resource type="Texture2D" uid="uid://bkbxaniyf0i4v" path="res://assets/icons/help.png" id="9_kqt3y"]
+[ext_resource type="Texture2D" uid="uid://d3g0i1sh0ibyl" path="res://assets/icons/help.png" id="9_kqt3y"]
 [ext_resource type="Script" path="res://scenes/main_scene/how_to_play_button.gd" id="10_wlxf3"]
 
 [node name="GameState" type="Control"]
@@ -25,136 +25,83 @@ theme = ExtResource("1_7oesa")
 script = ExtResource("1_icmeg")
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_x4nba")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 195.0
-offset_top = 77.0
-offset_right = -61.0
-offset_bottom = -79.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Spacer1" type="Control" parent="HBoxContainer"]
+[node name="Guidebook&Tips" type="VBoxContainer" parent="."]
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-size_flags_stretch_ratio = 3.6
+anchor_top = 0.5
+anchor_right = 0.236
+anchor_bottom = 0.5
+offset_top = -540.0
+offset_right = -0.120026
+offset_bottom = 540.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.31
+alignment = 1
 
-[node name="LeftPage" parent="HBoxContainer" instance=ExtResource("3_tb0wv")]
+[node name="MarginTop" type="Control" parent="Guidebook&Tips"]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
 
-[node name="Spacer2" type="Control" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-size_flags_stretch_ratio = 1.78
-
-[node name="RightPage" parent="HBoxContainer" instance=ExtResource("3_tb0wv")]
-layout_mode = 2
-_is_right_page = true
-
-[node name="Spacer3" type="Control" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-size_flags_stretch_ratio = 1.15
-
-[node name="Tips" parent="." instance=ExtResource("4_5o2c7")]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.65
-anchor_bottom = 0.65
-offset_right = 378.0
-offset_bottom = 376.0
-grow_vertical = 0
-
-[node name="GuideBookButton" type="TextureButton" parent="."]
+[node name="FolkloreCounter" type="Label" parent="Guidebook&Tips"]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0126667
-anchor_top = 0.0246667
-anchor_right = 0.19075
-anchor_bottom = 0.381963
-offset_left = -0.320007
-offset_top = 0.359985
-offset_right = 0.759979
-offset_bottom = 0.47998
-texture_normal = ExtResource("5_xykkt")
-ignore_texture_size = true
-stretch_mode = 5
-script = ExtResource("5_vsqrg")
-metadata/_edit_use_anchors_ = true
-
-[node name="FolkloreCounter" type="Label" parent="."]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.05325
-anchor_top = 0.404963
-anchor_right = 0.147667
-anchor_bottom = 0.455111
-offset_left = 0.759995
-offset_top = -0.360008
-offset_right = -0.52002
-offset_bottom = -0.52002
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
 theme_override_font_sizes/font_size = 32
 text = "0/4"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_a2jdn")
-metadata/_edit_use_anchors_ = true
 
-[node name="Debug" type="Control" parent="."]
-layout_mode = 1
-anchor_right = 0.189
-anchor_bottom = 0.101
-offset_right = -0.880005
-offset_bottom = -0.0800018
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Debug"]
-layout_mode = 0
-offset_right = 329.0
-offset_bottom = 116.0
-
-[node name="DebugLeft" type="Label" parent="Debug/VBoxContainer"]
+[node name="GuideBookButton" type="TextureButton" parent="Guidebook&Tips"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-text = "Left is none"
+size_flags_stretch_ratio = 1.15
+texture_normal = ExtResource("5_xykkt")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("5_vsqrg")
 
-[node name="DebugRight" type="Label" parent="Debug/VBoxContainer"]
+[node name="HowToPlayButton" type="TextureButton" parent="Guidebook&Tips"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-text = "Right is none"
+size_flags_stretch_ratio = 0.2
+texture_normal = ExtResource("9_kqt3y")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("10_wlxf3")
+
+[node name="Tips" parent="Guidebook&Tips" instance=ExtResource("4_5o2c7")]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.81
+
+[node name="Pages" type="HBoxContainer" parent="."]
+layout_mode = 2
+anchor_left = 0.238
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.039978
+size_flags_horizontal = 3
+
+[node name="LeftPage" parent="Pages" instance=ExtResource("3_tb0wv")]
+layout_mode = 2
+
+[node name="RightPage" parent="Pages" instance=ExtResource("3_tb0wv")]
+layout_mode = 2
+_is_right_page = true
 
 [node name="Merger" parent="." instance=ExtResource("8_8nnqh")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
-
-[node name="HowToPlayButton" type="TextureButton" parent="."]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 124.0
-offset_top = 557.0
-offset_right = 644.0
-offset_bottom = 1077.0
-scale = Vector2(0.25, 0.25)
-texture_normal = ExtResource("9_kqt3y")
-stretch_mode = 5
-script = ExtResource("10_wlxf3")

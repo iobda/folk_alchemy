@@ -4,22 +4,25 @@ extends Control
 var _right_element_selected: String = "none":
 	set(new_var):
 		_right_element_selected = new_var
-		debug_right.text = "Right Element - " + new_var
 var _left_element_selected: String = "none":
 	set(new_var):
 		_left_element_selected = new_var
-		debug_right.text = "Left Element - " + new_var
 var _popup_folklore_pc: PackedScene = preload("res://scenes/pop_folklore.tscn")
 ## Last opened page number in guidebook
 var last_current_page: int = 0
 
-@onready var debug_left: Label = %DebugLeft
-@onready var debug_right: Label = %DebugRight
 @onready var _merger: Control = %Merger
 
 func _ready() -> void:
+	((self as GameState).get_viewport() as Window).size = DisplayServer.screen_get_size()
 	_merger.visible = false
 	_connect_signals()
+	call_deferred("update_resolution")
+	
+
+#Function to sync with platform resolution
+func _update_resolution() -> void:
+	get_tree().root.size = DisplayServer.screen_get_size()
 
 func _connect_signals() -> void:
 	Events.category_closed.connect(_on_category_closed)

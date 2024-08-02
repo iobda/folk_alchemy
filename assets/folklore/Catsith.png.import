@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jd4iiruc6ly4"
-path="res://.godot/imported/right-page.png-599ce082125cb734fe3fff8a5f8bb2a8.ctex"
+uid="uid://cejki572peshm"
+path="res://.godot/imported/catsith.png-ad97592130f622a5bba98c6d217ad706.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background-book/right-page.png"
-dest_files=["res://.godot/imported/right-page.png-599ce082125cb734fe3fff8a5f8bb2a8.ctex"]
+source_file="res://assets/folklore/catsith.png"
+dest_files=["res://.godot/imported/catsith.png-ad97592130f622a5bba98c6d217ad706.ctex"]
 
 [params]
 
