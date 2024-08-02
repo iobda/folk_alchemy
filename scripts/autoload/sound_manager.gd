@@ -1,16 +1,16 @@
 extends Node
 
+var what: int
 var _music: AudioStreamPlayer
 var _sucess_sfx: AudioStreamPlayer
 var _unsucess_sfx: AudioStreamPlayer
 var _ui_click_sfx: AudioStreamPlayer
-var what: int
 
 func _ready() -> void:
 	#music
 	_music = AudioStreamPlayer.new()
 	_music.bus = "Music"
-	_music.stream = preload("res://assets/sound_and_music/Etirwer-_Looped_ theme.wav")
+	_music.stream = preload("res://assets/sound_and_music/Etirwer-_Looped_theme.wav")
 	#
 	#sucess_sfx
 	_sucess_sfx = AudioStreamPlayer.new()

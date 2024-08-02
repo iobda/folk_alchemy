@@ -19,8 +19,13 @@ shader = ExtResource("2_rbo7r")
 shader_parameter/is_visible = true
 
 [node name="Folklore" type="AspectRatioContainer"]
-offset_right = 1920.0
-offset_bottom = 1080.0
+anchors_preset = -1
+anchor_right = 0.411
+anchor_bottom = 0.383
+offset_right = 0.880005
+offset_bottom = 0.359985
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_n3bth")
 ratio = 2.11
 stretch_mode = 0
@@ -71,8 +76,12 @@ stretch_mode = 4
 
 [node name="TextContainer" type="VBoxContainer" parent="ContentHBox"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.9
+size_flags_horizontal = 11
+size_flags_vertical = 9
+
+[node name="MarginTop" type="Control" parent="ContentHBox/TextContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="FolkloreName" type="Label" parent="ContentHBox/TextContainer"]
 unique_name_in_owner = true
@@ -80,7 +89,7 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.6
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 40
 text = "СУККУБ"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -90,8 +99,13 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.2
-theme_override_font_sizes/normal_font_size = 13
+theme_override_font_sizes/normal_font_size = 20
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+scroll_active = false
+
+[node name="MarginDown" type="Control" parent="ContentHBox/TextContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="MarginLeft" type="Control" parent="ContentHBox"]
 layout_mode = 2

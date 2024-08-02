@@ -118,7 +118,7 @@ var _folklores: Dictionary ={
 	"bastet": {
 		"name": "Бастет",
 		"icon": "res://assets/folklore/bastet.png",
-		"description": "Лорем ипсум пси пси спим",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		"source_1": "cat",
 		"source_2": "love",
 		"state": "closed"
@@ -126,7 +126,7 @@ var _folklores: Dictionary ={
 	"succubus": {
 		"name": "Суккуб",
 		"icon": "res://assets/folklore/succubus.png",
-		"description": "Лорем ипсум пси пси спим",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		"source_1": "soul",
 		"source_2": "love",
 		"state": "closed"
@@ -134,7 +134,7 @@ var _folklores: Dictionary ={
 	"phoenix": {
 		"name": "Феникс",
 		"icon": "res://assets/folklore/phoenix.png",
-		"description": "Лорем ипсум пси пси спим",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		"source_1": "hope",
 		"source_2": "eruption",
 		"state": "closed"
@@ -142,7 +142,7 @@ var _folklores: Dictionary ={
 	"harpy": {
 		"name": "Гарпия",
 		"icon": "res://assets/folklore/harpy.png",
-		"description": "Лорем ипсум пси пси спим",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		"source_1": "fear",
 		"source_2": "tornado",
 		"state": "closed"
@@ -150,7 +150,7 @@ var _folklores: Dictionary ={
 	"banshi": {
 		"name": "Банши",
 		"icon": "res://assets/folklore/banshi.png",
-		"description": "Лорем ипсум пси пси спим",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		"source_1": "voice",
 		"source_2": "sadness",
 		"state": "closed"
@@ -158,7 +158,7 @@ var _folklores: Dictionary ={
 	"gorgon": {
 		"name": "Медуза Горгона",
 		"icon": "res://assets/folklore/gorgon.png",
-		"description": "Лорем ипсум пси пси спим",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		"source_1": "snake",
 		"source_2": "eyes",
 		"state": "closed"
@@ -166,7 +166,7 @@ var _folklores: Dictionary ={
 	"ifrit": {
 		"name": "Ифрит",
 		"icon": "res://assets/folklore/ifrit.png",
-		"description": "Лорем ипсум пси пси спим",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		"source_1": "eruption",
 		"source_2": "hatred",
 		"state": "closed"
@@ -174,7 +174,7 @@ var _folklores: Dictionary ={
 	"siren": {
 		"name": "Сирена",
 		"icon": "res://assets/folklore/siren.png",
-		"description": "Лорем ипсум пси пси спим",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		"source_1": "voice",
 		"source_2": "snake",
 		"state": "closed"
@@ -182,7 +182,7 @@ var _folklores: Dictionary ={
 	"vampire_cat": {
 		"name": "Кот-Вампир",
 		"icon": "res://assets/folklore/vampir_cat.png",
-		"description": "Лорем ипсум пси пси спим",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		"source_1": "cat",
 		"source_2": "bat",
 		"state": "closed"

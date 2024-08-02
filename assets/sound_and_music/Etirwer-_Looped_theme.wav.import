@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bynpbqr4dnatj"
-path="res://.godot/imported/Etirwer-_Looped_ theme.wav-831a37a01afbc0f420fa5597dab1fcfd.sample"
+path="res://.godot/imported/Etirwer-_Looped_theme.wav-51b4a643a1bdee81af84e98689564963.sample"
 
 [deps]
 
-source_file="res://assets/sound_and_music/Etirwer-_Looped_ theme.wav"
-dest_files=["res://.godot/imported/Etirwer-_Looped_ theme.wav-831a37a01afbc0f420fa5597dab1fcfd.sample"]
+source_file="res://assets/sound_and_music/Etirwer-_Looped_theme.wav"
+dest_files=["res://.godot/imported/Etirwer-_Looped_theme.wav-51b4a643a1bdee81af84e98689564963.sample"]
 
 [params]
 
