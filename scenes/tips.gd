@@ -3,7 +3,7 @@ extends VBoxContainer
 signal  tips_available_updated(tips: int)
 
 var _tiped_folklore: String = "none"
-var _tips_available: int = 1:
+var _tips_available: int = 3:
 	set(new_amount):
 		_tips_available = new_amount
 		if(_tips_available == 0 or _tips_available == 1):
