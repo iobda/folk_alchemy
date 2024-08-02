@@ -20,9 +20,6 @@ var last_current_page: int = 0
 func _ready() -> void:
 	_merger.visible = false
 	_connect_signals()
-	yandex()
-
-func yandex() -> void:
 	YandexSDK.init_game()
 
 func _connect_signals() -> void:
