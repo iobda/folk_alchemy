@@ -1,6 +1,7 @@
 class_name GameState
 extends Control
 
+var last_current_page: int = 0
 var _right_element_selected: String = "none":
 	set(new_var):
 		_right_element_selected = new_var
@@ -9,7 +10,6 @@ var _left_element_selected: String = "none":
 		_left_element_selected = new_var
 var _popup_folklore_pc: PackedScene = preload("res://scenes/pop_folklore.tscn")
 ## Last opened page number in guidebook
-var last_current_page: int = 0
 
 @onready var _merger: Control = %Merger
 
@@ -17,6 +17,7 @@ func _ready() -> void:
 	((self as GameState).get_viewport() as Window).size = DisplayServer.screen_get_size()
 	_merger.visible = false
 	_connect_signals()
+	YandexSDK.init_game()
 	call_deferred("_update_resolution")
 
 #Function to sync with platform resolution

@@ -1,6 +1,6 @@
 extends VBoxContainer
 
-signal  tips_available_updated(tips: int)
+signal tips_available_updated(tips: int)
 
 var _tiped_folklore: String = "none"
 var _tips_available: int = 3:
@@ -43,7 +43,8 @@ func _enable_elements() -> void:
 
 func _on_tip_button_pressed() -> void:
 	if(_tips_available == 0):
-		return
+		YandexSDK.show_rewarded_ad()
+		_tips_available += 1
 	_tip_button.disabled = true
 	var sources: Array[String]
 	for folk: String in DBElements.get_folklores_elements_bd_names():
