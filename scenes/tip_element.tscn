@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://b32a4y2djbyok"]
+
+[ext_resource type="PackedScene" uid="uid://qq55blymvfuq" path="res://scenes/element.tscn" id="1_jcru8"]
+[ext_resource type="Script" path="res://scenes/tip_element.gd" id="2_ex5dj"]
+
+[node name="TipElement" instance=ExtResource("1_jcru8")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 7.62939e-06
+offset_top = 0.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.01, 0.01)
+script = ExtResource("2_ex5dj")
+
+[node name="ElementFrame" parent="." index="0"]
+z_index = -1
+z_as_relative = false
+
+[node name="ContainerSpace" parent="ElementFrame" index="1"]
+z_index = 1
+z_as_relative = false
+
+[node name="ElementAspectRatioContainer" parent="ElementFrame/ContainerSpace" index="0"]
+scale = Vector2(1, 1)
+stretch_mode = 0

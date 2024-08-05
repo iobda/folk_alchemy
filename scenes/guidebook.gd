@@ -32,6 +32,7 @@ func _ready() -> void:
 
 func _init_guidebook() -> void:
 	var folkore_count: int = DBElements.get_folklores_elements_bd_names().size()
+	@warning_ignore("integer_division")
 	var all_pages: int = folkore_count/4
 	if(folkore_count%4 != 0):
 		all_pages+=1

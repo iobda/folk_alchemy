@@ -15,9 +15,11 @@ var _tips_available: int = 3:
 @onready var _left_element: TipElement = %LeftElement
 @onready var _right_element: TipElement = %RightElement
 @onready var _tip_button: TextureButton = %TipButton
+@onready var _plus_texture: TextureRect = %PlusTexture
 
 func _ready() -> void:
 	_tips_amount.text = str(_tips_available)
+	_plus_texture.hide()
 	_connect_signals()
 	_init_elements()
 
@@ -32,10 +34,12 @@ func _init_elements() -> void:
 func _disable_elements() -> void:
 	_left_element.disable_tip_element()
 	_right_element.disable_tip_element()
+	_plus_texture.hide()
 
 func _enable_elements() -> void:
 	_left_element.enable_tip_element()
 	_right_element.enable_tip_element()
+	_plus_texture.show()
 
 func _on_tip_button_pressed() -> void:
 	if(_tips_available == 0):
