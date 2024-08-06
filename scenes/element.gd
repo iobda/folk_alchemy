@@ -55,6 +55,7 @@ func _stop_animation(_left_element_selected: String, _right_element_selected: St
 	_clear_animation()
 
 func _on_element_chosen(element_db_name: String , in_is_right: bool) -> void:
+	SoundManager.play_ui_click_sfx()
 	if(element_db_name != _element_db_name and in_is_right == is_right):
 		_clear_animation()
 
@@ -82,7 +83,9 @@ func _on_texture_button_pressed() -> void:
 
 func _on_fail_merge(_left_element_selected: String, _right_element_selected: String) -> void:
 	if _element_db_name == _left_element_selected or _element_db_name == _right_element_selected:
+		SoundManager.stop_ui_click_sfx()
 		_animation_player.play("merge_failed")
+		SoundManager.play_unsucess_sfx()
 		await _animation_player.animation_finished
 		_shader_pulsar.material.set("shader_parameter/is_turn_on", false)
 		_animation_player.play("RESET")

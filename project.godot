@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Events="*res://scripts/autoload/event_bus.gd"
-SoundManager="*res://scripts/autoload/sound_manager.gd"
+SoundManager="*res://scenes/sound_manager.tscn"
 DBElements="*res://scripts/autoload/db_elements.gd"
 GlobalVariables="*res://scripts/autoload/global_variables.gd"
 YandexSDK="*res://addons/yandex_sdk/yandex_sdk.gd"

@@ -19,6 +19,7 @@ func _on_guidebook_closed() -> void:
 	self.show()
 
 func _on_guidebook_pressed() -> void:
+	SoundManager.play_ui_click_sfx()
 	var folklore_guidebooke: GuideBook = _guidebook_pc.instantiate() as GuideBook
 	add_child(folklore_guidebooke)
 	self.hide()

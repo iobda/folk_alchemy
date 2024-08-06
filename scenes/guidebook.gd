@@ -68,6 +68,7 @@ func _update_buttons() -> void:
 		_left_arrow_button.make_unavailable()
 
 func _on_exit_pressed() -> void:
+	SoundManager.play_ui_click_sfx()
 	if(is_instance_valid((get_tree().current_scene as GameState))):
 		(get_tree().current_scene as GameState).last_current_page = _current_page
 	Events.guidebook_closed.emit()

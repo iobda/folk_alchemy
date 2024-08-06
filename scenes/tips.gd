@@ -42,6 +42,7 @@ func _enable_elements() -> void:
 	_plus_texture.show()
 
 func _on_tip_button_pressed() -> void:
+	SoundManager.play_ui_click_sfx()
 	if(_tips_available == 0):
 		YandexSDK.show_rewarded_ad()
 		_tips_available += 1

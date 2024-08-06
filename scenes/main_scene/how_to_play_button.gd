@@ -11,5 +11,6 @@ func connect_signals() -> void:
 	_how_to_play_button.pressed.connect(_on_how_to_play_pressed)
 
 func _on_how_to_play_pressed() -> void:
+	SoundManager.play_ui_click_sfx()
 	var how_to_play: HowToPlay = _how_to_play_pc.instantiate() as HowToPlay
 	add_child(how_to_play)
