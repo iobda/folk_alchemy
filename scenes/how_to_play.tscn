@@ -7,7 +7,10 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7a8it"]
 shader = ExtResource("2_gffv8")
-shader_parameter/lod = 3.404
+shader_parameter/blur_radius = 1.0
+shader_parameter/blur_amount = 5.0
+shader_parameter/blur_inner = 0.082
+shader_parameter/blur_outer = 0.48
 
 [node name="HowToPlay" type="CanvasLayer"]
 script = ExtResource("1_oqccu")
@@ -26,27 +29,34 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -380.0
-offset_top = -396.0
-offset_right = 730.0
-offset_bottom = 401.0
+offset_left = -543.0
+offset_top = -530.0
+offset_right = 850.0
+offset_bottom = 535.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_aycbj")
-theme_override_font_sizes/normal_font_size = 44
-text = "Тут типа много текста о том как играть в игру можно еще стрелочки раставить и всякое показывать еще тут текст или стрелочки еще тут текст или стрелочки еще тут текст или стрелочки еще тут текст или стрелочки еще тут текст или стрелочки еще тут текст или стрелочки еще тут текст или стрелочки еще тут текст или стрелочки еще тут текст или стрелочки еще тут текст или стрелочки еще тут текст или стрелочки"
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[color=red]-Нужно собрать все фольклоры, но КАААААААК? [/color]
+
+1. Посмотри подсказку в справочнике – НАЖМИ на книгу слева на экране. Ты увидишь неоткрытые и открытые фольклоры. [color=green]У каждого фольклора есть подсказка![/color]
+
+2. Используя эту подсказку догадайся [color=green]из[/color] каких  [color=green]ДВУХ базовых элементов состоит фольклор.[/color]
+
+3. Базовые элементы разделены по 4 категориям: человек, эмоции, животные и стихии. [color=yellow]СОБЕРИ ФОЛЬКЛОР[/color],[color=green] раскрывая эти категории и выбирая элементы из левой и правой страницы![/color]"
 
 [node name="Exit" type="TextureButton" parent="."]
 unique_name_in_owner = true
 anchors_preset = -1
 anchor_left = -0.00152082
 anchor_top = -0.00392593
-anchor_right = 0.243021
-anchor_bottom = 0.376
+anchor_right = -0.001
 offset_left = 0.919983
 offset_top = 0.240005
-offset_right = 0.399994
-offset_bottom = -0.0800171
+offset_right = 235.92
+offset_bottom = 242.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("3_aycbj")
