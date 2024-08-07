@@ -19,6 +19,7 @@ func _ready() -> void:
 	_connect_signals()
 	YandexSDK.init_game()
 	call_deferred("_update_resolution")
+	SoundManager.play_music()
 
 #Function to sync with platform resolution
 func _update_resolution() -> void:

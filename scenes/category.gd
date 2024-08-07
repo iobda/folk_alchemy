@@ -68,12 +68,14 @@ func _on_folklores_to_merged_changed(new_amount: int) -> void:
 	_counter.text = str(new_amount)
 
 func _on_category_opened(in_category: DBElements.CategoryType, is_right_category: bool)->void:
+	SoundManager.play_ui_click_sfx()
 	if(is_right_category != is_right):
 		return
 	if(in_category != category):
 		_category_animation_player.play("disappear")
 
 func _on_category_closed(is_right_category: bool)->void:
+	SoundManager.play_ui_click_sfx()
 	if(is_right == is_right_category):
 		(self as Category).show()
 		(self as Category).process_mode = Node.PROCESS_MODE_ALWAYS
