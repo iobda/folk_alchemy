@@ -10,4 +10,5 @@ func connect_signals() -> void:
 	_exit.pressed.connect(_on_pressed_exit)
 
 func _on_pressed_exit() -> void:
+	SoundManager.play_ui_click_sfx()
 	queue_free()

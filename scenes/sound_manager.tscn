@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8tw37roju6mr"]
+
+[ext_resource type="Script" path="res://scripts/autoload/sound_manager.gd" id="1_4q6mv"]
+[ext_resource type="AudioStream" uid="uid://bynpbqr4dnatj" path="res://assets/sound_and_music/Etirwer-_Looped_theme.wav" id="2_ghq4j"]
+[ext_resource type="AudioStream" uid="uid://dtedujmdthq5q" path="res://assets/sound_and_music/matched.wav" id="3_xhwko"]
+[ext_resource type="AudioStream" uid="uid://bnvf3hmcjvji8" path="res://assets/sound_and_music/not_matched.wav" id="4_fddo7"]
+[ext_resource type="AudioStream" uid="uid://uyb564cre25f" path="res://assets/sound_and_music/ui_click.wav" id="5_tvvbg"]
+
+[node name="SoundManager" type="Node"]
+script = ExtResource("1_4q6mv")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_ghq4j")
+autoplay = true
+bus = &"Music"
+
+[node name="MergeSuccesSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_xhwko")
+bus = &"SFX"
+
+[node name="MergeFailedSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_fddo7")
+bus = &"SFX"
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_tvvbg")
+bus = &"SFX"

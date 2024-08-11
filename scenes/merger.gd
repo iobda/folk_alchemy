@@ -24,6 +24,8 @@ func set_left_element(element_db_name: String)->void:
 	_left_element.set_element_data(_left_element_selected)
 
 func _animation_merge(folkore_bd_name: String) -> void:
+	SoundManager.stop_ui_click_sfx()
+	SoundManager.play_sucess_sfx()
 	_animation_player.play("Merge")
 	await _animation_player.animation_finished
 	spawn_popup(folkore_bd_name)

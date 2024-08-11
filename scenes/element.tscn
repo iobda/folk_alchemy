@@ -169,7 +169,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.05, 1.05)
 
 [node name="ElementTextureButton" type="TextureButton" parent="ElementFrame/ContainerSpace/ElementAspectRatioContainer"]
 unique_name_in_owner = true
