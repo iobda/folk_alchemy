@@ -186,7 +186,135 @@ var _folklores: Dictionary ={
 		"source_1": "cat",
 		"source_2": "bat",
 		"state": "closed"
-	}
+	},
+	"promethean_fire": {
+		"name": "Огонь Прометея",
+		"icon": "res://assets/folklore/vampir_cat.png",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"source_1": "eruption",
+		"source_2": "eruption",
+		"state": "closed"
+	},
+	"dragon_ball": {
+		"name": "Жемчуг дракона",
+		"icon": "res://assets/folklore/vampir_cat.png",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"source_1": "sea",
+		"source_2": "sea",
+		"state": "closed"
+	},
+	"catsith": {
+		"name": "Кот-Вампир",
+		"icon": "res://assets/folklore/Catsith.png",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"source_1": "cat",
+		"source_2": "soul",
+		"state": "closed"
+	},
+	"camazotz": {
+		"name": "Камазотц",
+		"icon": "res://assets/folklore/camazotz.png",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"source_1": "bat",
+		"source_2": "earthquake",
+		"state": "closed"
+	},
+	"cerbeus": {
+		"name": "Цербер",
+		"icon": "res://assets/folklore/cerberus.png",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"source_1": "blood",
+		"source_2": "wolf",
+		"state": "closed"
+	},
+	"redcap": {
+		"name": "Красный колпак",
+		"icon": "res://assets/folklore/redcap.png",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"source_1": "hatred",
+		"source_2": "blood",
+		"state": "closed"
+	},
+	"fujin": {
+		"name": "Фудзин",
+		"icon": "res://assets/folklore/vampir_cat.png",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"source_1": "tornado",
+		"source_2": "hatred",
+		"state": "closed"
+	},
+	"weeping_woman": {
+		"name": "Плакашильца",
+		"icon": "res://assets/folklore/vampir_cat.png",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"source_1": "tornado",
+		"source_2": "sadness",
+		"state": "closed"
+	},
+	"werewolf": {
+		"name": "Оборотень",
+		"icon": "res://assets/folklore/vampir_cat.png",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"source_1": "wolf",
+		"source_2": "blood",
+		"state": "closed"
+	},
+	"basilisk": {
+		"name": "Василиск",
+		"icon": "res://assets/folklore/vampir_cat.png",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"source_1": "eyes",
+		"source_2": "snake",
+		"state": "closed"
+	},
+	"rudzin": {
+		"name": "Рюдзин",
+		"icon": "res://assets/folklore/vampir_cat.png",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"source_1": "snake",
+		"source_2": "sea",
+		"state": "closed"
+	},
+	"kitsune": {
+		"name": "Рюдзин",
+		"icon": "res://assets/folklore/vampir_cat.png",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"source_1": "love",
+		"source_2": "fox",
+		"state": "closed"
+	},
+	"koyote": {
+		"name": "Койот",
+		"icon": "res://assets/folklore/vampir_cat.png",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"source_1": "snake",
+		"source_2": "fox",
+		"state": "closed"
+	},
+	"cu_sith": {
+		"name": "Собака мира",
+		"icon": "res://assets/folklore/vampir_cat.png",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"source_1": "wolf",
+		"source_2": "soul",
+		"state": "closed"
+	},
+	"kanashibari": {
+		"name": "Канашибари",
+		"icon": "res://assets/folklore/vampir_cat.png",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"source_1": "love",
+		"source_2": "fox",
+		"state": "closed"
+	},
+	"25": {
+		"name": "25",
+		"icon": "res://assets/folklore/vampir_cat.png",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"source_1": "love",
+		"source_2": "love",
+		"state": "closed"
+	},
 }
 
 func get_category_name(category: CategoryType) -> String:
