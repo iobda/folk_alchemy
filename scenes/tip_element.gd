@@ -8,7 +8,7 @@ func _ready() -> void:
 	(self as TipElement).hide()
 	_element_texture_button.disabled = true
 
-func _connect_signals() -> void: 
+func _connect_signals() -> void:
 	return
 
 func enable_tip_element() -> void:
