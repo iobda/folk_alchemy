@@ -43,12 +43,12 @@ var _elements: Dictionary = {
 		"category" : CategoryType.EMOTIONS
 	},
 	"eruption": {
-		"name": "Извержение вулкана / Огонь",
+		"name": "Огонь",
 		"icon": "res://assets/element-icons/eruption.png",
 		"category" : CategoryType.NATURAL_DISASTERS
 	},
 	"tornado": {
-		"name": "Ураган / Ветер",
+		"name": "Ветер",
 		"icon": "res://assets/element-icons/tornado.png",
 		"category" : CategoryType.NATURAL_DISASTERS
 	},
@@ -68,7 +68,7 @@ var _elements: Dictionary = {
 		"category" : CategoryType.HUMAN
 	},
 	"earthquake": {
-		"name": "Землетрясение",
+		"name": "Земля",
 		"icon": "res://assets/element-icons/earthquake.png",
 		"category" : CategoryType.NATURAL_DISASTERS
 	},
@@ -93,7 +93,7 @@ var _elements: Dictionary = {
 		"category" : CategoryType.EMOTIONS
 	},
 	"sea": {
-		"name": "Море / Вода",
+		"name": "Вода",
 		"icon": "res://assets/element-icons/sea.png",
 		"category" : CategoryType.NATURAL_DISASTERS
 	},

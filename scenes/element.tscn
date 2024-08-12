@@ -23,7 +23,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ElementFrame/ContainerSpace/ElementAspectRatioContainer:scale")
+tracks/0/path = NodePath("VBoxContainer/AspectRatioContainer/ElementFrame/ContainerSpace/ElementAspectRatioContainer:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -35,7 +35,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ElementFrame/ContainerSpace/ElementAspectRatioContainer:position")
+tracks/1/path = NodePath("VBoxContainer/AspectRatioContainer/ElementFrame/ContainerSpace/ElementAspectRatioContainer:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -84,7 +84,7 @@ length = 1.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ElementFrame/ContainerSpace/ElementAspectRatioContainer/ElementTextureButton:position")
+tracks/0/path = NodePath("VBoxContainer/AspectRatioContainer/ElementFrame/ContainerSpace/ElementAspectRatioContainer/ElementTextureButton:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -96,7 +96,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ElementFrame/ContainerSpace/ElementAspectRatioContainer/ElementTextureButton:scale")
+tracks/1/path = NodePath("VBoxContainer/AspectRatioContainer/ElementFrame/ContainerSpace/ElementAspectRatioContainer/ElementTextureButton:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -113,7 +113,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ElementFrame/ContainerSpace/ElementAspectRatioContainer:scale")
+tracks/0/path = NodePath("VBoxContainer/AspectRatioContainer/ElementFrame/ContainerSpace/ElementAspectRatioContainer:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -140,28 +140,38 @@ anchor_right = 0.039
 anchor_bottom = 0.069
 offset_left = -74.88
 offset_top = -74.52
-offset_right = 75.12
-offset_bottom = 75.48
+offset_right = 118.12
+offset_bottom = 90.48
+scale = Vector2(0.01, 0.01)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 stretch_mode = 1
 script = ExtResource("1_2xiu2")
 
-[node name="ElementFrame" type="PanelContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ElementFrame" type="PanelContainer" parent="VBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_lbm7a")
 
-[node name="ShaderPulsar" type="PanelContainer" parent="ElementFrame"]
+[node name="ShaderPulsar" type="PanelContainer" parent="VBoxContainer/AspectRatioContainer/ElementFrame"]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_fje2l")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_lbm7a")
 
-[node name="ContainerSpace" type="Control" parent="ElementFrame"]
+[node name="ContainerSpace" type="Control" parent="VBoxContainer/AspectRatioContainer/ElementFrame"]
 layout_mode = 2
 
-[node name="ElementAspectRatioContainer" type="AspectRatioContainer" parent="ElementFrame/ContainerSpace"]
+[node name="ElementAspectRatioContainer" type="AspectRatioContainer" parent="VBoxContainer/AspectRatioContainer/ElementFrame/ContainerSpace"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -170,7 +180,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ElementTextureButton" type="TextureButton" parent="ElementFrame/ContainerSpace/ElementAspectRatioContainer"]
+[node name="ElementTextureButton" type="TextureButton" parent="VBoxContainer/AspectRatioContainer/ElementFrame/ContainerSpace/ElementAspectRatioContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
@@ -178,16 +188,13 @@ texture_normal = ExtResource("3_7nyd2")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="LabelMarginContainer" type="MarginContainer" parent="."]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/margin_bottom = -50
-
-[node name="ElementName" type="Label" parent="LabelMarginContainer"]
+[node name="ElementName" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 8
+size_flags_stretch_ratio = 0.0
+theme_override_font_sizes/font_size = 30
 text = "sdsd FD"
 horizontal_alignment = 1
 autowrap_mode = 2
