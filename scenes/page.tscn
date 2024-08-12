@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ctm5j1jfg6oyp"]
+[gd_scene load_steps=8 format=3 uid="uid://ctm5j1jfg6oyp"]
 
 [ext_resource type="Script" path="res://scenes/page.gd" id="1_widm8"]
 [ext_resource type="Theme" uid="uid://c1wlig7bg6hj6" path="res://resources/themes/left_page_background.tres" id="2_stl5s"]
@@ -18,7 +18,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(251.52, 137), Vector2(215, 200)]
+"values": [Vector2(251.52, 137), Vector2(220, 150)]
 }
 
 [sub_resource type="Animation" id="Animation_p7r5m"]
@@ -34,27 +34,11 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(251.52, 137), Vector2(215, 200)]
-}
-
-[sub_resource type="Animation" id="Animation_q6fog"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PageBackGround/Category4:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(157.52, 128)]
+"values": [Vector2(251.52, 137), Vector2(220, 150)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cc5x3"]
 _data = {
-"RESET": SubResource("Animation_q6fog"),
 "left_focus_move": SubResource("Animation_bjs8h"),
 "right_focus_move": SubResource("Animation_p7r5m")
 }
@@ -80,10 +64,10 @@ theme = ExtResource("2_stl5s")
 [node name="ElementsGrid" type="GridContainer" parent="PageBackGround"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.120497
-anchor_top = 0.641975
-anchor_right = 0.902672
-anchor_bottom = 0.902778
+anchor_left = 0.0799087
+anchor_top = 0.526852
+anchor_right = 0.953831
+anchor_bottom = 0.957407
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -97,7 +81,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-theme_override_constants/separation = -70
+theme_override_constants/separation = -50
 
 [node name="Element" parent="PageBackGround/ElementsGrid/ElementsHBoxContainer" instance=ExtResource("3_oi5ix")]
 visible = false
@@ -118,7 +102,7 @@ size_flags_vertical = 1
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
-theme_override_constants/separation = -220
+theme_override_constants/separation = -150
 
 [node name="Element4" parent="PageBackGround/ElementsGrid/ElementsHBoxContainer2" instance=ExtResource("3_oi5ix")]
 visible = false
@@ -138,12 +122,11 @@ anchor_left = 0.555254
 anchor_top = 0.209457
 anchor_right = 0.918254
 anchor_bottom = 0.475457
-offset_left = -11.1373
-offset_top = 1.27196
-offset_right = -10.8508
-offset_bottom = 0.904236
+offset_left = -0.562195
+offset_top = 2.78644
+offset_right = -0.275757
+offset_bottom = 2.78644
 category = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Category3" parent="PageBackGround" instance=ExtResource("3_hnd5t")]
 layout_mode = 1
@@ -187,3 +170,4 @@ reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_cc5x3")
 }
+playback_auto_capture = false

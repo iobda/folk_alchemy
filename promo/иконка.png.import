@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cejki572peshm"
-path="res://.godot/imported/catsith.png-ad97592130f622a5bba98c6d217ad706.ctex"
+uid="uid://bvyn6f220e20h"
+path="res://.godot/imported/иконка.png-810123039ec1b8f7f3f5c92afe7c90b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/folklore/catsith.png"
-dest_files=["res://.godot/imported/catsith.png-ad97592130f622a5bba98c6d217ad706.ctex"]
+source_file="res://promo/иконка.png"
+dest_files=["res://.godot/imported/иконка.png-810123039ec1b8f7f3f5c92afe7c90b0.ctex"]
 
 [params]
 

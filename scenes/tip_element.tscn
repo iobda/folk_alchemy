@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b32a4y2djbyok"]
+[gd_scene load_steps=5 format=3 uid="uid://b32a4y2djbyok"]
 
 [ext_resource type="PackedScene" uid="uid://qq55blymvfuq" path="res://scenes/element.tscn" id="1_jcru8"]
 [ext_resource type="Script" path="res://scenes/tip_element.gd" id="2_ex5dj"]
+[ext_resource type="Shader" path="res://resources/shaders/select_element.gdshader" id="3_g7hjs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_63nu1"]
+resource_local_to_scene = true
+shader = ExtResource("3_g7hjs")
+shader_parameter/circle_width = 1.0
+shader_parameter/wait_time = 0.6
+shader_parameter/speed = 1.5
+shader_parameter/alpha_boost = 1.0
+shader_parameter/in_color = Vector3(0.785, 1.32, -0.29)
+shader_parameter/is_turn_on = false
 
 [node name="TipElement" instance=ExtResource("1_jcru8")]
 anchors_preset = 0
@@ -15,17 +26,15 @@ offset_right = 150.0
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.01, 0.01)
 script = ExtResource("2_ex5dj")
 
-[node name="ElementFrame" parent="." index="0"]
+[node name="ElementFrame" parent="VBoxContainer/AspectRatioContainer" index="0"]
 z_index = -1
 z_as_relative = false
 
-[node name="ContainerSpace" parent="ElementFrame" index="1"]
+[node name="ShaderPulsar" parent="VBoxContainer/AspectRatioContainer/ElementFrame" index="0"]
+material = SubResource("ShaderMaterial_63nu1")
+
+[node name="ElementTextureButton" parent="VBoxContainer/AspectRatioContainer/ElementFrame/ContainerSpace/ElementAspectRatioContainer" index="0"]
 z_index = 1
 z_as_relative = false
-
-[node name="ElementAspectRatioContainer" parent="ElementFrame/ContainerSpace" index="0"]
-scale = Vector2(1, 1)
-stretch_mode = 0
