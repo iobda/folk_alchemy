@@ -18,10 +18,12 @@ func _init_guidebook_folklore() -> void:
 func set_guidebook_folklore(folklore_db_name: String) -> void:
 	var path_to_png: String = DBElements.get_folklore_element_icon_path(folklore_db_name)
 	_folklore_icon.texture = load(path_to_png) as CompressedTexture2D
-	_folklore_name.text =  DBElements.get_folklore_element_name(folklore_db_name)
-	_folklore_description.text =  DBElements.get_folklore_element_description(folklore_db_name)
+	_folklore_name.text =  "???????"
+	_folklore_description.text =  DBElements.get_folklore_element_tip(folklore_db_name)
 	if(DBElements.get_folklore_state(folklore_db_name) == "opened"):
 		_show_folklore_icon()
+		_folklore_description.text =  DBElements.get_folklore_element_description(folklore_db_name)
+		_folklore_name.text =  DBElements.get_folklore_element_name(folklore_db_name)
 	else:
 		_hide_folklore_icon()
 

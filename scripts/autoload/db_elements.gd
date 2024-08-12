@@ -85,7 +85,7 @@ var _elements: Dictionary = {
 	"hatred": {
 		"name": "Ненависть",
 		"icon": "res://assets/element-icons/hatred.png",
-		"category" : CategoryType.HUMAN
+		"category" : CategoryType.EMOTIONS
 	},
 	"sadness": {
 		"name": "Печаль",
@@ -118,7 +118,8 @@ var _folklores: Dictionary ={
 	"bastet": {
 		"name": "Бастет",
 		"icon": "res://assets/folklore/bastet.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Мифология Древнего Египта. Величественное существо с телом женщины и головой кошки. Она олицетворяет домашнее благополучие и защиту.",
+		"tip" : "Подсказка: может самое популярное и милое существо в интернете + самое сильное человеческое чувство.",
 		"source_1": "cat",
 		"source_2": "love",
 		"state": "closed"
@@ -126,7 +127,8 @@ var _folklores: Dictionary ={
 	"succubus": {
 		"name": "Суккуб",
 		"icon": "res://assets/folklore/succubus.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Соблазнительное существо, поглощает жизненную энергию людей. Оно использует свои чары и красоту, чтобы заманивать жертв и питаться их силами.",
+		"tip" : "Подсказка: у людей есть ЭТО и оно остаётся после смерти. Этот фольклор питается этим, обольщяя своих жертв.",
 		"source_1": "soul",
 		"source_2": "love",
 		"state": "closed"
@@ -134,7 +136,8 @@ var _folklores: Dictionary ={
 	"phoenix": {
 		"name": "Феникс",
 		"icon": "res://assets/folklore/phoenix.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Феникс — мифическая птица, которая сгорает и возрождается из своего пепла. Этот цикл символизирует вечное обновление и бессмертие.",
+		"tip" : "Подсказка: если вы заблудитесь зимой и замёрзнете, то ЭТО вселит в вас ЭТО чувство.",
 		"source_1": "hope",
 		"source_2": "eruption",
 		"state": "closed"
@@ -142,7 +145,8 @@ var _folklores: Dictionary ={
 	"harpy": {
 		"name": "Гарпия",
 		"icon": "res://assets/folklore/harpy.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Гарпия — существо из греческой мифологии, наполовину женщина, наполовину птица. Они похищают души и приносят разрушение.",
+		"tip" : "Подсказка: завывает по ночам и вселяет ЭТО в вас.",
 		"source_1": "fear",
 		"source_2": "tornado",
 		"state": "closed"
@@ -150,7 +154,8 @@ var _folklores: Dictionary ={
 	"banshi": {
 		"name": "Банши",
 		"icon": "res://assets/folklore/banshi.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Ирландский фольклор. Призрачная фигура, известная своими пронзительными криками, предвещающими смерть.",
+		"tip" : "Подсказка: из каких элементов состоит грустная песня? Из этого же состоит этот фольклор.",
 		"source_1": "voice",
 		"source_2": "sadness",
 		"state": "closed"
@@ -158,7 +163,8 @@ var _folklores: Dictionary ={
 	"gorgon": {
 		"name": "Медуза Горгона",
 		"icon": "res://assets/folklore/gorgon.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Древнегреческая мифология. страшное существо с змеями вместо волос, чей взгляд превращает людей в камень.",
+		"tip" : "Подсазка: её одолел Персей, великий герой Греции, с помощью зеркала и смекалки.",
 		"source_1": "snake",
 		"source_2": "eyes",
 		"state": "closed"
@@ -166,7 +172,8 @@ var _folklores: Dictionary ={
 	"ifrit": {
 		"name": "Ифрит",
 		"icon": "res://assets/folklore/ifrit.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Арабская мифология. Могущественное и огненное существо, обладающее огромной силой и разрушительными способностями, и, кстати, очень злое.",
+		"tip" : "Подсказка: эти два элемента ассоцирируется с одним цветом – красным.",
 		"source_1": "eruption",
 		"source_2": "hatred",
 		"state": "closed"
@@ -174,7 +181,8 @@ var _folklores: Dictionary ={
 	"siren": {
 		"name": "Сирена",
 		"icon": "res://assets/folklore/siren.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Сирена — существо из греческой мифологии, наполовину женщина, наполовину рыба, чье пение завлекает моряков на гибель.",
+		"tip" : "Подсказка: нечестные советники ассоцирируются с этими двумя элементами.",
 		"source_1": "voice",
 		"source_2": "snake",
 		"state": "closed"
@@ -182,7 +190,8 @@ var _folklores: Dictionary ={
 	"vampire_cat": {
 		"name": "Кот-Вампир",
 		"icon": "res://assets/folklore/vampir_cat.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Существо из Японского фольклора. Как-то в Японии кошка превратилась в вампира-женщину и начала питаться жизненными силами семьи Набэсима.",
+		"tip" : "Подсказка: самое милое животные совмещённое с самым романтизированным монстром.",
 		"source_1": "cat",
 		"source_2": "bat",
 		"state": "closed"
@@ -190,7 +199,8 @@ var _folklores: Dictionary ={
 	"promethean_fire": {
 		"name": "Огонь Прометея",
 		"icon": "res://assets/folklore/vampir_cat.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Огонь Прометея — это огонь, который титановый Прометей украл у богов, чтобы дать человечеству.",
+		"tip" : "Подсказка: ЭТОТ элемент сделал человеческую жизнь намного проще. Вдвойне проще!",
 		"source_1": "eruption",
 		"source_2": "eruption",
 		"state": "closed"
@@ -198,15 +208,17 @@ var _folklores: Dictionary ={
 	"dragon_ball": {
 		"name": "Жемчуг дракона",
 		"icon": "res://assets/folklore/vampir_cat.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Жемчуг Дракон — мистический драгоценный камень из восточной мифологии, обладающий магической силой.",
+		"tip" : "Подсказка: Где обитает Губка Боб?",
 		"source_1": "sea",
 		"source_2": "sea",
 		"state": "closed"
 	},
 	"catsith": {
-		"name": "Кот-Вампир",
+		"name": "Кошка Ситх",
 		"icon": "res://assets/folklore/Catsith.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Мифическое существо из шотландского и ирландского фольклора. Оно может похищать души умерших, проходя мимо их тел перед похоронами.",
+		"tip" : "Подсказка: ЭТО остаётся после смерти. Знаете у кого 9 жизней?",
 		"source_1": "cat",
 		"source_2": "soul",
 		"state": "closed"
@@ -214,7 +226,8 @@ var _folklores: Dictionary ={
 	"camazotz": {
 		"name": "Камазотц",
 		"icon": "res://assets/folklore/camazotz.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Демон-летучая мышь из майяской мифологии. Он обитает в подземных мирах и воплощает страх перед темнотой.",
+		"tip" : "Подсказка: ЭТО животное чаще всего живёт в пещерах. А где пещеры находятся?",
 		"source_1": "bat",
 		"source_2": "earthquake",
 		"state": "closed"
@@ -222,7 +235,8 @@ var _folklores: Dictionary ={
 	"cerbeus": {
 		"name": "Цербер",
 		"icon": "res://assets/folklore/cerberus.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Древнегреческая мифология. Огромное чудовище с тремя головами, охраняющее вход в мир мёртвых.",
+		"tip" : "Подсказка: эти животные часто болеют бешенством. Во время нападения этого животного человек теряет много ЭТОГО.",
 		"source_1": "blood",
 		"source_2": "wolf",
 		"state": "closed"
@@ -230,7 +244,8 @@ var _folklores: Dictionary ={
 	"redcap": {
 		"name": "Красный колпак",
 		"icon": "res://assets/folklore/redcap.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Красный колпак— злой дух британского фольклора, живущий в заброшенных замках. Он окрашивает шапку в кровь своих жертв, убивая всех, кто вторгается на его территорию.",
+		"tip" : "Подсказка: в войнах прливается много ЭТОГО элемента и из-за ДРУГОГО элемента.",
 		"source_1": "hatred",
 		"source_2": "blood",
 		"state": "closed"
@@ -238,7 +253,8 @@ var _folklores: Dictionary ={
 	"fujin": {
 		"name": "Фудзин",
 		"icon": "res://assets/folklore/vampir_cat.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Фудзин — японский бог ветра, изображаемый с мешком, в котором хранится ветер. Он управляет ветрами и бурями, и считается защитником от злых духов",
+		"tip" : "Подсказка: Стихия, которая несет холод и беспокойство, и чувство, которое вызывает разрушение и отторжение.",
 		"source_1": "tornado",
 		"source_2": "hatred",
 		"state": "closed"
@@ -246,7 +262,8 @@ var _folklores: Dictionary ={
 	"weeping_woman": {
 		"name": "Плакашильца",
 		"icon": "res://assets/folklore/vampir_cat.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Ла Льорона, или Плачущая Женщина, — мексиканская легенда о призраке, который ищет своих потерянных детей. Её плач предвещает беду и символизирует горе.",
+		"tip" : "Подсказка: Человека воет от этого чувства, а что ещё воет?",
 		"source_1": "tornado",
 		"source_2": "sadness",
 		"state": "closed"
@@ -254,7 +271,8 @@ var _folklores: Dictionary ={
 	"werewolf": {
 		"name": "Оборотень",
 		"icon": "res://assets/folklore/vampir_cat.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Оборотень — мифическое существо, способное превращаться из человека в волка, особенно в полнолуние.",
+		"tip" : "Подсказка: если бешеное ЭТО на вас нападёт, то вы потеряете много ЭТОЙ жидкости.",
 		"source_1": "wolf",
 		"source_2": "blood",
 		"state": "closed"
@@ -262,7 +280,8 @@ var _folklores: Dictionary ={
 	"basilisk": {
 		"name": "Василиск",
 		"icon": "res://assets/folklore/vampir_cat.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Вассилиск — мифическое существо. Его взгляд или дыхание могут убивать и вызывать смерть, что делает его символом разрушительной силы и опасности.",
+		"tip" : "Подсказка: длинное и хорошо видит по ночам.",
 		"source_1": "eyes",
 		"source_2": "snake",
 		"state": "closed"
@@ -270,7 +289,8 @@ var _folklores: Dictionary ={
 	"rudzin": {
 		"name": "Рюдзин",
 		"icon": "res://assets/folklore/vampir_cat.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Это легендарный дракон из японской мифологии. Он известен как повелитель морей и считается одним из могущественных и древних духов, связанных с водой. ",
+		"tip" : "Подсказка: у этих двух элементов есть одна общая черта – холод.",
 		"source_1": "snake",
 		"source_2": "sea",
 		"state": "closed"
@@ -278,7 +298,8 @@ var _folklores: Dictionary ={
 	"kitsune": {
 		"name": "Рюдзин",
 		"icon": "res://assets/folklore/vampir_cat.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Существо из Японского фольклора, способное превращаться в людей. Играет роль трикстера, иллюзиониста, трикстера. Живёт около тысячи лет.",
+		"tip" : "Подсказка: обольстители добиваются ЭТОГО от своих жертв. Обольстители же обладают ДРУГОЙ чертой, которую ассоцирируют с одним животным.",
 		"source_1": "love",
 		"source_2": "fox",
 		"state": "closed"
@@ -286,7 +307,8 @@ var _folklores: Dictionary ={
 	"koyote": {
 		"name": "Койот",
 		"icon": "res://assets/folklore/vampir_cat.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Североамериканский фольклор. Это хитрое и изобретательное существо, известное своими проделками и обманом.",
+		"tip" : "Подсказка: у этих элементов есть такие общие черты: подлость и хитрость.",
 		"source_1": "snake",
 		"source_2": "fox",
 		"state": "closed"
@@ -294,7 +316,8 @@ var _folklores: Dictionary ={
 	"cu_sith": {
 		"name": "Собака мира",
 		"icon": "res://assets/folklore/vampir_cat.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"description": "Ку-Ситх — мифическое существо из шотландского фольклора, демоническая черная собака с огненным взглядом.",
+		"tip" : "Подсказка: осторожно, злая тварь. И она смотрит прямо в то, что у человека остаётся после смерти.",
 		"source_1": "wolf",
 		"source_2": "soul",
 		"state": "closed"
@@ -302,17 +325,19 @@ var _folklores: Dictionary ={
 	"kanashibari": {
 		"name": "Канашибари",
 		"icon": "res://assets/folklore/vampir_cat.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-		"source_1": "love",
-		"source_2": "fox",
+		"description": "Японский фольклор. Зловещее существо. Является людям во время сонных паралечей.",
+		"tip" : "Подсказка: возьмите самые худшие эмоции человека и воображение сделает из этого ЭТОТ ужас.",
+		"source_1": "hatred",
+		"source_2": "fear",
 		"state": "closed"
 	},
-	"25": {
-		"name": "25",
+	"vampire": {
+		"name": "Вампир",
 		"icon": "res://assets/folklore/vampir_cat.png",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-		"source_1": "love",
-		"source_2": "love",
+		"description": "Это бессмертное существо, которое питается кровью живых. Он скрывается в тени и выходит на охоту ночью, вселяя страх в сердца людей.",
+		"tip" : "Подсказка: летают и кусают, а ещё сосут у человека кое-что.",
+		"source_1": "bat",
+		"source_2": "blood",
 		"state": "closed"
 	},
 }
@@ -360,6 +385,9 @@ func get_folklore_element_icon_path(folklore_db_name: String) -> String:
 
 func get_folklore_element_description(folklore_db_name: String) -> String:
 	return (_folklores.get(folklore_db_name) as Dictionary).get("description") as String
+
+func get_folklore_element_tip(folklore_db_name: String) -> String:
+	return (_folklores.get(folklore_db_name) as Dictionary).get("tip") as String
 
 ## If element opened then return "opened"
 ## else return "closed"
