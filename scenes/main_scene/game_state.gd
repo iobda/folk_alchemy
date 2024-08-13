@@ -14,16 +14,13 @@ var _popup_folklore_pc: PackedScene = preload("res://scenes/pop_folklore.tscn")
 @onready var _merger: Control = %Merger
 
 func _ready() -> void:
-	((self as GameState).get_viewport() as Window).size = DisplayServer.screen_get_size()
-	_merger.visible = false
+	_init_game()
 	_connect_signals()
-	YandexSDK.init_game()
-	call_deferred("_update_resolution")
-	SoundManager.play_music()
+	_merger.visible = false
 
-#Function to sync with platform resolution
-func _update_resolution() -> void:
-	get_tree().root.size = DisplayServer.screen_get_size()
+func _init_game() -> void:
+	YandexSDK.init_game()
+	SoundManager.play_music()
 
 func _connect_signals() -> void:
 	Events.category_closed.connect(_on_category_closed)

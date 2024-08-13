@@ -1,6 +1,7 @@
 class_name Category
 extends AspectRatioContainer
 
+#This class doesn't need signal to handle this kind of situtation, private function is enough. (Note for refactoring)
 signal folklores_to_merged_changed(_new_amount: int)
 
 @export  var category: DBElements.CategoryType
@@ -13,6 +14,8 @@ var _folklores_to_merged: int = 0:
 		_folklores_to_merged = new_amount
 		if(new_amount == 0):
 			_counter_icon.texture = load("res://assets/frame/off.png") as CompressedTexture2D
+		elif(new_amount >= 1):
+			_counter_icon.texture = load("res://assets/frame/on.png") as CompressedTexture2D
 		folklores_to_merged_changed.emit(new_amount)
 
 @onready var _category_texture_button: TextureButton = %CategoryTextureButton
@@ -50,19 +53,20 @@ func _init_category() -> void:
 	(self as Category).pivot_offset = (self as Category).size/2.0
 
 func _init_counter() -> void:
+	_folklores_to_merged = 0
 	for folklore_db_name: String in DBElements.get_folklores_elements_bd_names():
 		var sources: Array[String] = DBElements.get_folklores_elements_sources(folklore_db_name)
-		for source: String in sources:
-			var tmp_category: DBElements.CategoryType =  DBElements.get_element_category(source)
-			if(category == tmp_category):
-				_folklores_to_merged+=1
+		if(DBElements.get_element_category(sources[0]) == category && DBElements.get_folklore_state(folklore_db_name) == "closed"):
+			_folklores_to_merged+=1
+		if(DBElements.get_element_category(sources[1]) == category && DBElements.get_folklore_state(folklore_db_name) == "closed" && DBElements.get_element_category(sources[0]) != DBElements.get_element_category(sources[1])):
+			_folklores_to_merged+=1
 
 func _on_merged(folklore_db_name: String) -> void:
 	var sources: Array[String] = DBElements.get_folklores_elements_sources(folklore_db_name)
-	for source: String in sources:
-		if(DBElements.get_element_category(source) == category):
-			_folklores_to_merged-=1
-			return
+	if(DBElements.get_element_category(sources[0]) == category):
+		_folklores_to_merged-=1
+	if(DBElements.get_element_category(sources[1]) == category && DBElements.get_element_category(sources[0]) != DBElements.get_element_category(sources[1])):
+		_folklores_to_merged-=1
 
 func _on_folklores_to_merged_changed(new_amount: int) -> void:
 	_counter.text = str(new_amount)

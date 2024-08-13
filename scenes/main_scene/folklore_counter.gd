@@ -9,6 +9,9 @@ var _counter_text: String = "none"
 
 func _ready() -> void:
 	Events.merged.connect(_on_merged)
+	for folk: String in DBElements.get_folklores_elements_bd_names():
+		if(DBElements.get_folklore_state(folk) == "opened"):
+			_counter_opened+=1
 	folklore_counter.text = str(_counter_opened) + " Фольклоров из " + str(_all_folk_count)
 
 func _on_merged(folklore_db_name: String) -> void:
