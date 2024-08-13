@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://o4tec64a4n0p"]
 
 [ext_resource type="Script" path="res://scenes/merger.gd" id="1_qluel"]
-[ext_resource type="PackedScene" uid="uid://qq55blymvfuq" path="res://scenes/element.tscn" id="2_7dgqf"]
+[ext_resource type="PackedScene" uid="uid://d1uxethe5cab4" path="res://merge_element.tscn" id="2_s5vx7"]
 
 [sub_resource type="Animation" id="Animation_fekny"]
 resource_name = "Merge"
@@ -94,13 +94,14 @@ scale = Vector2(2, 2)
 pivot_offset = Vector2(197.74, 101.305)
 theme_override_constants/separation = 100
 
-[node name="LeftElement" parent="HBoxContainer" instance=ExtResource("2_7dgqf")]
+[node name="LeftElement" parent="HBoxContainer" instance=ExtResource("2_s5vx7")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="RightElement" parent="HBoxContainer" instance=ExtResource("2_7dgqf")]
+[node name="RightElement" parent="HBoxContainer" instance=ExtResource("2_s5vx7")]
 unique_name_in_owner = true
 layout_mode = 2
+is_right = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true

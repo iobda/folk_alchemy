@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1uxethe5cab4"]
+
+[ext_resource type="Script" path="res://scenes/merge_element.gd" id="1_e36pw"]
+[ext_resource type="Texture2D" uid="uid://ltokwdkxg2ww" path="res://assets/frame/category-frame.png" id="2_lojsg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lbm7a"]
+texture = ExtResource("2_lojsg")
+
+[node name="LeftElement" type="AspectRatioContainer"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+stretch_mode = 1
+script = ExtResource("1_e36pw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ElementFrame" type="PanelContainer" parent="VBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_lbm7a")
+
+[node name="ContainerSpace" type="Control" parent="VBoxContainer/AspectRatioContainer/ElementFrame"]
+layout_mode = 2
+
+[node name="ElementAspectRatioContainer" type="AspectRatioContainer" parent="VBoxContainer/AspectRatioContainer/ElementFrame/ContainerSpace"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ElementIcon" type="TextureRect" parent="VBoxContainer/AspectRatioContainer/ElementFrame/ContainerSpace/ElementAspectRatioContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+expand_mode = 4
+stretch_mode = 5
+
+[node name="ElementName" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 8
+size_flags_stretch_ratio = 0.0
+theme_override_font_sizes/font_size = 30
+text = "sdsd FD"
+horizontal_alignment = 1
+autowrap_mode = 2
+justification_flags = 161

@@ -83,7 +83,7 @@ func _on_texture_button_pressed() -> void:
 	Events.element_chosen.emit(_element_db_name, is_right)
 
 func _on_fail_merge(_left_element_selected: String, _right_element_selected: String) -> void:
-	if _element_db_name == _left_element_selected or _element_db_name == _right_element_selected:
+	if ((_element_db_name == _left_element_selected && !is_right) or (_element_db_name == _right_element_selected && is_right)):
 		SoundManager.stop_ui_click_sfx()
 		_animation_player.play("merge_failed")
 		SoundManager.play_unsucess_sfx()
