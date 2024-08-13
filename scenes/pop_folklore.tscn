@@ -7,7 +7,10 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e2hqn"]
 shader = ExtResource("2_o2n7d")
-shader_parameter/lod = 3.939
+shader_parameter/blur_radius = 1.0
+shader_parameter/blur_amount = 5.0
+shader_parameter/blur_inner = 0.082
+shader_parameter/blur_outer = 0.48
 
 [node name="PopUpFolklore" type="CanvasLayer"]
 script = ExtResource("1_c4axo")
@@ -54,6 +57,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 4.35
 theme = ExtResource("4_5bmeg")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 90
 text = "Succub"
 horizontal_alignment = 1
@@ -65,6 +69,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.31
 theme = ExtResource("4_5bmeg")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 50
 text = "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\""
 fit_content = true

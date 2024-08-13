@@ -50,6 +50,7 @@ func _disable_element() -> void:
 func _on_category_closed(category_is_right: bool) -> void:
 	if(category_is_right == is_right):
 		_disable_element()
+		_shader_pulsar.material.set("shader_parameter/is_turn_on", false)
 
 func _stop_animation(_left_element_selected: String, _right_element_selected: String) -> void:
 	_clear_animation()

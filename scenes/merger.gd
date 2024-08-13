@@ -1,34 +1,44 @@
 extends Control
 
-var _right_element_selected: String
-var _left_element_selected: String
-
 @onready var _animation_player: AnimationPlayer = %AnimationPlayer
 @onready var _left_element: Element = %LeftElement
 @onready var _right_element: Element = %RightElement
 
 func _ready() -> void:
+	_right_element.is_right = true
+	_left_element.is_right = false
 	_connect_signals()
 
 func _connect_signals() -> void:
 	Events.merged.connect(_animation_merge)
-	Events.right_element_chosen.connect(set_right_element)
-	Events.left_element_chosen.connect(set_left_element)
+	Events.right_element_chosen.connect(_on_right_element_chosen)
+	Events.left_element_chosen.connect(_on_left_element_chosen)
+	_animation_player.animation_started.connect(_on_animation_started)
+	_animation_player.animation_finished.connect(_on_animation_finished)
 
-func set_right_element(element_db_name: String)->void:
-	_right_element_selected = element_db_name
-	_right_element.set_element_data(_right_element_selected)
+func _on_right_element_chosen(element_db_name: String)->void:
+	_right_element.set_element_data(element_db_name)
+	#Access violation due to unconvinient design
+	_right_element._animation_player.stop()
 
-func set_left_element(element_db_name: String)->void:
-	_left_element_selected = element_db_name
-	_left_element.set_element_data(_left_element_selected)
+func _on_left_element_chosen(element_db_name: String)->void:
+	_left_element.set_element_data(element_db_name)
+	#Access violation due to unconvinient design
+	_left_element._animation_player.stop()
 
 func _animation_merge(folkore_bd_name: String) -> void:
+	
 	SoundManager.stop_ui_click_sfx()
 	SoundManager.play_sucess_sfx()
 	_animation_player.play("Merge")
 	await _animation_player.animation_finished
-	spawn_popup(folkore_bd_name)
+	_spawn_popup(folkore_bd_name)
 
-func spawn_popup(folkore_bd_name: String) -> void:
+func _spawn_popup(folkore_bd_name: String) -> void:
 	Events.spawn_popup.emit(folkore_bd_name)
+
+func _on_animation_started(_anim_name: String) -> void:
+	get_tree().get_root().set_disable_input(true)
+
+func _on_animation_finished(_anim_name: String) -> void:
+	get_tree().get_root().set_disable_input(false)
