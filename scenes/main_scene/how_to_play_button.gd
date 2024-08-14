@@ -6,6 +6,8 @@ var _how_to_play_pc: PackedScene = preload("res://scenes/how_to_play.tscn")
 
 func _ready() -> void:
 	connect_signals()
+	var how_to_play: HowToPlay = _how_to_play_pc.instantiate() as HowToPlay
+	add_child(how_to_play)
 
 func connect_signals() -> void:
 	_how_to_play_button.pressed.connect(_on_how_to_play_pressed)
