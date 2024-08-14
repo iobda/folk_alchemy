@@ -100,6 +100,7 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.2
 theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
 text = "Бастет — древнеегипетская богиня кошек, домашнего уюта и плодородия. В древнем Египте кошки считались священными, и убить кошку считалось тяжким преступлением, караемым смертью."
 scroll_active = false
 
