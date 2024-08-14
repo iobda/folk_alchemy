@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d2tsyp5uo6uou"]
+[gd_scene load_steps=13 format=3 uid="uid://d2tsyp5uo6uou"]
 
 [ext_resource type="Theme" uid="uid://cfnbb06x7c6ff" path="res://resources/themes/text.tres" id="1_7oesa"]
 [ext_resource type="Script" path="res://scenes/main_scene/game_state.gd" id="1_icmeg"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://o4tec64a4n0p" path="res://scenes/merger.tscn" id="8_8nnqh"]
 [ext_resource type="Texture2D" uid="uid://d3g0i1sh0ibyl" path="res://assets/icons/help.png" id="9_kqt3y"]
 [ext_resource type="Script" path="res://scenes/main_scene/how_to_play_button.gd" id="10_wlxf3"]
+[ext_resource type="PackedScene" uid="uid://suk1bjmqk02h" path="res://scenes/tutorial.tscn" id="12_73iol"]
 
 [node name="GameState" type="Control"]
 layout_mode = 3
@@ -120,4 +121,7 @@ _is_right_page = true
 [node name="Merger" parent="." instance=ExtResource("8_8nnqh")]
 unique_name_in_owner = true
 visible = false
+layout_mode = 1
+
+[node name="Tutorial" parent="." instance=ExtResource("12_73iol")]
 layout_mode = 1
