@@ -8,6 +8,9 @@ var _tips_available: int = 3:
 		_tips_available = new_amount
 		if(_tips_available == 0 or _tips_available == 1):
 			_change_tip_button_icon()
+			_ad_button.visible = true
+		else:
+			_ad_button.visible = false 
 		tips_available_updated.emit(new_amount)
 		_tips_amount.text = str(new_amount)
 
@@ -16,6 +19,7 @@ var _tips_available: int = 3:
 @onready var _right_element: TipElement = %RightElement
 @onready var _tip_button: TextureButton = %TipButton
 @onready var _plus_texture: TextureRect = %PlusTexture
+@onready var _ad_button: TextureButton = %AdButton
 
 func _ready() -> void:
 	_tips_amount.text = str(_tips_available)
@@ -25,11 +29,13 @@ func _ready() -> void:
 
 func _connect_signals() -> void:
 	_tip_button.pressed.connect(_on_tip_button_pressed)
+	_ad_button.pressed.connect(_reward_ad_button_hint)
 	Events.merged.connect(_on_merged)
 
 func _init_elements() -> void:
 	_left_element.is_right = false
 	_left_element.is_right = true
+	_ad_button.visible = false 
 
 func _disable_elements() -> void:
 	_left_element.disable_tip_element()
@@ -44,8 +50,7 @@ func _enable_elements() -> void:
 func _on_tip_button_pressed() -> void:
 	SoundManager.play_ui_click_sfx()
 	if(_tips_available == 0):
-		YandexSDK.show_rewarded_ad()
-		_tips_available += 1
+		return
 	_tip_button.disabled = true
 	var sources: Array[String]
 	for folk: String in DBElements.get_folklores_elements_bd_names():
@@ -68,3 +73,7 @@ func _change_tip_button_icon() -> void:
 		_tip_button.material.set("shader_parameter/is_grey",false)
 	elif (_tips_available == 0):
 		_tip_button.material.set("shader_parameter/is_grey",true)
+
+func _reward_ad_button_hint() -> void:
+	YandexSDK.show_rewarded_ad()
+	_tips_available += 1
