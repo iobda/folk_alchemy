@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ypkjewaj75u1"
-path="res://.godot/imported/fujin.png-11ea0c6498423e7079da6a8a55be42ea.ctex"
+uid="uid://ksjqtsda5xps"
+path="res://.godot/imported/pearl.png-29fc80fb50f7558ff2fb62c523e4292f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fujin.png"
-dest_files=["res://.godot/imported/fujin.png-11ea0c6498423e7079da6a8a55be42ea.ctex"]
+source_file="res://assets/folklore/pearl.png"
+dest_files=["res://.godot/imported/pearl.png-29fc80fb50f7558ff2fb62c523e4292f.ctex"]
 
 [params]
 

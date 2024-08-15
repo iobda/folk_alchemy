@@ -13,7 +13,10 @@ config_version=5
 config/name="Godot-wild-jam"
 run/main_scene="res://scenes/main_scene/game.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://resources/default_bus_layout.tres"
 
 [autoload]
 
@@ -35,6 +38,7 @@ gdscript/warnings/unsafe_call_argument=2
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
