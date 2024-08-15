@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://o4tec64a4n0p"]
 
 [ext_resource type="Script" path="res://scenes/merger.gd" id="1_qluel"]
-[ext_resource type="PackedScene" uid="uid://d1uxethe5cab4" path="res://merge_element.tscn" id="2_s5vx7"]
+[ext_resource type="PackedScene" uid="uid://d1uxethe5cab4" path="res://scenes/merge_element.tscn" id="2_s5vx7"]
 
 [sub_resource type="Animation" id="Animation_fekny"]
 resource_name = "Merge"
