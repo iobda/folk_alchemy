@@ -9,6 +9,7 @@ var _left_element_selected: String = "none":
 	set(new_var):
 		_left_element_selected = new_var
 var _popup_folklore_pc: PackedScene = preload("res://scenes/pop_folklore.tscn")
+var _tutorial_page_pc: PackedScene = preload("res://scenes/tutorial/tutorial.tscn")
 ## Last opened page number in guidebook
 
 @onready var _merger: Control = %Merger
@@ -16,6 +17,7 @@ var _popup_folklore_pc: PackedScene = preload("res://scenes/pop_folklore.tscn")
 func _ready() -> void:
 	_init_game()
 	_connect_signals()
+	_tutorial()
 	_merger.visible = false
 
 func _init_game() -> void:
@@ -26,6 +28,13 @@ func _connect_signals() -> void:
 	Events.category_closed.connect(_on_category_closed)
 	Events.element_chosen.connect(_on_element_chosen)
 	Events.spawn_popup.connect(_spawn_popup_folklore)
+
+func _tutorial() -> void:
+	if Events.tutorial_complete == false:
+		var tutorial_page: Tutorial = _tutorial_page_pc.instantiate() as Tutorial
+		add_child(tutorial_page)
+	else:
+		pass
 
 func _on_category_closed(is_right: bool)->void:
 	if(is_right):
