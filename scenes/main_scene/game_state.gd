@@ -22,6 +22,7 @@ func _ready() -> void:
 
 func _init_game() -> void:
 	YandexSDK.init_game()
+	YandexSDK.show_interstitial_ad()
 	SoundManager.play_music()
 
 func _connect_signals() -> void:
