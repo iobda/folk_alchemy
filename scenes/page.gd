@@ -17,7 +17,6 @@ func _ready() -> void:
 	if(_is_right_page):
 		_page_background.theme = load("res://resources/themes/right_page_background.tres")
 		(self as Control).layout_direction = Control.LAYOUT_DIRECTION_RTL
-		
 
 func _connect_signals() -> void:
 	Events.category_opened.connect(_on_category_opened)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1fdo0sym155n"]
+[gd_scene load_steps=9 format=3 uid="uid://d1fdo0sym155n"]
 
 [ext_resource type="Script" path="res://scenes/tips.gd" id="1_5i7du"]
 [ext_resource type="PackedScene" uid="uid://b32a4y2djbyok" path="res://scenes/tip_element.tscn" id="2_x7tg6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Shader" path="res://resources/shaders/grey_scale.gdshader" id="5_b1hf3"]
 [ext_resource type="Theme" uid="uid://dgg4q0g5l2soj" path="res://resources/themes/tip_button.tres" id="5_n0aga"]
 [ext_resource type="Texture2D" uid="uid://baf2pn5477gnk" path="res://assets/icons/clue.png" id="6_1y1n5"]
+[ext_resource type="Texture2D" uid="uid://b1rqrdku2e1qs" path="res://clapperboard.png" id="7_rh4bx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y3xk4"]
 shader = ExtResource("5_b1hf3")
@@ -48,10 +49,18 @@ stretch_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="AdButton" type="TextureButton" parent="TipsCount&Button"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("7_rh4bx")
+ignore_texture_size = true
+stretch_mode = 5
+
 [node name="TipsAmount" type="Label" parent="TipsCount&Button"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 11
+size_flags_horizontal = 6
 size_flags_stretch_ratio = 1.5
 theme_override_font_sizes/font_size = 70
 text = "3"

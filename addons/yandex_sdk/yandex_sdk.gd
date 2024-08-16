@@ -38,7 +38,6 @@ var callback_leaderboard_entries_loaded = JavaScriptBridge.create_callback(_lead
 
 @onready var window = JavaScriptBridge.get_interface("window")
 
-
 func is_working() -> bool:
 	return OS.has_feature("yandex")
 
