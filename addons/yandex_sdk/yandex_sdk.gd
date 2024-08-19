@@ -38,6 +38,9 @@ var callback_leaderboard_entries_loaded = JavaScriptBridge.create_callback(_lead
 
 @onready var window = JavaScriptBridge.get_interface("window")
 
+func print_info(info_text: String):
+	print("YANDEX_SDK: " + info_text)
+
 func is_working() -> bool:
 	return OS.has_feature("yandex")
 
@@ -203,7 +206,7 @@ func _rewarded_ad(args) -> void:
 
 func _interstitial_ad(args) -> void:
 	print("ad res: ", args[0])
-	emit_signal("interstitial_ad", args[0])
+	emit_signal("interstitial_ad", args)
 
 func _data_loaded(args) -> void:
 	var result := {}

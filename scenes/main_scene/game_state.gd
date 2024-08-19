@@ -29,6 +29,17 @@ func _connect_signals() -> void:
 	Events.category_closed.connect(_on_category_closed)
 	Events.element_chosen.connect(_on_element_chosen)
 	Events.spawn_popup.connect(_spawn_popup_folklore)
+	YandexSDK.interstitial_ad.connect(interstitial_ad)
+
+func interstitial_ad(result: Array) -> void:
+	if typeof(result) == TYPE_ARRAY and result.size() > 0:
+		var status: String = result[0]
+		if status == 'opened':
+			YandexSDK.print_info('interstitial ad - opened')
+		if status == 'closed':
+			YandexSDK.print_info('interstitial ad - closed')
+		if status == 'error':
+			YandexSDK.print_info('interstitial ad - error')
 
 func _tutorial() -> void:
 	if Events.tutorial_complete == false:

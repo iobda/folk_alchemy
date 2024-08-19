@@ -2,6 +2,7 @@ extends VBoxContainer
 
 signal tips_available_updated(tips: int)
 
+var result: String
 var _tiped_folklore: String = "none"
 var _tips_available: int = 3:
 	set(new_amount):
@@ -10,7 +11,7 @@ var _tips_available: int = 3:
 			_change_tip_button_icon()
 			_ad_button.visible = true
 		else:
-			_ad_button.visible = false 
+			_ad_button.visible = false
 		tips_available_updated.emit(new_amount)
 		_tips_amount.text = str(new_amount)
 
@@ -29,13 +30,14 @@ func _ready() -> void:
 
 func _connect_signals() -> void:
 	_tip_button.pressed.connect(_on_tip_button_pressed)
-	_ad_button.pressed.connect(_reward_ad_button_hint)
+	_ad_button.pressed.connect(_reward_ad_button_press)
 	Events.merged.connect(_on_merged)
+	YandexSDK.rewarded_ad.connect(rewarded)
 
 func _init_elements() -> void:
 	_left_element.is_right = false
 	_left_element.is_right = true
-	_ad_button.visible = false 
+	_ad_button.visible = false
 
 func _disable_elements() -> void:
 	_left_element.disable_tip_element()
@@ -74,6 +76,18 @@ func _change_tip_button_icon() -> void:
 	elif (_tips_available == 0):
 		_tip_button.material.set("shader_parameter/is_grey",true)
 
-func _reward_ad_button_hint() -> void:
+func _reward_ad_button_press() -> void:
 	YandexSDK.show_rewarded_ad()
-	_tips_available += 1
+
+func rewarded(result: Array) -> void:
+	if typeof(result) == TYPE_ARRAY and result.size() > 0:
+		var status: String = result[0]
+		if status == 'rewarded':
+			_tips_available += 1
+			YandexSDK.print_info('rewarded')
+		if status == 'opened':
+			YandexSDK.print_info('rewarded ad - opened')
+		if status == 'closed':
+			YandexSDK.print_info('rewarded ad - closed')
+		if status == 'error':
+			YandexSDK.print_info('rewarded ad - error')
