@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1rqrdku2e1qs"
-path="res://.godot/imported/clapperboard.png-6cc4f6c2bb6747c1954610cc59144f0a.ctex"
+uid="uid://ce3sfcnob2hnd"
+path="res://.godot/imported/clue_not.png-4e9c4c0f179bdbac4a71db816cf78535.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://clapperboard.png"
-dest_files=["res://.godot/imported/clapperboard.png-6cc4f6c2bb6747c1954610cc59144f0a.ctex"]
+source_file="res://assets/icons/clue_not.png"
+dest_files=["res://.godot/imported/clue_not.png-4e9c4c0f179bdbac4a71db816cf78535.ctex"]
 
 [params]
 
