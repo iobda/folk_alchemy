@@ -38,6 +38,17 @@ var callback_leaderboard_entries_loaded = JavaScriptBridge.create_callback(_lead
 
 @onready var window = JavaScriptBridge.get_interface("window")
 
+func _ready() -> void:
+	if is_working():
+		get_window().focus_entered.connect(func() -> void:
+				print("focus in signal")
+				AudioServer.set_bus_mute(0, false)
+		)
+		get_window().focus_exited.connect(func() -> void:
+				print("focus out signal")
+				AudioServer.set_bus_mute(0, true)
+		)
+
 func print_info(info_text: String):
 	print("YANDEX_SDK: " + info_text)
 
