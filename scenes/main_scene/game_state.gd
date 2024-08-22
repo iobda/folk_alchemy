@@ -16,14 +16,19 @@ var _tutorial_page_pc: PackedScene = preload("res://scenes/tutorial/tutorial.tsc
 
 func _ready() -> void:
 	_init_game()
+	_init_yandex_sdk()
 	_connect_signals()
 	_tutorial()
 	_merger.visible = false
 
 func _init_game() -> void:
-	YandexSDK.init_game()
-	YandexSDK.show_interstitial_ad()
 	SoundManager.play_music()
+
+func _init_yandex_sdk() -> void:
+	YandexSDK.init_game()
+	YandexSDK.init_player()
+	YandexSDK.show_interstitial_ad()
+	YandexSDK.load_all_data()
 
 func _connect_signals() -> void:
 	Events.category_closed.connect(_on_category_closed)
@@ -35,11 +40,11 @@ func interstitial_ad(result: Array) -> void:
 	if typeof(result) == TYPE_ARRAY and result.size() > 0:
 		var status: String = result[0]
 		if status == 'opened':
-			YandexSDK.print_info('interstitial ad - opened')
+			pass
 		if status == 'closed':
-			YandexSDK.print_info('interstitial ad - closed')
+			pass
 		if status == 'error':
-			YandexSDK.print_info('interstitial ad - error')
+			pass
 
 func _tutorial() -> void:
 	if Events.tutorial_complete == false:

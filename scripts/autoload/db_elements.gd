@@ -114,7 +114,7 @@ var _elements: Dictionary = {
 	}
 }
 
-var _folklores: Dictionary ={
+var _folklores: Dictionary = {
 	"bastet": {
 		"name": "Бастет",
 		"icon": "res://assets/folklore/bastet.png",
@@ -342,6 +342,9 @@ var _folklores: Dictionary ={
 	},
 }
 
+var data: Dictionary = {
+}
+
 func get_category_name(category: CategoryType) -> String:
 	return (_categories.get(category) as Dictionary).get("name") as String
 
@@ -396,6 +399,8 @@ func get_folklore_state(folklore_db_name: String) -> String:
 
 func set_folklore_element_to_open(folklore_db_name: String) -> void:
 	(_folklores[folklore_db_name])["state"] = "opened"
+	data[folklore_db_name] = "opened"
+	YandexSDK.save_data(data, true)
 
 func get_folklore_element_name_by_sources(source_1: String, source_2: String) -> String:
 	for key: String in _folklores.keys() as Array[String]:
