@@ -2,6 +2,9 @@ extends Node
 
 enum CategoryType {ANIMALS = 0, HUMAN = 1, NATURAL_DISASTERS = 2, EMOTIONS = 3}
 
+var data: Dictionary = {
+}
+
 var _categories: Dictionary = {
 	CategoryType.ANIMALS: {
 		"name": "Животные",
@@ -342,8 +345,12 @@ var _folklores: Dictionary = {
 	},
 }
 
-var data: Dictionary = {
-}
+func update_folklores_state(data1: Dictionary) -> void:
+	data = data1
+	for key: String in data1:
+		if data1[key] == "opened":
+			if key in _folklores and "state" in _folklores[key]:
+				_folklores[key]["state"] = "opened"
 
 func get_category_name(category: CategoryType) -> String:
 	return (_categories.get(category) as Dictionary).get("name") as String

@@ -35,6 +35,10 @@ func _connect_signals() -> void:
 	Events.element_chosen.connect(_on_element_chosen)
 	Events.spawn_popup.connect(_spawn_popup_folklore)
 	YandexSDK.interstitial_ad.connect(interstitial_ad)
+	YandexSDK.data_loaded.connect(data_loaded)
+
+func data_loaded(data: Dictionary) -> void:
+	DBElements.update_folklores_state(data)
 
 func interstitial_ad(result: Array) -> void:
 	if typeof(result) == TYPE_ARRAY and result.size() > 0:
