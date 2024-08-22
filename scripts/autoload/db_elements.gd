@@ -201,7 +201,7 @@ var _folklores: Dictionary = {
 	},
 	"promethean_fire": {
 		"name": "Огонь Прометея",
-		"icon": "res://assets/folklore/vampir_cat.png",
+		"icon": "res://assets/folklore/fre.png",
 		"description": "Из древнегреческой мифологии, огонь Прометея был даром людям, символизируя надежду и прогресс. Этот огонь принес знания и развитие, несмотря на страдания самого Прометея.",
 		"tip" : "Подсказка: [color=green]ЭТОТ[/color] элемент сделал человеческую жизнь намного проще. [color=green]ВДВОЙНЕ[/color] проще!",
 		"source_1": "eruption",
@@ -210,7 +210,7 @@ var _folklores: Dictionary = {
 	},
 	"dragon_ball": {
 		"name": "Жемчуг дракона",
-		"icon": "res://assets/folklore/vampir_cat.png",
+		"icon": "res://assets/folklore/pearl.png",
 		"description": "Из китайской мифологии, жемчуг дракона символизирует могущество и мудрость. Говорят, что он был найден на морском дне и мог успокаивать штормы и приносить удачу морякам.",
 		"tip" : "Подсказка: Где обитает Губка Боб?",
 		"source_1": "sea",
@@ -219,7 +219,7 @@ var _folklores: Dictionary = {
 	},
 	"catsith": {
 		"name": "Кошка Ситх",
-		"icon": "res://assets/folklore/Catsith.png",
+		"icon": "res://assets/folklore/сatsith.png",
 		"description": "Из ирландского фольклора, кошка Ситх могла поглощать души и предсказывать будущее, используя силу тех душ, которые захватывала.",
 		"tip" : "Подсказка: [color=green]ЭТО[/color] остаётся после смерти. У [color=green]ЭТОГО[/color] есть 9 жизней.",
 		"source_1": "cat",
@@ -228,7 +228,7 @@ var _folklores: Dictionary = {
 	},
 	"camazotz": {
 		"name": "Камазотц",
-		"icon": "res://assets/folklore/camazotz.png",
+		"icon": "res://assets/folklore/сamazotz.png",
 		"description": "Из майянской мифологии, Камазотц, бог летучих мышей и ночи, жил в пещере. Считалось, что он поглощал души и приносил тьму тем, кто осмеливался войти в его обитель.",
 		"tip" : "Подсказка: [color=green]ЭТО[/color] животное чаще всего живёт в пещерах. Оно живёт под [color=green]ЭТИМ[/color].",
 		"source_1": "bat",
@@ -237,7 +237,7 @@ var _folklores: Dictionary = {
 	},
 	"cerbeus": {
 		"name": "Цербер",
-		"icon": "res://assets/folklore/cerberus.png",
+		"icon": "res://assets/folklore/сerberus.png",
 		"description": "Цербер из древнегреческих мифов охранял вход в подземное царство; его лохматая шкура была пропитана кровью тех, кто пытался сбежать.",
 		"tip" : "Подсказка: [color=green]ЭТО[/color] животное часто болеет бешенством. Во время нападения этого животного человек теряет много [color=green]ЭТОГО[/color].",
 		"source_1": "blood",
@@ -255,7 +255,7 @@ var _folklores: Dictionary = {
 	},
 	"fujin": {
 		"name": "Фудзин",
-		"icon": "res://assets/folklore/vampir_cat.png",
+		"icon": "res://assets/folklore/fujin.png",
 		"description": "Фудзин из японской мифологии — бог ветра; он управляет бурями с помощью мешка, наполненного ветром, который может вызвать как разрушение, так и очищение.",
 		"tip" : "Подсказка: [color=green]ЭТО[/color] то, благодаря чему шумят листья и кусты.",
 		"source_1": "tornado",
@@ -264,7 +264,7 @@ var _folklores: Dictionary = {
 	},
 	"weeping_woman": {
 		"name": "Плакашильца",
-		"icon": "res://assets/folklore/vampir_cat.png",
+		"icon": "res://assets/folklore/lo.png",
 		"description": "Ла Льорона из мексиканского фольклора — дух плачущей женщины, которая ищет своих детей; её рыдания приносят ужас и предвещают несчастье.",
 		"tip" : "Подсказка: Человек воет от [color=green]ЭТОГО[/color] чувства, и [color=green]ЭТО[/color] воет само по себе.",
 		"source_1": "tornado",
@@ -273,7 +273,7 @@ var _folklores: Dictionary = {
 	},
 	"werewolf": {
 		"name": "Оборотень",
-		"icon": "res://assets/folklore/vampir_cat.png",
+		"icon": "res://assets/folklore/werewolf.png",
 		"description": "Оборотень из европейских мифов — человек, способный превращаться в волка; считается, что его трансформация вызвана злым колдовством или проклятием.",
 		"tip" : "Подсказка: вы испытаете [color=green]ЭТО[/color] при виде [color=green]ЭТОГО[/color] в лесу.",
 		"source_1": "wolf",
@@ -282,7 +282,7 @@ var _folklores: Dictionary = {
 	},
 	"basilisk": {
 		"name": "Василиск",
-		"icon": "res://assets/folklore/vampir_cat.png",
+		"icon": "res://assets/folklore/basilisk.png",
 		"description": "Василиск из европейских мифов — гигантское змееподобное существо; его огромные размеры делают его крайне опасным для любого, кто попадается ему на пути.",
 		"tip" : "Подсказка: [color=green]ЭТО ВДВОЙНЕ[/color] длинное существо.",
 		"source_1": "snake",
@@ -309,7 +309,7 @@ var _folklores: Dictionary = {
 	},
 	"koyote": {
 		"name": "Койот",
-		"icon": "res://assets/folklore/vampir_cat.png",
+		"icon": "res://assets/folklore/koy.png",
 		"description": "Койот из североамериканского фольклора — хитрое и смелое существо, часто выступающее как обманщик и лукавый культурный герой, вызывающий бурю своими шалостями.",
 		"tip" : "Подсказка: у [color=green]ЭТИХ[/color] элементов есть общая черта. Оба ассоцирируются с подлость и хитростью.",
 		"source_1": "snake",
@@ -336,7 +336,7 @@ var _folklores: Dictionary = {
 	},
 	"vampire": {
 		"name": "Вампир",
-		"icon": "res://assets/folklore/vampir_cat.png",
+		"icon": "res://assets/folklore/vampir.png",
 		"description": "Вампир из европейского фольклора — существо, питающееся кровью; Он способен превращаться в летучую мышь.",
 		"tip" : "Подсказка: [color=green]ЭТО[/color] кусает человека и сосёт [color=green]ЭТО[/color] у человека.",
 		"source_1": "bat",
