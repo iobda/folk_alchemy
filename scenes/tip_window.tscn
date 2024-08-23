@@ -16,10 +16,10 @@ shader_parameter/is_grey = false
 
 [node name="Tips" type="VBoxContainer"]
 anchors_preset = -1
-anchor_right = 0.104
-anchor_bottom = 0.185
-offset_right = 0.319992
-offset_bottom = 0.199997
+anchor_right = 0.16
+anchor_bottom = 0.293
+offset_right = -107.2
+offset_bottom = -116.44
 mouse_filter = 2
 script = ExtResource("1_5i7du")
 
@@ -67,9 +67,8 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 100)
 layout_mode = 2
 size_flags_horizontal = 6
-size_flags_stretch_ratio = 1.5
 theme_override_fonts/font = ExtResource("5_wc6y4")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 85
 text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
