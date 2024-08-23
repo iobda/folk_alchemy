@@ -29,6 +29,7 @@ func _init_yandex_sdk() -> void:
 	YandexSDK.init_player()
 	YandexSDK.show_interstitial_ad()
 	YandexSDK.load_all_data()
+	YandexSDK.load_all_stats()
 
 func _connect_signals() -> void:
 	Events.category_closed.connect(_on_category_closed)
