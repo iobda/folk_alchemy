@@ -112,7 +112,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
-text = "[center]Наша игра это алхимик, только получаем мы [color=green]фольклоры[/color]! В игре есть [color=green]четыре категории[/color], каждая со своими элементами:[/center]
+text = "[center]Наша игра — это алхимия, только мы получаем  [color=green]фольклоры[/color]! В игре есть [color=green]четыре категории[/color], каждая со своими элементами:[/center]
 "
 scroll_active = false
 context_menu_enabled = true
@@ -303,8 +303,8 @@ theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
 text = "
 [center]Игровое поле разделено на две страницы.
-На одной странице можно выбрать[color=green] один элемент[/color].
-Выбор элемента показан зеленым эффектом:[/center]"
+На одной странице можно выбрать [color=green]один элемент[/color].
+Выбор элемента показан зелёным эффектом:[/center]"
 scroll_active = false
 
 [node name="ElementsExample" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
@@ -397,7 +397,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
-text = "[center]Найдите эти элементы в категориях и откройте первый [color=green] фольклор[/color]![/center]"
+text = "[center]Найдите эти элементы в категориях и откройте первый [color=green]фольклор[/color]![/center]"
 scroll_active = false
 
 [node name="Exit" type="TextureButton" parent="."]
