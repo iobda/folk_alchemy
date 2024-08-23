@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/fon_in_book.png-31e8bb333f6f5409bdc69648af251
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

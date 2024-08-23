@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/banshi.png-902793158cba4b7de6e1b3b6737e82dc.c
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

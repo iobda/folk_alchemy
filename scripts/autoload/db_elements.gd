@@ -291,7 +291,7 @@ var _folklores: Dictionary = {
 	},
 	"rudzin": {
 		"name": "Рюдзин",
-		"icon": "res://assets/folklore/vampir_cat.png",
+		"icon": "res://assets/folklore/dragon.png",
 		"description": "Рюдзин из японской мифологии — бог драконов и морей; его могущество настолько велико, что он управляет морскими штормами и приливами.",
 		"tip" : "Подсказка: у [color=green]ЭТИХ[/color] двух элементов есть одна общая черта – холод.",
 		"source_1": "snake",
@@ -300,7 +300,7 @@ var _folklores: Dictionary = {
 	},
 	"kitsune": {
 		"name": "Кицунэ",
-		"icon": "res://assets/folklore/vampir_cat.png",
+		"icon": "res://assets/folklore/kitsune.png",
 		"description": "Кицунэ из японской мифологии — лиса, обладающая магическими способностями; считается, что она может превращаться в женщину и жить тысячу лет.",
 		"tip" : "Подсказка: соблазнители добиваются [color=green]ЭТОЙ[/color] эмоции у своих жертв. Это требует хитрости, которая ассоцириуется с [color=green]ЭТИМ[/color] животным.",
 		"source_1": "love",
@@ -318,7 +318,7 @@ var _folklores: Dictionary = {
 	},
 	"cu_sith": {
 		"name": "Ку-Ситх",
-		"icon": "res://assets/folklore/vampir_cat.png",
+		"icon": "res://assets/folklore/dogsith.png",
 		"description": "Ку-Ситх из шотландского фольклора — мифический гигантский пес; его завывание предсказывает смерть, и он охраняет места, связанные с миром мёртвых.",
 		"tip" : "Подсказка: [color=green]ЭТО[/color] остается у человека после смерти. [color=green]ЭТО[/color] нужно часто выгуливать человеку.",
 		"source_1": "wolf",
@@ -327,7 +327,7 @@ var _folklores: Dictionary = {
 	},
 	"kanashibari": {
 		"name": "Канашибари",
-		"icon": "res://assets/folklore/vampir_cat.png",
+		"icon": "res://assets/folklore/kanashibari.png",
 		"description": "Канашибари из японского фольклора — дух, вызывающий паралич во сне; её ненависть к людям проявляется в том, что он мешает им двигаться и вызывает страх.",
 		"tip" : "Подсказка: возьмите [color=green]ЭТИ[/color] самые худшие эмоции человека и воображение сделает из этого этот фольклор.",
 		"source_1": "hatred",

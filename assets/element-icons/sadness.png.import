@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/sadness.png-fc460c265e9c77be0bd846e454a75299.
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

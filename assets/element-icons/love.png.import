@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/love.png-15398206f1eb85eb2c6ce00b24a8dcfc.cte
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

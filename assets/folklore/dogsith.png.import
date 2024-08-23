@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/dogsith.png-757c6fb51cb80d16c05167fa481f82dd.
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

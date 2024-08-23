@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/emotions.png-6c5116f4fb91e321327f40e3ac9dce5e
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
