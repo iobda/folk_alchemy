@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/earthquake.png-d46a2104a934e8dd5bf9e504873787
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

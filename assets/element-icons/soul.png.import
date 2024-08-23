@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/soul.png-ee1d874ae2dd7658f1a64146e48834a5.cte
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

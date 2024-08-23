@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/siren.png-b1d9ecc181084bc6c713ca709ecddef7.ct
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

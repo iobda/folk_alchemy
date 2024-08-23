@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/сamazotz.png-38d819571f3b44d0a894fae471e66b7
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -318,7 +318,7 @@ var _folklores: Dictionary = {
 	},
 	"cu_sith": {
 		"name": "Ку-Ситх",
-		"icon": "res://assets/folklore/vampir_cat.png",
+		"icon": "res://assets/folklore/dogsith.png",
 		"description": "Ку-Ситх из шотландского фольклора — мифический гигантский пес; его завывание предсказывает смерть, и он охраняет места, связанные с миром мёртвых.",
 		"tip" : "Подсказка: [color=green]ЭТО[/color] остается у человека после смерти. [color=green]ЭТО[/color] нужно часто выгуливать человеку.",
 		"source_1": "wolf",

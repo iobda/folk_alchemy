@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/snake.png-f4e9da7c7eb5869403cf6c7f326c4863.ct
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
