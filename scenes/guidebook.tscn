@@ -20,7 +20,7 @@ texture = ExtResource("4_ancqp")
 
 [node name="Guidebook" type="CanvasLayer" node_paths=PackedStringArray("_guide_book_folklores")]
 script = ExtResource("1_ubvq5")
-_guide_book_folklores = [NodePath("AspectRatioContainer/BookPanelContainer/ColumnsHBox/LeftColumnVBox/Folklore2"), NodePath("AspectRatioContainer/BookPanelContainer/ColumnsHBox/LeftColumnVBox/Folklore"), NodePath("AspectRatioContainer/BookPanelContainer/ColumnsHBox/RightColumnVBox/Folklore4"), NodePath("AspectRatioContainer/BookPanelContainer/ColumnsHBox/RightColumnVBox/Folklore3")]
+_guide_book_folklores = [NodePath("HBoxContainer/AspectRatioContainer/BookPanelContainer/ColumnsHBox/LeftColumnVBox/Folklore2"), NodePath("HBoxContainer/AspectRatioContainer/BookPanelContainer/ColumnsHBox/LeftColumnVBox/Folklore"), NodePath("HBoxContainer/AspectRatioContainer/BookPanelContainer/ColumnsHBox/RightColumnVBox/Folklore4"), NodePath("HBoxContainer/AspectRatioContainer/BookPanelContainer/ColumnsHBox/RightColumnVBox/Folklore3")]
 
 [node name="Panel" type="Panel" parent="."]
 material = SubResource("ShaderMaterial_pbrw7")
@@ -32,135 +32,133 @@ grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
-anchors_preset = -1
-anchor_left = 0.001
-anchor_top = 1.0
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -0.92
-offset_top = -1083.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Exit" type="TextureButton" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.31
+texture_normal = ExtResource("3_sj5mn")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 12.17
 mouse_filter = 2
 theme = ExtResource("5_d4dyg")
 ratio = 1.5999
 
-[node name="BookPanelContainer" type="PanelContainer" parent="AspectRatioContainer"]
+[node name="BookPanelContainer" type="PanelContainer" parent="HBoxContainer/AspectRatioContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ee5eh")
 
-[node name="ColumnsHBox" type="HBoxContainer" parent="AspectRatioContainer/BookPanelContainer"]
+[node name="ColumnsHBox" type="HBoxContainer" parent="HBoxContainer/AspectRatioContainer/BookPanelContainer"]
 layout_mode = 2
 
-[node name="MarginLeft" type="Control" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox"]
+[node name="MarginLeft" type="Control" parent="HBoxContainer/AspectRatioContainer/BookPanelContainer/ColumnsHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.15
 
-[node name="LeftColumnVBox" type="VBoxContainer" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox"]
+[node name="LeftColumnVBox" type="VBoxContainer" parent="HBoxContainer/AspectRatioContainer/BookPanelContainer/ColumnsHBox"]
 layout_mode = 2
 size_flags_horizontal = 11
 
-[node name="MarginTop" type="Control" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox/LeftColumnVBox"]
+[node name="MarginTop" type="Control" parent="HBoxContainer/AspectRatioContainer/BookPanelContainer/ColumnsHBox/LeftColumnVBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.2
 
-[node name="Folklore2" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox/LeftColumnVBox" instance=ExtResource("6_lx1jx")]
+[node name="Folklore2" parent="HBoxContainer/AspectRatioContainer/BookPanelContainer/ColumnsHBox/LeftColumnVBox" instance=ExtResource("6_lx1jx")]
 layout_mode = 2
 size_flags_vertical = 3
 is_right = false
 
-[node name="Folklore" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox/LeftColumnVBox" instance=ExtResource("6_lx1jx")]
+[node name="Folklore" parent="HBoxContainer/AspectRatioContainer/BookPanelContainer/ColumnsHBox/LeftColumnVBox" instance=ExtResource("6_lx1jx")]
 layout_mode = 2
 size_flags_vertical = 3
 is_right = false
 
-[node name="ArrowHBox" type="HBoxContainer" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox/LeftColumnVBox"]
+[node name="ArrowHBox" type="HBoxContainer" parent="HBoxContainer/AspectRatioContainer/BookPanelContainer/ColumnsHBox/LeftColumnVBox"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
 
-[node name="LeftArrowButton" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox/LeftColumnVBox/ArrowHBox" instance=ExtResource("7_nlapj")]
+[node name="LeftArrowButton" parent="HBoxContainer/AspectRatioContainer/BookPanelContainer/ColumnsHBox/LeftColumnVBox/ArrowHBox" instance=ExtResource("7_nlapj")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 is_right_button = false
 
-[node name="MarginLeft" type="Control" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox/LeftColumnVBox/ArrowHBox"]
+[node name="MarginLeft" type="Control" parent="HBoxContainer/AspectRatioContainer/BookPanelContainer/ColumnsHBox/LeftColumnVBox/ArrowHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.4
 
-[node name="MarginBottom" type="Control" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox/LeftColumnVBox"]
+[node name="MarginBottom" type="Control" parent="HBoxContainer/AspectRatioContainer/BookPanelContainer/ColumnsHBox/LeftColumnVBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.15
 
-[node name="RightColumnVBox" type="VBoxContainer" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox"]
+[node name="RightColumnVBox" type="VBoxContainer" parent="HBoxContainer/AspectRatioContainer/BookPanelContainer/ColumnsHBox"]
 layout_mode = 2
 size_flags_horizontal = 11
 
-[node name="MarginTop" type="Control" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox/RightColumnVBox"]
+[node name="MarginTop" type="Control" parent="HBoxContainer/AspectRatioContainer/BookPanelContainer/ColumnsHBox/RightColumnVBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.2
 
-[node name="Folklore4" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox/RightColumnVBox" instance=ExtResource("6_lx1jx")]
+[node name="Folklore4" parent="HBoxContainer/AspectRatioContainer/BookPanelContainer/ColumnsHBox/RightColumnVBox" instance=ExtResource("6_lx1jx")]
 layout_direction = 3
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Folklore3" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox/RightColumnVBox" instance=ExtResource("6_lx1jx")]
+[node name="Folklore3" parent="HBoxContainer/AspectRatioContainer/BookPanelContainer/ColumnsHBox/RightColumnVBox" instance=ExtResource("6_lx1jx")]
 layout_direction = 3
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ArrowHBox" type="HBoxContainer" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox/RightColumnVBox"]
+[node name="ArrowHBox" type="HBoxContainer" parent="HBoxContainer/AspectRatioContainer/BookPanelContainer/ColumnsHBox/RightColumnVBox"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
 
-[node name="MarginLeft" type="Control" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox/RightColumnVBox/ArrowHBox"]
+[node name="MarginLeft" type="Control" parent="HBoxContainer/AspectRatioContainer/BookPanelContainer/ColumnsHBox/RightColumnVBox/ArrowHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.4
 
-[node name="RightArrowButton" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox/RightColumnVBox/ArrowHBox" instance=ExtResource("7_nlapj")]
+[node name="RightArrowButton" parent="HBoxContainer/AspectRatioContainer/BookPanelContainer/ColumnsHBox/RightColumnVBox/ArrowHBox" instance=ExtResource("7_nlapj")]
 unique_name_in_owner = true
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="MarginBottom" type="Control" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox/RightColumnVBox"]
+[node name="MarginBottom" type="Control" parent="HBoxContainer/AspectRatioContainer/BookPanelContainer/ColumnsHBox/RightColumnVBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.15
 
-[node name="MarginRight" type="Control" parent="AspectRatioContainer/BookPanelContainer/ColumnsHBox"]
+[node name="MarginRight" type="Control" parent="HBoxContainer/AspectRatioContainer/BookPanelContainer/ColumnsHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.15
-
-[node name="ExitMargin" type="MarginContainer" parent="AspectRatioContainer"]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/margin_left = -90
-theme_override_constants/margin_top = 20
-
-[node name="Exit" type="TextureButton" parent="AspectRatioContainer/ExitMargin"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture_normal = ExtResource("3_sj5mn")
-ignore_texture_size = true
-stretch_mode = 5

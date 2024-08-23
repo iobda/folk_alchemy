@@ -29,6 +29,7 @@ func _init_yandex_sdk() -> void:
 	YandexSDK.init_player()
 	YandexSDK.show_interstitial_ad()
 	YandexSDK.load_all_data()
+	YandexSDK.load_all_stats()
 
 func _connect_signals() -> void:
 	Events.category_closed.connect(_on_category_closed)
@@ -39,6 +40,7 @@ func _connect_signals() -> void:
 
 func data_loaded(data: Dictionary) -> void:
 	DBElements.update_folklores_state(data)
+	Events.player_data_loaded.emit()
 
 func interstitial_ad(result: Array) -> void:
 	if typeof(result) == TYPE_ARRAY and result.size() > 0:

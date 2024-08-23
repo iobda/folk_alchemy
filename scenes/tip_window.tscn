@@ -16,10 +16,10 @@ shader_parameter/is_grey = false
 
 [node name="Tips" type="VBoxContainer"]
 anchors_preset = -1
-anchor_right = 0.104
-anchor_bottom = 0.185
-offset_right = 0.319992
-offset_bottom = 0.199997
+anchor_right = 0.16
+anchor_bottom = 0.293
+offset_right = -107.2
+offset_bottom = -116.44
 mouse_filter = 2
 script = ExtResource("1_5i7du")
 
@@ -49,15 +49,14 @@ stretch_mode = 2
 [node name="TipsCount&Button" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(308, 108)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
+size_flags_vertical = 3
 
 [node name="AdButton" type="TextureButton" parent="TipsCount&Button"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(108, 108)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_horizontal = 7
+size_flags_vertical = 5
+size_flags_stretch_ratio = 3.8
 texture_normal = ExtResource("4_mrbbq")
 ignore_texture_size = true
 stretch_mode = 4
@@ -67,9 +66,8 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 100)
 layout_mode = 2
 size_flags_horizontal = 6
-size_flags_stretch_ratio = 1.5
 theme_override_fonts/font = ExtResource("5_wc6y4")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 85
 text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -79,8 +77,8 @@ unique_name_in_owner = true
 material = SubResource("ShaderMaterial_y3xk4")
 custom_minimum_size = Vector2(108, 108)
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
+size_flags_horizontal = 7
+size_flags_vertical = 7
 size_flags_stretch_ratio = 4.0
 theme = ExtResource("5_n0aga")
 texture_normal = ExtResource("6_1y1n5")

@@ -43,6 +43,10 @@ func _connect_signals() -> void:
 	_category_texture_button.pressed.connect(_category_pressed)
 	(self as Category).resized.connect(_on_resized)
 	_category_animation_player.animation_finished.connect(_on_animation_finished)
+	Events.player_data_loaded.connect(_on_player_data_loaded)
+
+func _on_player_data_loaded() -> void:
+	_init_counter()
 
 func _init_category() -> void:
 	var path_to_icon: String = DBElements.get_category_icon_path(category)

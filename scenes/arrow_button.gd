@@ -34,6 +34,7 @@ func _on_resized() -> void:
 	(self as AspectRatioContainer).pivot_offset = (self as AspectRatioContainer).size/2
 
 func _on_pressed() -> void:
+	SoundManager.play_ui_click_sfx()
 	arrow_button_animation_player.play("bubble_up")
 	arrow_button_pressed.emit()
 
