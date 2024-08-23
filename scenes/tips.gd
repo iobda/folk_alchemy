@@ -72,9 +72,9 @@ func _on_merged(folklore_db_name: String) -> void:
 
 func _change_tip_button_icon() -> void:
 	if (_tips_available >= 1):
-		_tip_button.material.set("shader_parameter/is_grey",false)
+		_tip_button.texture_normal = load("res://assets/icons/clue.png") as CompressedTexture2D
 	elif (_tips_available == 0):
-		_tip_button.material.set("shader_parameter/is_grey",true)
+		_tip_button.texture_normal = load("res://assets/icons/clue_not.png") as CompressedTexture2D
 
 func _reward_ad_button_press() -> void:
 	YandexSDK.show_rewarded_ad()

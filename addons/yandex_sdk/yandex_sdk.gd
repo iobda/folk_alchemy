@@ -38,6 +38,17 @@ var callback_leaderboard_entries_loaded = JavaScriptBridge.create_callback(_lead
 
 @onready var window = JavaScriptBridge.get_interface("window")
 
+func _ready() -> void:
+	if is_working():
+		get_window().focus_entered.connect(func() -> void:
+				print("focus in signal")
+				AudioServer.set_bus_mute(0, false)
+		)
+		get_window().focus_exited.connect(func() -> void:
+				print("focus out signal")
+				AudioServer.set_bus_mute(0, true)
+		)
+
 func print_info(info_text: String):
 	print("YANDEX_SDK: " + info_text)
 
@@ -117,6 +128,8 @@ func save_data(data: Dictionary, flush: bool = false) -> void:
 			saves[i] = float(data[i])
 		else:
 			saves[i] = data[i]
+		if data[i] is Array:
+			saves[i] = JSON.stringify(data[i])
 	window.SaveData(saves, flush)
 
 func save_stats(stats: Dictionary) -> void:
@@ -201,11 +214,11 @@ func load_leaderboard_entries(leaderboard_name: String, include_user: bool, quan
 	window.LoadLeaderboardEntries(leaderboard_name, include_user, quantity_around, quantity_top, callback_leaderboard_entries_loaded)
 
 func _rewarded_ad(args) -> void:
-	print("rewarded ad res: ", args[0])
+	print_info(args[0])
 	emit_signal("rewarded_ad", args)
 
 func _interstitial_ad(args) -> void:
-	print("ad res: ", args[0])
+	print_info(args[0])
 	emit_signal("interstitial_ad", args)
 
 func _data_loaded(args) -> void:
@@ -242,7 +255,7 @@ func _leaderboard_entries_loaded(args) -> void:
 			result[keys[i]] = values[i]
 		emit_signal("leaderboard_entries_loaded", result)
 	elif args[0] == 'error':
-		print("Произошла ошибка при загрузке лидерборда.")
+		print_info("Произошла ошибка при загрузке лидерборда.")
 
 func _game_initialized(args) -> void:
 	is_game_initialized = true
