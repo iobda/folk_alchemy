@@ -13,19 +13,13 @@ signal stats_loaded(stats)
 signal check_auth(answer)
 
 
-var is_game_initialized: bool = false
-var is_game_ready: bool = false
-var is_player_initialized: bool = false
+var is_game_initialized : bool = false
+var is_player_initialized : bool = false
 var is_leaderboard_initialized: bool = false
 
 var is_game_initialization_started: bool = false
 var is_player_initialization_started: bool = false
 var is_leaderboard_initialization_started: bool = false
-
-var app_id: String = ""
-var lang: String = ""
-var tld: String = ""
-var payload: String = ""
 
 var is_authorized: bool = false
 
@@ -65,7 +59,6 @@ func open_auth_dialog() -> void:
 	if not OS.has_feature("yandex"):
 		return
 	if not is_player_initialized:
-		init_player()
 		await player_initialized
 	if not is_authorized:
 		window.OpenAuthDialog()
@@ -74,7 +67,6 @@ func check_is_authorized() -> void:
 	if not OS.has_feature("yandex"):
 		return
 	if not is_player_initialized:
-		init_player()
 		await player_initialized
 	if not is_authorized:
 		window.CheckAuth(callback_is_authorized)
@@ -99,45 +91,17 @@ func init_game() -> void:
 		var options = JavaScriptBridge.create_object("Object")
 		window.InitGame(options, callback_game_initialized)
 
-func game_ready() -> void:
-	if not OS.has_feature("yandex"):
-		return
-	if not is_game_initialized:
-		init_game()
-		await game_initialized
-	if not is_game_ready:
-		is_game_ready = true
-		window.GameReady()
-
-func gameplay_started() -> void:
-	if not OS.has_feature("yandex"):
-		return
-	if not is_game_initialized:
-		init_game()
-		await game_initialized
-	window.GameplayStarted()
-
-func gameplay_stopped() -> void:
-	if not OS.has_feature("yandex"):
-		return
-	if not is_game_initialized:
-		init_game()
-		await game_initialized
-	window.GameplayStopped()
-
 func show_interstitial_ad() -> void:
 	if not OS.has_feature("yandex"):
 		return
-	if not is_game_initialized:
-		init_game()
+	if not is_game_initialized :
 		await game_initialized
 	window.ShowAd(callback_ad)
 
 func show_rewarded_ad() -> void:
 	if not OS.has_feature("yandex"):
 		return
-	if not is_game_initialized:
-		init_game()
+	if not is_game_initialized :
 		await game_initialized
 	window.ShowAdRewardedVideo(callback_rewarded_ad)
 
@@ -164,6 +128,8 @@ func save_data(data: Dictionary, flush: bool = false) -> void:
 			saves[i] = float(data[i])
 		else:
 			saves[i] = data[i]
+		if data[i] is Array:
+			saves[i] = JSON.stringify(data[i])
 	window.SaveData(saves, flush)
 
 func save_stats(stats: Dictionary) -> void:
@@ -287,15 +253,10 @@ func _leaderboard_entries_loaded(args) -> void:
 			result[keys[i]] = values[i]
 		emit_signal("leaderboard_entries_loaded", result)
 	elif args[0] == 'error':
-		print("Произошла ошибка при загрузке лидерборда.")
+		print_info("Произошла ошибка при загрузке лидерборда.")
 
 func _game_initialized(args) -> void:
-	app_id = args[0].app.id
-	lang = args[0].i18n.lang
-	tld = args[0].i18n.tld
-	payload = args[0].payload
 	is_game_initialized = true
-	TranslationServer.set_locale(lang)
 	emit_signal('game_initialized')
 
 func _player_initialized(args) -> void:
