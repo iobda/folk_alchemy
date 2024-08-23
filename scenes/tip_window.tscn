@@ -49,15 +49,14 @@ stretch_mode = 2
 [node name="TipsCount&Button" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(308, 108)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
+size_flags_vertical = 3
 
 [node name="AdButton" type="TextureButton" parent="TipsCount&Button"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(108, 108)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_horizontal = 7
+size_flags_vertical = 5
+size_flags_stretch_ratio = 3.8
 texture_normal = ExtResource("4_mrbbq")
 ignore_texture_size = true
 stretch_mode = 4
@@ -78,8 +77,8 @@ unique_name_in_owner = true
 material = SubResource("ShaderMaterial_y3xk4")
 custom_minimum_size = Vector2(108, 108)
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
+size_flags_horizontal = 7
+size_flags_vertical = 7
 size_flags_stretch_ratio = 4.0
 theme = ExtResource("5_n0aga")
 texture_normal = ExtResource("6_1y1n5")
