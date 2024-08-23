@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Etirwer-_Looped_theme.ogg-3d17dea333e9487bd2d
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
