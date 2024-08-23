@@ -38,7 +38,7 @@ func _connect_signals() -> void:
 	_tip_button.pressed.connect(_on_tip_button_pressed)
 	_ad_button.pressed.connect(_reward_ad_button_press)
 	Events.merged.connect(_on_merged)
-	YandexSDK.rewarded_ad.connect(rewarded)
+	YandexSDK.rewarded_ad.connect(_on_rewarded_ad)
 	YandexSDK.stats_loaded.connect(_on_stats_loaded)
 
 func _on_stats_loaded(stats: Dictionary) -> void:
@@ -89,15 +89,17 @@ func _change_tip_button_icon() -> void:
 func _reward_ad_button_press() -> void:
 	YandexSDK.show_rewarded_ad()
 
-func rewarded(result: Array) -> void:
+func _on_rewarded_ad(result: Array) -> void:
 	if typeof(result) == TYPE_ARRAY and result.size() > 0:
 		var status: String = result[0]
 		if status == 'rewarded':
 			_tips_available += 1
 			YandexSDK.print_info('rewarded')
 		if status == 'opened':
+			AudioServer.set_bus_mute(0, true)
 			YandexSDK.print_info('rewarded ad - opened')
 		if status == 'closed':
+			AudioServer.set_bus_mute(0, false)
 			YandexSDK.print_info('rewarded ad - closed')
 		if status == 'error':
 			YandexSDK.print_info('rewarded ad - error')

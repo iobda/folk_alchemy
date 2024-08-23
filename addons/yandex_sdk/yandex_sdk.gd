@@ -214,11 +214,9 @@ func load_leaderboard_entries(leaderboard_name: String, include_user: bool, quan
 	window.LoadLeaderboardEntries(leaderboard_name, include_user, quantity_around, quantity_top, callback_leaderboard_entries_loaded)
 
 func _rewarded_ad(args) -> void:
-	print_info(args[0])
 	emit_signal("rewarded_ad", args)
 
 func _interstitial_ad(args) -> void:
-	print_info(args[0])
 	emit_signal("interstitial_ad", args)
 
 func _data_loaded(args) -> void:
