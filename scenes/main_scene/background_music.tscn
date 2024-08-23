@@ -1,8 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://x07c0lkyketu"]
 
-[ext_resource type="AudioStream" uid="uid://bynpbqr4dnatj" path="res://assets/sound_and_music/Etirwer-_Looped_theme.wav" id="1_4cao0"]
+[ext_resource type="AudioStream" uid="uid://qvu66phn1ckw" path="res://assets/sound_and_music/Etirwer-_Looped_theme.ogg" id="1_sgo78"]
 
 [node name="BackgroundMusic" type="AudioStreamPlayer"]
-stream = ExtResource("1_4cao0")
+stream = ExtResource("1_sgo78")
 volume_db = -12.0
 autoplay = true
+parameters/looping = true
