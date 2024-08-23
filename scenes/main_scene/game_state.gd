@@ -39,6 +39,7 @@ func _connect_signals() -> void:
 
 func data_loaded(data: Dictionary) -> void:
 	DBElements.update_folklores_state(data)
+	Events.player_data_loaded.emit()
 
 func interstitial_ad(result: Array) -> void:
 	if typeof(result) == TYPE_ARRAY and result.size() > 0:
