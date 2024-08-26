@@ -23,6 +23,10 @@ func _on_guidebook_pressed() -> void:
 	var folklore_guidebooke: GuideBook = _guidebook_pc.instantiate() as GuideBook
 	add_child(folklore_guidebooke)
 	self.hide()
+	#Cructh for fixing bugged animation when mouse entered on button, book opened and mouse exited in any place but button.
+	for tw: Tween in get_tree().get_processed_tweens():
+		tw.kill()
+	_guidebook.scale = Vector2(1,1)
 
 func _on_mouse_entered() -> void:
 	var _tween: Tween = get_tree().create_tween()
