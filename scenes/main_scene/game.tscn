@@ -87,6 +87,11 @@ script = ExtResource("5_a2jdn")
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="MarginBookTop" type="Control" parent="Guidebook&Tips"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.07
+
 [node name="GuideBookButton" type="TextureButton" parent="Guidebook&Tips"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -94,7 +99,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 1.15
 texture_normal = ExtResource("5_xykkt")
 ignore_texture_size = true
-stretch_mode = 5
+stretch_mode = 6
 script = ExtResource("5_vsqrg")
 
 [node name="Tips" parent="Guidebook&Tips" instance=ExtResource("4_5o2c7")]

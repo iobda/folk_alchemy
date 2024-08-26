@@ -424,3 +424,11 @@ func is_folklore_element_closed(folklore_db_name: String)->bool:
 	if(state == "closed"):
 		return true
 	return false
+
+func get_opened_folklores_count() -> int:
+	var count: int = 0
+	for fk_name: String in get_folklores_elements_bd_names():
+		if(get_folklore_state(fk_name) == "opened"):
+			count+=1
+	return count
+	
