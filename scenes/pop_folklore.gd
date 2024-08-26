@@ -5,7 +5,7 @@ extends CanvasLayer
 @onready var _folklore_name: Label = %FolkloreName
 @onready var _folklore_description: RichTextLabel = %FolkloreDescription
 @onready var _pop_up_v_box_container: VBoxContainer = %PopUpVBoxContainer
-
+var _end_screen_pc: PackedScene = preload("res://scenes/end_screen.tscn")
 
 var _left_element_selected: String
 var _right_element_selected: String
@@ -26,4 +26,6 @@ func set_popup_data(folklore_db_name: String)->void:
 func _on_gui_inputed(_event: InputEvent) -> void:
 	if(_event.is_action_pressed("BUTTON_LEFT")):
 		Events.popup_closed.emit(_left_element_selected, _right_element_selected)
+		if(DBElements.get_opened_folklores_count() == 25):
+			get_tree().current_scene.add_child(_end_screen_pc.instantiate())
 		queue_free()

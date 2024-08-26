@@ -1,8 +1,6 @@
 extends Control
 
 @onready var _animation_player: AnimationPlayer = %AnimationPlayer
-@onready var _left_element: MergeElement = %LeftElement
-@onready var _right_element: MergeElement = %RightElement
 
 func _ready() -> void:
 	_connect_signals()

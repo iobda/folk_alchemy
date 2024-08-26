@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://e5rcijiom57t"]
+
+[ext_resource type="Texture2D" uid="uid://b5yg05w5wu2ew" path="res://assets/background-book/end.png" id="1_4bq8n"]
+[ext_resource type="Script" path="res://scenes/end_screen.gd" id="1_afylg"]
+[ext_resource type="Theme" uid="uid://cfnbb06x7c6ff" path="res://resources/themes/text.tres" id="2_h7s6p"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_afylg")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+anchors_preset = -1
+anchor_left = -0.205
+anchor_top = -0.238
+anchor_right = 1.115
+anchor_bottom = 1.154
+offset_left = 0.600037
+offset_top = 0.0400085
+offset_right = 0.199951
+offset_bottom = 10.6449
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.7
+stretch_mode = 3
+
+[node name="EndingTextureRect" type="TextureRect" parent="AspectRatioContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_4bq8n")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.054
+anchor_top = 0.837
+anchor_right = 0.946
+anchor_bottom = 1.0
+offset_left = 0.82
+offset_top = 0.039978
+offset_right = -0.820068
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+alignment = 1
+
+[node name="Thanks" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_h7s6p")
+theme_override_font_sizes/font_size = 90
+text = "Вы прошли игру! Спасибо за ваше внимание!!"
+
+[node name="Continue" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_h7s6p")
+theme_override_colors/font_color = Color(0.733005, 0.733005, 0.733005, 1)
+theme_override_font_sizes/font_size = 45
+text = "Нажмите куда-угодно для просмотра открытых фольклоров."
